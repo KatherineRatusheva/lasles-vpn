@@ -55,6 +55,11 @@ export default {
         closeModal() {
             this.isModalVisible = false
             this.selectPlan = ''
+
+            this.errorPhone = false;
+            this.error = false;
+            this.name = '';
+            this.phone = '';
         },
     }
 }
