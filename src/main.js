@@ -1,0 +1,30 @@
+import Vue from 'vue'
+import App from './App.vue'
+import VueRouter from 'vue-router'
+import router from './router'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import store from './store'
+import './main.css';
+
+import { initializeApp } from "firebase/app";
+
+Vue.use(VueRouter, VueAxios, axios)
+Vue.config.productionTip = false
+
+const firebaseApp = initializeApp({
+  apiKey: "AIzaSyD0R1x2p5aszf2C-bFXYJ7FYxorHAnPwZ8",
+  authDomain: "laslesvpn-97c54.firebaseapp.com",
+  databaseURL: "https://laslesvpn-97c54-default-rtdb.firebaseio.com",
+  projectId: "laslesvpn-97c54",
+  storageBucket: "laslesvpn-97c54.appspot.com",
+  messagingSenderId: "1001301090465",
+  appId: "1:1001301090465:web:aaba4668812d1b6411d0e0"
+});
+
+new Vue({
+  firebaseApp,
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
