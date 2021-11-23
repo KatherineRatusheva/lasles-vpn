@@ -20,10 +20,13 @@
 </template>
 
 <script>
-import axios from 'axios'
-import {mapGetters} from 'vuex'
+import axios from 'axios';
+import {mapGetters} from 'vuex';
+import {saveUser} from '../mixins/saveUser';
 
 export default {
+    name: 'SignUp',
+    mixins: [saveUser],
     data() {
         return {
             email: this.email,
@@ -47,12 +50,8 @@ export default {
                 password: this.password,
                 returnSecureToken: true
             }).then(res => {
-                localStorage.setItem('user-token', res.data.idToken);
-                localStorage.setItem('user-email', res.data.email);
-
-                this.$store.commit('SIGN_IN')
-                this.$store.dispatch('toggleSignIn')
                 this.emailUser = res.data.email
+                this.saveRegisterUser(res)
 
             }).catch(error => {
                 console.log(error);
@@ -60,11 +59,7 @@ export default {
         },
 
         signOutUser() {
-            localStorage.removeItem('user-token')
-            localStorage.removeItem('user-email')
-
-            this.$store.commit('LOG_OUT')
-            this.$store.dispatch('isLogOut')
+            this.deleteUser()
         }
     },
 

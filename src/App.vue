@@ -6,16 +6,13 @@
       <label class="menu__btn" for="menu__toggle">
         <span></span>
       </label>
-      <ul class="menu__box">
-        <router-link to="/">  <li class="menu__item">Main</li>  </router-link>
-        <router-link to="/about">  <li class="menu__item">About</li>  </router-link>
-        <router-link to="/features">  <li class="menu__item">Features</li>  </router-link>
-        <router-link to="/pricing">  <li class="menu__item">Pricing</li>  </router-link>
-        <router-link to="/testimonials">  <li class="menu__item">Testimonials</li>  </router-link>
-        <router-link to="/help">  <li class="menu__item">Help</li>  </router-link>
+      <nav class="menu__box">
+        <ul v-for="link in links" :key='link'>
+          <router-link v-bind:to="link">  <li class="menu__item">{{link}}</li>  </router-link>
+        </ul>
         <router-link to="/sign-in">  <button type="button" class="menu__item-button">Sign In</button>  </router-link>
         <router-link to="/sign-up">  <button type="button" class="menu__item-button">Sign Up</button>  </router-link>
-      </ul>
+      </nav>
     </div>
     
     <header class="header">
