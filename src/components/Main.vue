@@ -16,22 +16,10 @@
       </div>
 
       <div class="info">
-          <div class="info-block info-block_users">
+          <div class="info-block" v-bind:class="[item.activeClass]" v-for="item in info" :key="item.activeClass">
               <div class="info-block__value">
-                  <p class="info-block__title">90+</p>
-                  <p class="info-block__description">Users</p>
-              </div>
-          </div>
-          <div class="info-block info-block_locations">
-              <div class="info-block__value">
-                  <p class="info-block__title">30+</p>
-                  <p class="info-block__description">Locations</p>
-              </div>
-          </div>
-          <div class="info-block info-block_servers">
-              <div class="info-block__value">
-                  <p class="info-block__title">50+</p>
-                  <p class="info-block__description">Servers</p>
+                  <p class="info-block__title"> {{item.title}} </p>
+                  <p class="info-block__description"> {{item.description}} </p>
               </div>
           </div>
       </div>
@@ -55,31 +43,15 @@
           <p class="price__description">Let's choose the package that is best for you and explore it happily and cheerfully.</p>
           <div class="price-block">
 
-              <div class="price-block__package">
-                  <p class="price-block__title">Free Plan</p>
-                  <div class="price-block__list price-block__list_free">
-                      <p class="price-block__item" v-for="item in freePlan" :key="item">  {{item}} </p>
+              <div class="price-block__package" v-bind:class="[item.activeClass]" v-for="item in plan" :key="item.name">
+                  <div class="price-block__list">
+                      <p class="price-block__title">{{item.name}}</p>
+                      <p class="price-block__item" v-for="item in item.include" :key="item">  {{item}} </p>
                   </div>
                   <div>
-                      <p class="price-block__cost">Free</p>
+                      <p class="price-block__cost">{{item.price}}</p>
                       <button class="price-block__button" @click="showModalPrice">Select</button>
                   </div>
-              </div>
-              <div class="price-block__package price-block__package_standart">
-                  <p class="price-block__title">Standard Plan</p>
-                  <div class="price-block__list price-block__list_standard">
-                      <p class="price-block__item" v-for="item in standardPlan" :key="item">  {{item}} </p>
-                  </div>
-                  <p class="price-block__cost">$9 / mo</p>
-                  <button class="price-block__button" @click="showModalPrice">Select</button>
-              </div>
-              <div class="price-block__package price-block__package_premium">
-                  <p class="price-block__title">Premium Plan</p>
-                  <div class="price-block__list price-block__list_premium">
-                      <p class="price-block__item" v-for="item in premiumPlan" :key="item">  {{item}} </p>
-                  </div>
-                  <p class="price-block__cost">$12 / mo</p>
-                  <button class="price-block__button" @click="showModalPrice">Select</button>
               </div>
           </div>
           <Modal ref="modal"/>
@@ -99,63 +71,24 @@
       </div>
       
       <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
-          <div>
+          <div v-for="item in reviews" :key='item.name'>
               <div class="reviews-user">
                   <div class="reviews-user-header">
-                      <img class="reviews-user__img" src="../image/robert-img.png" alt="">
-                      <div class="reviews-user-main">
-                          <p class="reviews-user__name" >{{ reviews.user1.surname }} {{ reviews.user1.name }}</p>
-                          <p class="reviews-user__city">{{ reviews.user1.country }}, {{ reviews.user1.city }}</p>
+                      <img class="reviews-user__img" v-bind:src="[item.img]" alt="">
+                      <div class="reviews-user__main">
+                          <p class="reviews-user__name" >{{ item.surname }} {{ item.name }}</p>
+                          <p class="reviews-user__city">{{ item.country }}, {{ item.city }}</p>
                       </div>
-                      <p class="reviews-user__rating">{{ reviews.user1.rating }}</p>
+                      <p class="reviews-user__rating">{{ item.rating }}</p>
                   </div>
-                  <p class="reviews-user__description"> {{ reviews.user1.message }}</p>
-              </div>
-        </div>
-        <div>
-            <div class="reviews-user">
-                  <div class="reviews-user-header">
-                      <img class="reviews-user__img" src="../image/christy-img.png" alt="">
-                      <div class="reviews-user-main">
-                          <p class="reviews-user__name" >{{ reviews.user2.surname }} {{ reviews.user2.name }}</p>
-                          <p class="reviews-user__city">{{ reviews.user2.country }}, {{ reviews.user2.city }}</p>
-                      </div>
-                      <p class="reviews-user__rating">{{ reviews.user2.rating }}</p>
-                  </div>
-                  <p class="reviews-user__description"> {{ reviews.user2.message }}</p>
-              </div>
-        </div>
-        <div>
-            <div class="reviews-user">
-                  <div class="reviews-user-header">
-                      <img class="reviews-user__img" src="../image/kim-img.png" alt="">
-                      <div class="reviews-user-main">
-                          <p class="reviews-user__name" >{{ reviews.user3.surname }} {{ reviews.user3.name }}</p>
-                          <p class="reviews-user__city">{{ reviews.user3.country }}, {{ reviews.user3.city }}</p>
-                      </div>
-                      <p class="reviews-user__rating">{{ reviews.user3.rating }}</p>
-                  </div>
-                  <p class="reviews-user__description"> {{ reviews.user3.message }}</p>
-              </div>
-        </div>
-		<div>
-            <div class="reviews-user">
-                  <div class="reviews-user-header">
-                      <img class="reviews-user__img" src="../image/christy-img.png" alt="">
-                      <div class="reviews-user-main">
-                          <p class="reviews-user__name" >{{ reviews.user2.surname }} {{ reviews.user2.name }}</p>
-                          <p class="reviews-user__city">{{ reviews.user2.country }}, {{ reviews.user2.city }}</p>
-                      </div>
-                      <p class="reviews-user__rating">{{ reviews.user2.rating }}</p>
-                  </div>
-                  <p class="reviews-user__description"> {{ reviews.user2.message }} </p>
+                  <p class="reviews-user__description"> {{ item.message }}</p>
               </div>
         </div>
 	</VueSlickCarousel>
 
       <div class="arrows-button">
-              <div class="arrows-button-left" @click="prev"></div>
-              <div class="arrows-button-right" @click="next"></div>
+              <div class="arrows-button__left" @click="prev"></div>
+              <div class="arrows-button__right" @click="next"></div>
       </div>
   </main >
 
@@ -182,26 +115,15 @@
           </div>
           <ul class="footer-main-links footer-main-links_left">
               <li class="footer-main-links__title">Product</li>
-              <li class="footer-main-links__item"><a href="#">Download</a></li>
-              <li class="footer-main-links__item"><a href="#">Pricing</a></li>
-              <li class="footer-main-links__item"><a href="#">Locations</a></li>
-              <li class="footer-main-links__item"><a href="#">Server</a></li>
-              <li class="footer-main-links__item"><a href="#">Countries</a></li>
-              <li class="footer-main-links__item"><a href="#">Blog</a></li>
+              <li class="footer-main-links__item" v-for="link in footerLinksProduct" :key='link'><a href="#">{{link}}</a></li>
           </ul>
           <ul class="footer-main-links footer-main-links_centre">
               <li class="footer-main-links__title">Engage</li>
-              <li class="footer-main-links__item"><a href="#">LaslesVPN</a></li>
-              <li class="footer-main-links__item"><a href="#">FAQ</a></li>
-              <li class="footer-main-links__item"><a href="#">Tutorials</a></li>
-              <li class="footer-main-links__item"><a href="#">About Us</a></li>
-              <li class="footer-main-links__item"><a href="#">Privacy Policy</a></li>
-              <li class="footer-main-links__item"><a href="#">Terms of Service</a></li>
+              <li class="footer-main-links__item" v-for="link in footerLinksEngage" :key='link'><a href="#">{{link}}</a></li>
           </ul>
           <ul class="footer-main-links footer-main-links_right">
               <li class="footer-main-links__title">Earn Money</li>
-              <li class="footer-main-links__item"><a href="#">Affiliate</a></li>
-              <li class="footer-main-links__item"><a href="#">Become Partner</a></li>
+              <li class="footer-main-links__item" v-for="link in footerLinksMoney" :key='link'><a href="#">{{link}}</a></li>
           </ul>
       </div>
   </footer>
@@ -223,6 +145,35 @@ export default {
     data() {
         return {
             reviews: {},
+            footerLinksProduct: ['Download', 'Pricing', 'Locations', 'Server', 'Countries', 'Blog'],
+            footerLinksEngage: ['LaslesVPN', 'FAQ', 'Tutorials', 'About Us', 'Privacy Policy', 'Terms of Service'],
+            footerLinksMoney: ['Affiliate', 'Become Partner'],
+            info: [
+                {title: "90+", description: 'Users', activeClass: 'info-block_users'},
+                {title: "30+", description: 'Locations', activeClass: 'info-block_locations'},
+                {title: "50+", description: 'Servers', activeClass: 'info-block_servers'},
+            ],
+            plan: [
+                {
+                    name: 'Free Plan',
+                    price: 'Free', 
+                    include: ['Unlimited Bandwitch', 'Encrypted Connection', 'No Traffic Logs','Works on All Devices'],
+                    activeClass: 'price-block'
+                },
+                {
+                    name: 'Standard Plan', 
+                    price: '$9 / mo', 
+                    include:['Unlimited Bandwitch', 'Encrypted Connection', 'No Traffic Logs','Works on All Devices', 'Connect Anyware'],
+                    activeClass: 'price-block__package_standart'
+                },
+                {
+                    name: 'Premium Plan', 
+                    price: '$12 / mo', 
+                    include:['Unlimited Bandwitch', 'Encrypted Connection', 'No Traffic Logs','Works on All Devices', 'Connect Anyware', 'Get New Features'],
+                    activeClass: 'price-block__package_premium'
+                }
+            ],
+
             settings: {
 				"slidesToShow": 3,
 				"slidesToScroll": 1,
@@ -241,9 +192,6 @@ export default {
                     }
                 }]
             },
-            freePlan: ['Unlimited Bandwitch', 'Encrypted Connection', 'No Traffic Logs','Works on All Devices'],
-            standardPlan: ['Unlimited Bandwitch', 'Encrypted Connection', 'No Traffic Logs','Works on All Devices', 'Connect Anyware'],
-            premiumPlan: ['Unlimited Bandwitch', 'Encrypted Connection', 'No Traffic Logs','Works on All Devices', 'Connect Anyware', 'Get New Features'],
         }
     },
     mounted() {

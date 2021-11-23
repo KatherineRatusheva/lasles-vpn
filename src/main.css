@@ -44,11 +44,15 @@ li {
     display: flex;
     margin-top: 12px;
 }
+.header-nav {
+    display: flex;
+}
 .header-nav__item {
     margin-right: 40px;
     font-size: 16px;
     color: #4F5665;
     cursor: pointer;
+    text-transform: capitalize;
 }
 .header-nav__item:hover {
     color: #0B132A;
@@ -232,6 +236,7 @@ li {
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: space-between;
     width: 330px;
     height: 760px;
     background: #FFFFFF;
@@ -253,6 +258,7 @@ li {
     margin-bottom: 30px;
     font-size: 18px;
     font-weight: 500;
+    text-align: center;
 }
 .price-block__item {
     margin-bottom: 10px;
@@ -284,15 +290,6 @@ li {
     background-color: #F53838;
     color: white;
     box-shadow: 10px 20px 34px -10px rgb(245 56 56 / 35%);
-}
-.price-block__list_free {
-    margin-bottom: 130px;
-}
-.price-block__list_standard {
-    margin-bottom: 90px;
-}
-.price-block__list_premium {
-    margin-bottom: 50px;
 }
 
 /* style locations */
@@ -368,7 +365,7 @@ li {
     justify-content: flex-end;
     margin-right: 150px;
 }
-.arrows-button-left {
+.arrows-button__left {
     margin-top: 60px;
     margin-right: 20px;
     width: 60px;
@@ -379,7 +376,7 @@ li {
     background-position: center;
     cursor: pointer;
 }
-.arrows-button-right {
+.arrows-button__right {
     margin-top: 60px;
     width: 60px;
     height: 60px;
@@ -390,12 +387,12 @@ li {
     transform: scale(-1, 1);
     cursor: pointer;
 }
-.arrows-button-right:hover{
+.arrows-button__right:hover{
     background: url(../src/image/arrow-right.png) no-repeat #F53838;
     background-position: center;
     transform: scale(1, -1);
 }
-.arrows-button-left:hover{
+.arrows-button__left:hover{
     background: url(../src/image/arrow-right.png) no-repeat #F53838;
     background-position: center;
     transform: scale(-1, 1);
@@ -404,7 +401,7 @@ li {
     position: relative;
     display: flex;
 }
-.reviews-user-main {
+.reviews-user__main {
     margin-left: 20px;
 }
 .reviews-user__name {
@@ -1233,9 +1230,6 @@ a:hover {
     }
     .price-block__title {
         padding-top: 240px;
-    }
-    .price-block__list_free, .price-block__list_standard, .price-block__list_premium {
-        margin-bottom: 15px;
     }
     .price-block__button {
         margin-bottom: 40px;

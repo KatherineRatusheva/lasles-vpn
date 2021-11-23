@@ -23,12 +23,8 @@
         <router-link to="/">  <img class="header-container__logo" src="./image/Logo.png" alt="Logo">  </router-link>
 
         <nav class="header-nav">
-          <ul class="header-nav__list">
-            <router-link to="/about">  <li class="header-nav__item">About</li>  </router-link>
-            <router-link to="/features">  <li class="header-nav__item">Features</li>  </router-link>
-            <router-link to="/pricing">  <li class="header-nav__item">Pricing</li>  </router-link>
-            <router-link to="/testimonials">  <li class="header-nav__item">Testimonials</li>  </router-link>
-            <router-link to="/help">  <li class="header-nav__item">Help</li>  </router-link>
+          <ul class="header-nav__list" v-for="link in links" :key='link'>
+            <router-link v-bind:to="link">  <li class="header-nav__item">{{link}}</li>  </router-link>
           </ul>
         </nav>
         <router-link to="/sign-in" v-if="LOGIN_STATE"><div class="header-auth-user"></div>  </router-link>
@@ -50,6 +46,12 @@ import {mapGetters} from 'vuex'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      routerLink: [],
+      links: ['about', 'features', 'pricing', 'testimonials', 'help'],
+    }
+  },
   
   created() {
     this.$store.dispatch('getUser')
