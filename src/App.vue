@@ -45,7 +45,6 @@ export default {
   name: 'App',
   data() {
     return {
-      routerLink: [],
       links: ['about', 'features', 'pricing', 'testimonials', 'help'],
     }
   },

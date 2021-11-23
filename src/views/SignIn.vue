@@ -21,6 +21,7 @@
 import axios from 'axios'
 import {mapGetters} from 'vuex'
 import {saveUser} from '../mixins/saveUser';
+import {apiUrls} from '../apiUrls.js';
 
 export default {
     name: 'SignIn',
@@ -39,7 +40,7 @@ export default {
     },
     methods: {
         loginUser() {
-            axios.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyD0R1x2p5aszf2C-bFXYJ7FYxorHAnPwZ8', {
+            axios.post( apiUrls.signInUrl, {
                 email: this.email,
                 password: this.password,
                 returnSecureToken: true

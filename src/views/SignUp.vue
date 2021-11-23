@@ -23,6 +23,7 @@
 import axios from 'axios';
 import {mapGetters} from 'vuex';
 import {saveUser} from '../mixins/saveUser';
+import {apiUrls} from '../apiUrls.js';
 
 export default {
     name: 'SignUp',
@@ -45,7 +46,7 @@ export default {
             if(this.password.length < 6){
                 this.error = true
             }
-            axios.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyD0R1x2p5aszf2C-bFXYJ7FYxorHAnPwZ8', {
+            axios.post( apiUrls.registerUrl, {
                 email: this.email,
                 password: this.password,
                 returnSecureToken: true

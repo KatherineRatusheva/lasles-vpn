@@ -134,11 +134,11 @@
 <script>
 import axios from 'axios';
 import Modal from '../components/Modal.vue';
+import {apiUrls} from '../apiUrls.js';
 
 import VueSlickCarousel from 'vue-slick-carousel';
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
-
  
 export default {
     components: { VueSlickCarousel, Modal},
@@ -195,7 +195,7 @@ export default {
         }
     },
     mounted() {
-        axios.get('https://laslesvpn-97c54-default-rtdb.firebaseio.com/reviews.json')
+        axios.get( apiUrls.getReviews)
         .then(response => {
             this.reviews = response.data
         });

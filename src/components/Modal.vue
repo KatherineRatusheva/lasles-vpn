@@ -17,6 +17,7 @@
 
 <script>
 import axios from 'axios';
+import {apiUrls} from '../apiUrls.js';
 
 export default {
     name: 'modal',
@@ -34,7 +35,7 @@ export default {
         sendRequest() {
             if(this.name != null && this.phone != null ) {
                 if(this.phone.length >= 12) {
-                    axios.post('https://laslesvpn-97c54-default-rtdb.firebaseio.com/requests.json', {
+                    axios.post( apiUrls.sendRequest, {
                         name: this.name,
                         phone: this.phone,
                         selectPlan: this.selectPlan
