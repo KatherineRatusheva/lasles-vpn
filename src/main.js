@@ -6,6 +6,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from './store'
 import './main.css';
+import {i18n} from './helpers/i18n'
 
 import { initializeApp } from "firebase/app";
 
@@ -26,5 +27,6 @@ new Vue({
   firebaseApp,
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')

@@ -30,7 +30,11 @@
           <router-link to="/sign-in">  <button class="header-auth__button-sign-in">Sign In</button>  </router-link>
           <router-link to="/sign-up">  <button class="header-auth__button-sign-up">Sign Up</button>  </router-link>
         </div>
-          
+        
+        <div>
+          <a href="#" @click="setLocale('en')"> en </a>
+          <a href="#" @click="setLocale('ru')"> ru </a>
+        </div>
       </div>
     </header>
       
@@ -64,6 +68,12 @@ export default {
     ...mapGetters([
       'LOGIN_STATE',
     ])
+  },
+
+  methods: {
+    setLocale(locale) {
+      this.$i18n.locale = locale
+    }
   }
 
 }

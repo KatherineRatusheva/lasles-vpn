@@ -4,10 +4,10 @@
 
       <div class="about">
           <div class="about-description">
-              <h1 class="about-description__title">Want anything to be easy with <b>LaslesVPN.</b></h1>
-              <p class="about-description__description">Provide a network for all your needs with ease and fun using LaslesVPN discover interesting features from us.</p>
+              <h1 class="about-description__title"> {{ $t('welcomeTitle') }} </h1>
+              <p class="about-description__description"> {{ $t('welcomeText') }} </p>
               <a href="#price">
-                  <button class="about-description__button">Get Started</button>
+                  <button class="about-description__button"> {{ $t('welcomeButton') }} </button>
               </a>
           </div>
           <div class="about-img">
@@ -29,36 +29,36 @@
               <img class="features-img__image" src="../image/Illustration-2.png" alt="">
           </div>
           <div class="features-text">
-              <h2 class="features-text__title">We Provide Many Features You Can Use</h2>
-              <p class="features-text__description">You can explore the features that we provide with fun and have their own functions each feature.</p>
-              <p class="features-text__item">Powerfull online protection.</p>
-              <p class="features-text__item">Internet without borders.</p>
-              <p class="features-text__item">Supercharged VPN</p>
-              <p class="features-text__item">No specific time limits.</p>
+              <h2 class="features-text__title"> {{ $t('featuresTitle') }} </h2>
+              <p class="features-text__description"> {{ $t('featuresText') }} </p>
+              <p class="features-text__item"> {{ $t('featuresItem_1') }} </p>
+              <p class="features-text__item"> {{ $t('featuresItem_2') }} </p>
+              <p class="features-text__item"> {{ $t('featuresItem_3') }} </p>
+              <p class="features-text__item"> {{ $t('featuresItem_4') }} </p>
           </div>
       </div>
 
       <div class="price" id="price">
-          <h3 class="price__title">Choose Your Plan</h3>
-          <p class="price__description">Let's choose the package that is best for you and explore it happily and cheerfully.</p>
+          <h3 class="price__title"> {{ $t('planTitle') }} </h3>
+          <p class="price__description"> {{ $t('planText') }} </p>
           <div class="price-block">
 
-              <div class="price-block__package" v-bind:class="[item.activeClass]" v-for="item in plan" :key="item.name">
+              <div class="price-block__package" v-for="item in $t('plan')" :key="item.name" v-bind:class="[item.activeClass]">
                   <div class="price-block__list">
-                      <p class="price-block__title">{{item.name}}</p>
+                      <p class="price-block__title"> {{item.name}} </p>
                       <p class="price-block__item" v-for="item in item.include" :key="item">  {{item}} </p>
                   </div>
                   <div>
                       <p class="price-block__cost">{{item.price}}</p>
-                      <button class="price-block__button" @click="showModalPrice">Select</button>
+                      <button class="price-block__button" @click="showModalPrice"> {{ $t('priseButton') }} </button>
                   </div>
               </div>
           </div>
           <Modal ref="modal"/>
 
           <div class="locations">
-              <h3 class="locations__title">Huge Global Network of Fast VPN</h3>
-              <p class="locations__description">See <b>LaslesVPN</b> everywhere to make it easier for you when you move locations.</p>
+              <h3 class="locations__title"> {{ $t('locationsTitle') }} </h3>
+              <p class="locations__description"> {{ $t('locationsText') }} </p>
               <img class="locations__img" src="../image/Huge-Global.png" alt="">
           </div>
       </div>
@@ -66,8 +66,8 @@
       <div class="partners"></div>
 
       <div class="reviews">
-          <h3 class="reviews__title">Trusted by Thousands of Happy Customer</h3>
-          <p class="reviews__description">These are the stories of our customers who have joined us with great pleasure when using this crazy feature.</p>
+          <h3 class="reviews__title"> {{ $t('reviewsTitle') }} </h3>
+          <p class="reviews__description"> {{ $t('reviewsText') }} </p>
       </div>
       
       <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
@@ -87,25 +87,25 @@
 	</VueSlickCarousel>
 
       <div class="arrows-button">
-              <div class="arrows-button__left" @click="prev"></div>
-              <div class="arrows-button__right" @click="next"></div>
+          <div class="arrows-button__left" @click="prev"></div>
+          <div class="arrows-button__right" @click="next"></div>
       </div>
   </main >
 
   <footer class="footer">
       <div class="subscribe">
           <div class="subscribe-info">
-              <h3 class="subscribe-info__title">Subscribe Now for Get Special Features!</h3>
-              <p class="subscribe-info__description">Let's subscribe with us and find the fun.</p>
+              <h3 class="subscribe-info__title"> {{ $t('subscribeTitle') }} </h3>
+              <p class="subscribe-info__description"> {{ $t('subscribeText') }} </p>
           </div>
-          <button class="subscribe__button" @click="showModal">Subscribe Now</button>
+          <button class="subscribe__button" @click="showModal"> {{ $t('subscribeButton') }} </button>
       </div>
       <Modal ref="modal"/>
 
       <div class="footer-main">
           <div class="footer-main-info">
               <a href="#" class="footer-main__logo"> <img src="../image/Logo.png" alt=""> </a>
-              <p class="footer-main__description"><b>LaslesVPN</b> is a private virtual network that has unique features and has high security.</p>
+              <p class="footer-main__description"> {{ $t('subscribeText') }} </p>
               <div class="footer-main-social">
                   <a href="https://ru-ru.facebook.com/"><div class="footer-main-social__facebook"></div></a>
                   <a href="https://www.instagram.com/?hl=ru"><div class="footer-main-social__instagram"></div></a>
@@ -152,26 +152,6 @@ export default {
                 {title: "90+", description: 'Users', activeClass: 'info-block_users'},
                 {title: "30+", description: 'Locations', activeClass: 'info-block_locations'},
                 {title: "50+", description: 'Servers', activeClass: 'info-block_servers'},
-            ],
-            plan: [
-                {
-                    name: 'Free Plan',
-                    price: 'Free', 
-                    include: ['Unlimited Bandwitch', 'Encrypted Connection', 'No Traffic Logs','Works on All Devices'],
-                    activeClass: 'price-block'
-                },
-                {
-                    name: 'Standard Plan', 
-                    price: '$9 / mo', 
-                    include:['Unlimited Bandwitch', 'Encrypted Connection', 'No Traffic Logs','Works on All Devices', 'Connect Anyware'],
-                    activeClass: 'price-block__package_standart'
-                },
-                {
-                    name: 'Premium Plan', 
-                    price: '$12 / mo', 
-                    include:['Unlimited Bandwitch', 'Encrypted Connection', 'No Traffic Logs','Works on All Devices', 'Connect Anyware', 'Get New Features'],
-                    activeClass: 'price-block__package_premium'
-                }
             ],
 
             settings: {
