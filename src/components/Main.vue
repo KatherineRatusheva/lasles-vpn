@@ -70,11 +70,12 @@
           <p class="reviews__description"> {{ $t('reviewsText') }} </p>
       </div>
       
-      <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
-          <div v-for="item in reviews" :key='item.name' >
-              <div class="reviews-user">
+      
+          <div v-if="GET_REVIEWS">
+              <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
+              <div class="reviews-user" v-for="item in this.$store.state.reviews" :key='item.name'>
                   <div class="reviews-user__header">
-                      <img class="reviews-user__img" v-bind:src="[item.img]" alt="">
+                      <img class="reviews-user__img" :src="[item.img]" alt="">
                       <div class="reviews-user__main">
                           <p class="reviews-user__name" >{{ item.surname }} {{ item.name }}</p>
                           <p class="reviews-user__city">{{ item.country }}, {{ item.city }}</p>
@@ -83,8 +84,8 @@
                   </div>
                   <p class="reviews-user__description"> {{ item.message }}</p>
               </div>
+              </VueSlickCarousel>
         </div>
-	</VueSlickCarousel>
 
       <div class="arrows-button">
           <div class="arrows-button__left" @click="prev"></div>
@@ -133,19 +134,16 @@
 </template>
 
 <script>
-import axios from 'axios';
 import Modal from '../components/Modal.vue';
-import {apiUrls} from '../apiUrls.js';
-
 import VueSlickCarousel from 'vue-slick-carousel';
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
+import {mapGetters} from 'vuex'
  
 export default {
     components: { VueSlickCarousel, Modal},
     data() {
         return {
-            reviews: {},
             footerLinksProduct: ['Download', 'Pricing', 'Locations', 'Server', 'Countries', 'Blog'],
             footerLinksEngage: ['LaslesVPN', 'FAQ', 'Tutorials', 'About Us', 'Privacy Policy', 'Terms of Service'],
             footerLinksMoney: ['Affiliate', 'Become Partner'],
@@ -158,10 +156,11 @@ export default {
             settings: {
 				"slidesToShow": 3,
 				"slidesToScroll": 1,
+                
                 responsive: [{
                     breakpoint: 1260,
                     settings: {
-                        "slidesToShow": 3,
+                        "slidesToShow": 2,
                         "slidesToScroll": 1,
                     }
                 },
@@ -175,12 +174,17 @@ export default {
             },
         }
     },
-    mounted() {
-        axios.get( apiUrls.getReviews)
-        .then(response => {
-            this.reviews = response.data
-        });
+
+    computed: {
+        ...mapGetters([
+            'GET_REVIEWS',
+        ])
     },
+
+    mounted() {
+        this.$store.dispatch('getReviews')
+    },
+
     methods: {
         next() {
             this.$refs.carousel.next()

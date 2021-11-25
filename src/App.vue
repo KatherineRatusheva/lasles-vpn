@@ -8,7 +8,7 @@
       </label>
       <nav class="menu__box">
         <ul v-for="link in links" :key='link'>
-          <router-link v-bind:to="link">  <li class="menu__item">{{link}}</li>  </router-link>
+          <router-link :to="link">  <li class="menu__item">{{link}}</li>  </router-link>
         </ul>
         <router-link to="/sign-in">  <button type="button" class="menu__item-button">Sign In</button>  </router-link>
         <router-link to="/sign-up">  <button type="button" class="menu__item-button">Sign Up</button>  </router-link>
@@ -21,7 +21,7 @@
 
         <nav class="header-nav">
           <ul class="header-nav__list" v-for="link in links" :key='link'>
-            <router-link v-bind:to="link">  <li class="header-nav__item">{{link}}</li>  </router-link>
+            <router-link :to="link">  <li class="header-nav__item">{{link}}</li>  </router-link>
           </ul>
         </nav>
         <router-link to="/sign-in" v-if="LOGIN_STATE"><div class="header-auth__user"></div>  </router-link>
