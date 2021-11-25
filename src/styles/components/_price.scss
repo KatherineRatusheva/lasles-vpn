@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../mixins';
 
 .price {
     padding: 0 9em;
@@ -6,16 +7,12 @@
 
     &__title {
         padding: 2em 0 0.5em;
-        font-size: 35px;
-        text-align: center;
-        font-weight: 500;
+        @include primaryTitle;
     }
     &__description {
         width: 46%;
         margin: 0 auto 3.5em;
-        font-size: 16px;
-        line-height: 30px;
-        color: #4F5665;
+        @include primaryDescription;
         text-align: center;
     }
 }
@@ -30,12 +27,12 @@
         flex-direction: column;
         justify-content: space-between;
         width: 33.33%;
-        background: #FFFFFF;
+        background: $color-white;
         border: 2px solid #DDDDDD;
         border-radius: 10px;
         background: url(../image/free.png) no-repeat;
         background-position: center 4em;
-        background-color: white;
+        background-color: $color-white;
     }
 
     &__package:hover {
@@ -55,9 +52,7 @@
 
     &__item {
         padding: 0 0 1em 3em;
-        font-size: 14px;
-        line-height: 30px;
-        color: #4F5665;
+        @include primaryText;
         background: url(../image/check.png) no-repeat;
     }
 
@@ -73,16 +68,16 @@
         padding: 1em 4em;
         border: 2px solid $color-active;
         border-radius: 50px;
-        background-color: white;
+        background-color: $color-white;
         font-size: 16px;
         font-weight: 700;
-        color: #F53838;
+        color: $color-active;
         cursor: pointer;
     }
 
     &__button:hover {
         background-color: $color-active;
-        color: white;
+        color: $color-white;
         box-shadow: 10px 20px 34px -10px rgb(245 56 56 / 35%);
     }
 }

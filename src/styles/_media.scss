@@ -1,3 +1,9 @@
+@media (max-width: 1260px) {
+    .slick-slide {
+        margin-right: 6em;
+        width: 7%;
+    }
+}
 
 @media (max-width: 1230px) {
     .subscribe-info {
@@ -174,6 +180,9 @@
     }
     .partners {
         margin: 2em 3em 3em;
+    }
+    .carousel {
+        margin: 0 0 0 3em;
     }
 }
 @media (max-width: 640px) {

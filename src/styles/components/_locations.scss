@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../mixins';
 
 .locations {
     margin-top: 9em;
@@ -9,17 +10,13 @@
     &__title {
         width: 34%;
         margin-bottom: 0.5em;
-        font-weight: 500;
-        font-size: 35px;
         line-height: 50px;
-        text-align: center;
+        @include primaryTitle;
     }
     &__description {
         width: 50%;
         margin-bottom: 9em;
-        font-size: 16px;
-        line-height: 30px;
-        color: #4F5665;
+        @include primaryDescription;
         text-align: center;
     }
     &__img {

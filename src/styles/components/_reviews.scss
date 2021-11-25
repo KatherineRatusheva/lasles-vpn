@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../mixins';
 
 .reviews {
     display: flex;
@@ -8,18 +9,14 @@
     &__title {
         width: 36%;
         margin-bottom: 0.5em;
-        font-size: 35px;
-        font-weight: 500;
         line-height: 50px;
         color: $primary-color;
-        text-align: center;
+        @include primaryTitle;
     }
     &__description {
         width: 40%;
         margin-bottom: 4em;
-        font-size: 16px;
-        line-height: 30px;
-        color: #4F5665;
+        @include primaryDescription;
         text-align: center;
     }
 }
@@ -49,8 +46,7 @@
     }
 
     &__city {
-        font-size: 14px;
-        color: #4F5665;
+        @include primaryText;
     }
 
     &__rating {
@@ -80,22 +76,14 @@
 
     &__left {
         margin-right: 1.5em;
-        padding: 2em;
-        border: 2px solid $color-active;
-        border-radius: 50%;
         background: url(../image/arrow-left.png) no-repeat;
-        background-position: center;
-        cursor: pointer;
+        @include reviewsButton;
     }
 
     &__right {
-        padding: 2em;
-        border: 2px solid $color-active;
-        border-radius: 50%;
         background: url(../image/arrow-left.png) no-repeat;
-        background-position: center;
         transform: scale(-1, 1);
-        cursor: pointer;
+        @include reviewsButton;
     }
 
     &__right:hover{
@@ -112,5 +100,10 @@
 }
 
 .carousel {
+    max-width: 100%;
     margin: 0 0 0 6em;
+}
+.slick-slide {
+    margin-right: 6em;
+    width: 25%;
 }

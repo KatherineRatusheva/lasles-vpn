@@ -47,6 +47,7 @@ export default {
                 this.error = true
             }
             this.$store.dispatch('registerUser', this.user)
+            this.emailUser = this.user.email
         },
 
         signOutUser() {

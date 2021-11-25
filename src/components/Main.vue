@@ -73,7 +73,7 @@
       
           <div v-if="GET_REVIEWS">
               <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
-              <div class="reviews-user" v-for="item in this.$store.state.reviews" :key='item.name'>
+              <div class="reviews-user" v-for="item in GET_REVIEWS" :key='item.name'>
                   <div class="reviews-user__header">
                       <img class="reviews-user__img" :src="[item.img]" alt="">
                       <div class="reviews-user__main">
@@ -110,7 +110,7 @@
               <div class="footer-social">
                   <a class="footer-social__facebook" href="https://ru-ru.facebook.com/"></a>
                   <a class="footer-social__instagram" href="https://www.instagram.com/?hl=ru"></a>
-                  <a class="footer-social__twitter" href="hhttps://twitter.com/?lang=ru"></a>
+                  <a class="footer-social__twitter" href="https://twitter.com/?lang=ru"></a>
               </div>
               <p class="footer-info__year">©2020LaslesVPN</p>
           </div>
@@ -156,6 +156,7 @@ export default {
             settings: {
 				"slidesToShow": 3,
 				"slidesToScroll": 1,
+                "variableWidth": true,
                 
                 responsive: [{
                     breakpoint: 1260,
@@ -165,7 +166,7 @@ export default {
                     }
                 },
                 {
-                    breakpoint: 415,
+                    breakpoint: 850,
                     settings: {
                         "slidesToShow": 1,
                         "slidesToScroll": 1,

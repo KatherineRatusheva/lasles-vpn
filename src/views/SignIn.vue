@@ -42,6 +42,7 @@ export default {
     methods: {
         loginUser() {
             this.$store.dispatch('loginUser', this.user)
+            this.emailUser = this.user.email
         },
 
         signOutUser() {

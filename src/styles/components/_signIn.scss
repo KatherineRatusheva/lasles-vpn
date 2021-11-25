@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../mixins';
 
 .signIn, .signIn-form, .signUp, .signUp-form {
     display: flex;
@@ -27,12 +28,12 @@
     border: none;
     font-weight: bold;
     font-size: 16px;
-    color: #FFFFFF;
+    color: $color-white;
     cursor: pointer;
 }
 
 .signIn-form__button:hover, .signUp-form__button:hover {
-    background: #eb3535;
+    background: $color-button-active;
 }
 
 .signUp-form__error {
