@@ -20,6 +20,9 @@ export default new Vuex.Store({
     },
     GET_REVIEWS(state) {
       return state.reviews
+    },
+    LOGIN_USER(state) {
+      return state.user
     }
   },
 
@@ -49,7 +52,23 @@ export default new Vuex.Store({
     },
     isLogOut({commit}) {
       commit('LOG_OUT')
-    }
+    },
+
+    loginUser({commit}, user) {
+      axios.post( apiUrls.signInUrl, {
+          email: user.email,
+          password: user.password,
+          returnSecureToken: true
+      }).then(res => {
+        commit('LOGIN_SUCSESS', res.data)
+        localStorage.setItem('user-token', res.data.idToken);
+        localStorage.setItem('user-email', res.data.email)
+        commit('SIGN_IN')
+
+      }).catch(error => {
+          console.log(error);
+      });
+  }
   },
   
   mutations: {
@@ -64,7 +83,10 @@ export default new Vuex.Store({
     },
     GET_REVIEWS (state, payload) {
       state.reviews = payload
-    }
+    },
+    LOGIN_SUCSESS (state, payload){
+      state.user = payload
+    },
   }
   
 })
