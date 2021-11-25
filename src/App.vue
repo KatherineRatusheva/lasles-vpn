@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <div class="hamburger-menu">
+    <div class="menu">
       <input id="menu__toggle" type="checkbox">
       <label class="menu__btn" for="menu__toggle">
         <span></span>
@@ -24,14 +24,14 @@
             <router-link v-bind:to="link">  <li class="header-nav__item">{{link}}</li>  </router-link>
           </ul>
         </nav>
-        <router-link to="/sign-in" v-if="LOGIN_STATE"><div class="header-auth-user"></div>  </router-link>
+        <router-link to="/sign-in" v-if="LOGIN_STATE"><div class="header-auth__user"></div>  </router-link>
         
         <div class="header-auth" v-else>
           <router-link to="/sign-in">  <button class="header-auth__button-sign-in">Sign In</button>  </router-link>
           <router-link to="/sign-up">  <button class="header-auth__button-sign-up">Sign Up</button>  </router-link>
         </div>
         
-        <div>
+        <div  class="header-locale">
           <a href="#" @click="setLocale('en')"> en </a>
           <a href="#" @click="setLocale('ru')"> ru </a>
         </div>

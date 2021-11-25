@@ -5,7 +5,7 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from './store'
-import './main.css';
+import './styles/style.scss';
 import {i18n} from './helpers/i18n'
 
 import { initializeApp } from "firebase/app";

@@ -1,0 +1,329 @@
+
+@media (max-width: 1230px) {
+    .subscribe-info {
+        width: 60%;
+        margin-right: 3em;
+    }
+    .subscribe-info__title {
+        font-size: 28px;
+    }
+    .footer-info {
+        margin-right: 8em;
+    }
+}
+@media (max-width: 1190px) {
+    .header {
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+}
+@media (max-width: 1024px) {
+    .about-description__title {
+        font-size: 37px;
+    }
+    .about-description__description {
+        margin-bottom: 2em;
+    }
+    .about-img {
+        display: flex;
+        align-items: center;
+    }
+    .features-img, .features-text {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .features-text__title {
+        font-size: 28px;
+        margin-bottom: 0.5em;
+    }
+    .features-text__item {
+        margin-bottom: 0;
+    }
+    .locations__title, .reviews__title {
+        width: 100%;
+    }
+}
+
+@media (max-width: 823px) {
+    .about {
+        margin: 0 4em 6em 5em;
+    }
+    .about-description__title {
+        font-size: 31px;
+        line-height: 50px;
+    }
+    .info {
+        margin: 0 5em 6em;
+    }
+    .info-block {
+        background-position: 20% 50%;
+    }
+    .info-block__title {
+        font-size: 22px;
+    }
+    .info-block__description {
+        font-size: 18px;
+    }
+    .features-text__title {
+        font-size: 25px;
+        line-height: 40px;
+    }
+    .features {
+        margin: 0 5em 8em;
+    }
+    .price {
+        padding: 0 5em;
+    }
+    .price-block__item {
+        padding: 0 0 1em 2em;
+    }
+    .price-block__button {
+        padding: 1em 3em;
+    }
+    .reviews {
+        margin: 0 5em;
+    }
+    .reviews__description {
+        width: 63%;
+    }
+    .subscribe {
+        left: 5em;
+        right: 5em;
+    }
+    .footer-main {
+        padding: 11em 5em 6em 5em;
+    }
+    .footer-info {
+        margin-right: 5em;
+    }
+    .footer-links_centre {
+        margin: 0px 6em;
+    }
+}
+@media (max-width: 812px) {
+    .subscribe {
+        padding: 3.5em 3em;
+    }
+}
+@media (max-width: 768px) {
+    .subscribe-info {
+        margin-right: 1.5em;
+    }
+    .footer-links_centre {
+        margin: 0px 5em;
+    }
+}
+@media (max-width: 736px) {
+    .about-description__description {
+        font-size: 15px;
+    }
+    .price-block__item {
+        font-size: 13px;
+    }
+    .subscribe__button {
+        padding: 1em 1em;
+    }
+    .subscribe-info {
+        width: 64%;
+    }
+    .footer-info {
+        margin-right: 4em;
+    }
+    .footer-links {
+        width: 13%;
+    }
+    .footer-links_centre {
+        margin: 0px 4em;
+    }
+    .partners {
+        margin: 2em 4em 3em;
+    }
+}
+
+@media (max-width: 667px) {
+    .about {
+        margin: 0 3em 6em 3em;
+    }
+    .about-description {
+        margin-right: 2em;
+    }
+    .info {
+        margin: 0 3em 6em;
+    }
+    .features {
+        margin: 0 3em 8em;
+    }
+    .price {
+        padding: 0 3em;
+    }
+    .price-block__button {
+        padding: 1em 2.5em;
+    }
+    .locations__description {
+        width: 60%;
+    }
+    .reviews {
+        margin: 0 3em;
+    }
+    .subscribe {
+        left: 3em;
+        right: 3em;
+    }
+    .partners {
+        margin: 2em 3em 3em;
+    }
+}
+@media (max-width: 640px) {
+    .about-description {
+        width: 54%;
+    }
+    .subscribe-info__title {
+        font-size: 25px;
+    }
+    .footer-links__item {
+        font-size: 14px;
+    }
+    .footer-info__description {
+        font-size: 14px;
+    }
+    .subscribe__button {
+        font-size: 15px;
+    }
+}
+@media (max-width: 568px) {
+    .info-block {
+        background-position: 15% 50%;
+    }    
+    .info-block__description {
+        font-size: 16px;
+    }
+    .price-block {
+        flex-direction: column;
+        align-items: center;
+    }
+    .price-block__package {
+        width: 70%;
+        margin-bottom: 2em;
+    }
+    .subscribe {
+        padding: 2em 2em;
+    }
+    .subscribe-info__title {
+        font-size: 22px;
+    }
+    .footer-info__image {
+        width: 100%;
+    }
+    .footer-info {
+        margin-right: 2em;
+    }
+    .footer-links {
+        width: 15%;
+    }
+}
+@media (max-width: 541px) {
+    .about {
+        flex-direction: column;
+    }
+    .about-description {
+        width: 100%;
+        text-align: center;
+    }
+    .about-img {
+        width: 100%;
+        margin-top: 10%;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+    }
+    .info-block {
+        width: 100%;
+        background-position: 25% 50%;
+    }
+    .info-block__value {
+        left: 40%;
+    }
+}
+@media (max-width: 414px) {
+    .info-block {
+        background-position: 20% 50%;
+    }
+    .info-block__value {
+        left: 35%;
+    }
+    .features {
+        flex-direction: column;
+    }
+    .features-img__image {
+        width: 100%;
+    }
+    .price__description {
+        width: 100%;
+    }
+    .price-block__package {
+        width: 100%;
+    }
+    .locations__description {
+        width: 100%;
+    }
+    .partners {
+        height: 59px;
+    }
+    .reviews__description {
+        width: 100%;
+    }
+    .subscribe {
+        flex-direction: column;
+    }
+    .subscribe-info {
+        width: 100%;
+    }
+    .footer-main {
+        padding: 15em 3em 6em 3em;
+    }
+    .footer-info {
+        width: 100%;
+        margin-right: 0;
+    }
+    .footer-main {
+        flex-wrap: wrap;
+    }
+    .footer-info__year {
+        padding: 1em 0 2em;
+    }
+    .footer-links {
+        width: 19%;
+    }
+}
+@media (max-width: 375px) {
+    .info-block {
+        background-position: 15% 50%;
+    }
+    .info-block__value {
+        left: 34%;
+    }
+    .price__title, .locations__title, .reviews__title {
+        font-size: 28px;
+    }
+    .subscribe-info__title {
+        font-size: 20px;
+    }
+    .subscribe-info {
+        text-align: center;
+    }
+    .footer-links {
+        width: 25%;
+    }
+    .footer-links_centre {
+        margin: 0px 2em;
+    } 
+}
+@media (max-width: 360px) {
+    .subscribe-info__title {
+        font-size: 19px;
+    }
+}

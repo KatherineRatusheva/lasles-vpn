@@ -1,0 +1,81 @@
+@import '../variables';
+
+.footer {
+    margin-top: 11em;
+    position: relative;
+    background: #F8F8F8;
+}
+.footer-main {
+    padding: 11em 9em 6em 9em;
+    display: flex;
+}
+
+.footer-info {
+    width: 28%;
+    margin-right: 14em;
+
+    &__description {
+        margin: 1em 0 2em;
+        font-size: 16px;
+        line-height: 30px;
+        color: #4F5665;
+    }
+    &__year {
+        font-size: 16px;
+        color: #AFB5C0;
+        padding-top: 4em;
+    }
+}
+
+.footer-social {
+    display: flex;
+
+    &__facebook {
+        width: 60px;
+        height: 50px;
+        background: url(../image/Facebook.png) no-repeat;
+        background-size: cover;
+    }
+    &__instagram {
+        width: 60px;
+        height: 50px;
+        background: url(../image/Instagram.png) no-repeat;
+        background-size: cover;
+    }
+    &__twitter {
+        width: 60px;
+        height: 50px;
+        background: url(../image/Twitter.png) no-repeat;
+        background-size: cover;
+    }
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    width: 11%;
+
+    &_centre {
+        margin: 0 7em;
+    }
+    &__title {
+        margin-bottom: 1em;
+        font-size: 18px;
+        font-weight: 500;
+        color: $primary-color;
+    }
+    &__item {
+        margin-bottom: 0.6em;
+        font-size: 16px;
+        line-height: 30px;
+        color: #4F5665;
+        cursor: pointer;
+    }
+}
+
+a {
+    color: #4F5665;
+}
+a:hover {
+    color: $primary-color;
+}

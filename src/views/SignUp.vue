@@ -1,19 +1,19 @@
 <template>
-<div class="sign-up-container">
+<div class="signUp-container">
 
-    <div class="sign-up" v-if="LOGIN_STATE">
-        <p class="sign-up__title">Hello {{this.emailUser}}</p>
-        <button @click="signOutUser" class="sign-up-form__button" type="submit">Sign out</button>
+    <div class="signUp" v-if="LOGIN_STATE">
+        <p class="signUp__title">Hello {{this.emailUser}}</p>
+        <button @click="signOutUser" class="signUp-form__button" type="submit">Sign out</button>
     </div>
 
-    <div class="sign-up" v-else>
-        <h1 class="sign-up__title">Sign up</h1>
-        <form @submit.prevent='registerUser' class="sign-up-form">
-            <input class="sign-up-form__input" v-model="email" type="email" placeholder="E-mail">
-            <input class="sign-up-form__input" v-model="password" type="password" placeholder="Password">
-            <p class="sign-up-form__error" v-if="error">Password must be at least 6 characters</p>
-            <button class="sign-up-form__button" type="submit">Sign up</button>
-            </form>
+    <div class="signUp" v-else>
+        <h1 class="signUp__title">Sign up</h1>
+        <form @submit.prevent='registerUser' class="signUp-form">
+            <input class="signUp-form__input" v-model="email" type="email" placeholder="E-mail">
+            <input class="signUp-form__input" v-model="password" type="password" placeholder="Password">
+            <p class="signUp-form__error" v-if="error">Password must be at least 6 characters</p>
+            <button class="signUp-form__button" type="submit">Sign up</button>
+        </form>
     </div>
 
 </div>

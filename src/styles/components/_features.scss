@@ -1,0 +1,39 @@
+@import '../variables';
+
+.features {
+    display: flex;
+    margin: 0 9em 8em;
+}
+.features-text {
+    width: 41%;
+    padding-top: 4em;
+
+    &__title {
+        margin-bottom: 1em;
+        font-weight: 500;
+        font-size: 35px;
+        line-height: 50px;
+    }
+    &__description {
+        margin-bottom: 1em;
+        font-size: 16px;
+        line-height: 30px;
+        color: #4F5665;
+    }
+    &__item {
+        margin-bottom: 1em;
+        padding-left: 3em;
+        background: url(../image/done.png) no-repeat;
+        font-size: 14px;
+        line-height: 30px;
+        color: #4F5665;
+    }
+}
+.features-img {
+    width: 59%;
+    margin-right: 9em;
+
+    &__image {
+        width: 90%;
+    }
+}

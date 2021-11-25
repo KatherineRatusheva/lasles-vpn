@@ -1,0 +1,116 @@
+@import '../variables';
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        width: 36%;
+        margin-bottom: 0.5em;
+        font-size: 35px;
+        font-weight: 500;
+        line-height: 50px;
+        color: $primary-color;
+        text-align: center;
+    }
+    &__description {
+        width: 40%;
+        margin-bottom: 4em;
+        font-size: 16px;
+        line-height: 30px;
+        color: #4F5665;
+        text-align: center;
+    }
+}
+.reviews-user {
+    padding: 2em;
+    margin-left: 3em;
+    border: 2px solid #DDDDDD;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+        border: 2px solid $color-active;
+    }
+
+    &__header {
+        position: relative;
+        display: flex;
+    }
+
+    &__main {
+        padding-left: 1em;
+    }
+
+    &__name {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    &__city {
+        font-size: 14px;
+        color: #4F5665;
+    }
+
+    &__rating {
+        padding: 0 2em;
+        position: absolute;
+        top: 0.5em;
+        right: 0;
+        font-size: 16px;
+        font-weight: 400;
+        color: $primary-color;
+        background: url(../image/star.png) no-repeat;
+        background-position: 100%;
+    }
+
+    &__description {
+        padding-top: 1em;
+        font-size: 16px;
+        line-height: 30px;
+        color: $primary-color;
+    }
+}
+
+.arrows-button {
+    display: flex;
+    justify-content: flex-end;
+    margin: 3em 9em 0 0;
+
+    &__left {
+        margin-right: 1.5em;
+        padding: 2em;
+        border: 2px solid $color-active;
+        border-radius: 50%;
+        background: url(../image/arrow-left.png) no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    &__right {
+        padding: 2em;
+        border: 2px solid $color-active;
+        border-radius: 50%;
+        background: url(../image/arrow-left.png) no-repeat;
+        background-position: center;
+        transform: scale(-1, 1);
+        cursor: pointer;
+    }
+
+    &__right:hover{
+        background: url(../image/arrow-right.png) no-repeat $color-active;
+        background-position: center;
+        transform: scale(1, -1);
+    }
+
+    &__left:hover{
+        background: url(../image/arrow-right.png) no-repeat $color-active;
+        background-position: center;
+        transform: scale(-1, 1);
+    }
+}
+
+.carousel {
+    margin: 0 0 0 6em;
+}

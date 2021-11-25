@@ -1,0 +1,40 @@
+@import '../variables';
+
+.info {
+    display: flex;
+    margin: 0 9em;
+    margin-bottom: 6em;
+    box-shadow: 50px 50px 114px 0px rgb(13, 16, 37, 0.06);;
+}
+.info-block {
+    padding: 6em 5em;
+    position: relative;
+    width: 33.33%;
+
+    &__value {
+        position: absolute;
+        left: 50%;
+        bottom: 35%;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 25px;
+    }
+    &__description {
+        font-size: 20px;
+        line-height: 30px;
+        color: #4F5665;
+    }
+    &_users {
+        background: url(../image/user.png) no-repeat;
+        background-position: 30% 50%;
+    }
+    &_servers {
+        background: url(../image/Server.png) no-repeat;
+        background-position: 30% 50%;
+    }
+    &_locations {
+        background: url(../image/location.png) no-repeat;
+        background-position: 30% 50%;
+    }
+}

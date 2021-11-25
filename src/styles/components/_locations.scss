@@ -1,0 +1,35 @@
+@import '../variables';
+
+.locations {
+    margin-top: 9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        width: 34%;
+        margin-bottom: 0.5em;
+        font-weight: 500;
+        font-size: 35px;
+        line-height: 50px;
+        text-align: center;
+    }
+    &__description {
+        width: 50%;
+        margin-bottom: 9em;
+        font-size: 16px;
+        line-height: 30px;
+        color: #4F5665;
+        text-align: center;
+    }
+    &__img {
+        width: 100%;
+    }
+}
+
+.partners {
+    margin: 2em 9em 3em;
+    height: 208px;
+    background: url(../image/sponsored.png) no-repeat;
+    background-size: contain;
+}

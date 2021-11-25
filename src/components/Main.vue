@@ -16,7 +16,7 @@
       </div>
 
       <div class="info">
-          <div class="info-block" v-bind:class="[item.activeClass]" v-for="item in info" :key="item.activeClass">
+          <div class="info-block" :class="[item.activeClass]" v-for="item in info" :key="item.activeClass">
               <div class="info-block__value">
                   <p class="info-block__title"> {{item.title}} </p>
                   <p class="info-block__description"> {{item.description}} </p>
@@ -43,7 +43,7 @@
           <p class="price__description"> {{ $t('planText') }} </p>
           <div class="price-block">
 
-              <div class="price-block__package" v-for="item in $t('plan')" :key="item.name" v-bind:class="[item.activeClass]">
+              <div class="price-block__package" v-for="item in $t('plan')" :key="item.name" :class="[item.activeClass]">
                   <div class="price-block__list">
                       <p class="price-block__title"> {{item.name}} </p>
                       <p class="price-block__item" v-for="item in item.include" :key="item">  {{item}} </p>
@@ -71,9 +71,9 @@
       </div>
       
       <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
-          <div v-for="item in reviews" :key='item.name'>
+          <div v-for="item in reviews" :key='item.name' >
               <div class="reviews-user">
-                  <div class="reviews-user-header">
+                  <div class="reviews-user__header">
                       <img class="reviews-user__img" v-bind:src="[item.img]" alt="">
                       <div class="reviews-user__main">
                           <p class="reviews-user__name" >{{ item.surname }} {{ item.name }}</p>
@@ -103,27 +103,28 @@
       <Modal ref="modal"/>
 
       <div class="footer-main">
-          <div class="footer-main-info">
-              <a href="#" class="footer-main__logo"> <img src="../image/Logo.png" alt=""> </a>
-              <p class="footer-main__description"> {{ $t('subscribeText') }} </p>
-              <div class="footer-main-social">
-                  <a href="https://ru-ru.facebook.com/"><div class="footer-main-social__facebook"></div></a>
-                  <a href="https://www.instagram.com/?hl=ru"><div class="footer-main-social__instagram"></div></a>
-                  <a href="hhttps://twitter.com/?lang=ru"><div class="footer-main-social__twitter"></div></a>
+          <div class="footer-info">
+              <a href="#" class="footer-info__logo"> <img class="footer-info__image" src="../image/Logo.png" alt=""> </a>
+              <p class="footer-info__description"> {{ $t('footerText') }} </p>
+              <div class="footer-social">
+                  <a class="footer-social__facebook" href="https://ru-ru.facebook.com/"></a>
+                  <a class="footer-social__instagram" href="https://www.instagram.com/?hl=ru"></a>
+                  <a class="footer-social__twitter" href="hhttps://twitter.com/?lang=ru"></a>
               </div>
-              <p class="footer-main__year">©2020LaslesVPN</p>
+              <p class="footer-info__year">©2020LaslesVPN</p>
           </div>
-          <ul class="footer-main-links footer-main-links_left">
-              <li class="footer-main-links__title">Product</li>
-              <li class="footer-main-links__item" v-for="link in footerLinksProduct" :key='link'><a href="#">{{link}}</a></li>
+
+          <ul class="footer-links footer-links_left">
+              <li class="footer-links__title">Product</li>
+              <li class="footer-links__item" v-for="link in footerLinksProduct" :key='link'><a href="#">{{link}}</a></li>
           </ul>
-          <ul class="footer-main-links footer-main-links_centre">
-              <li class="footer-main-links__title">Engage</li>
-              <li class="footer-main-links__item" v-for="link in footerLinksEngage" :key='link'><a href="#">{{link}}</a></li>
+          <ul class="footer-links footer-links_centre">
+              <li class="footer-links__title">Engage</li>
+              <li class="footer-links__item" v-for="link in footerLinksEngage" :key='link'><a href="#">{{link}}</a></li>
           </ul>
-          <ul class="footer-main-links footer-main-links_right">
-              <li class="footer-main-links__title">Earn Money</li>
-              <li class="footer-main-links__item" v-for="link in footerLinksMoney" :key='link'><a href="#">{{link}}</a></li>
+          <ul class="footer-links footer-links_right">
+              <li class="footer-links__title">Earn Money</li>
+              <li class="footer-links__item" v-for="link in footerLinksMoney" :key='link'><a href="#">{{link}}</a></li>
           </ul>
       </div>
   </footer>
@@ -158,9 +159,9 @@ export default {
 				"slidesToShow": 3,
 				"slidesToScroll": 1,
                 responsive: [{
-                    breakpoint: 824,
+                    breakpoint: 1260,
                     settings: {
-                        "slidesToShow": 2,
+                        "slidesToShow": 3,
                         "slidesToScroll": 1,
                     }
                 },

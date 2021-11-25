@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+@import 'reset';
+@import 'variables';
+@import './components/header';
+@import './components/about';
+@import './components/info';
+@import './components/features';
+@import './components/price';
+@import './components/locations';
+@import './components/reviews';
+@import './components/subscribe';
+@import './components/footer';
+@import './components/signIn';
+@import './components/modal';
+@import 'media';
+
+#app {
+    font-family: 'Rubik', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}

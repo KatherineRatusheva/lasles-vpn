@@ -1,0 +1,89 @@
+@import '../variables';
+
+.price {
+    padding: 0 9em;
+    background: linear-gradient(180deg, #F8F8F8 -45.04%, rgba(248, 248, 248, 0) 88.56%);
+
+    &__title {
+        padding: 2em 0 0.5em;
+        font-size: 35px;
+        text-align: center;
+        font-weight: 500;
+    }
+    &__description {
+        width: 46%;
+        margin: 0 auto 3.5em;
+        font-size: 16px;
+        line-height: 30px;
+        color: #4F5665;
+        text-align: center;
+    }
+}
+
+.price-block {
+    display: flex;
+    justify-content: center;
+
+    &__package {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 33.33%;
+        background: #FFFFFF;
+        border: 2px solid #DDDDDD;
+        border-radius: 10px;
+        background: url(../image/free.png) no-repeat;
+        background-position: center 4em;
+        background-color: white;
+    }
+
+    &__package:hover {
+        border: 2px solid $color-active;
+    }
+
+    &__package_standart {
+        margin: 0 2em;
+    }
+    
+    &__title {
+        padding: 14.5em 0 2em;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    &__item {
+        padding: 0 0 1em 3em;
+        font-size: 14px;
+        line-height: 30px;
+        color: #4F5665;
+        background: url(../image/check.png) no-repeat;
+    }
+
+    &__cost {
+        margin: 2em 0 1em;
+        font-size: 25px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    &__button {
+        margin-bottom: 3em;
+        padding: 1em 4em;
+        border: 2px solid $color-active;
+        border-radius: 50px;
+        background-color: white;
+        font-size: 16px;
+        font-weight: 700;
+        color: #F53838;
+        cursor: pointer;
+    }
+
+    &__button:hover {
+        background-color: $color-active;
+        color: white;
+        box-shadow: 10px 20px 34px -10px rgb(245 56 56 / 35%);
+    }
+}
+

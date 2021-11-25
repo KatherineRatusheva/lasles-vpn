@@ -41,7 +41,7 @@ export default new Vuex.Store({
   },
   
   mutations: {
-    AUTH_SUCSESS (state, payload){
+    AUTH_SUCCESS (state, payload){
       state.user = payload
     },
     SIGN_IN (state) {

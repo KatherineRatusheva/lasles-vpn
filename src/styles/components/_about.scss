@@ -1,0 +1,47 @@
+@import '../variables';
+
+.about {
+    display: flex;
+    margin: 0 4em 6em 9em;
+}
+.about-description {
+    width: 49%;
+    margin-right: 2.5em;
+
+    &__title {
+        margin: 0.5em auto 0.5em;
+        font-weight: 500;
+        font-size: 50px;
+        line-height: 70px;
+        color: $primary-color;
+    }
+    &__description {
+        margin-bottom: 4em;
+        font-size: 16px;
+        line-height: 30px;
+        color: #4F5665;
+    }
+    &__button {
+        padding: 1em 5em;
+        background: $color-active;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        font-size: 16px;
+        color: #FFFFFF;
+        cursor: pointer;
+        box-shadow: 0px 30px 30px -20px rgb(245 56 56 / 35%);
+    }
+    &__button:hover {
+        background: #eb3535;
+    }
+}
+
+.about-img {
+    width: 51%;
+
+    &__img {
+        width: 100%;
+    }
+}
+
