@@ -32,7 +32,7 @@ export default new Vuex.Store({
         axios.post( apiUrls.getUser, {
           idToken: this.state.token,
         }).then(res => {
-          commit('AUTH_SUCSESS', res)
+          commit('LOGIN_SUCSESS', res)
           commit('SIGN_IN')
         }).catch(error => {
           console.log(error);
@@ -67,14 +67,30 @@ export default new Vuex.Store({
 
       }).catch(error => {
           console.log(error);
+      })
+    },
+
+    registerUser({commit}, user) {
+      axios.post( apiUrls.registerUrl, {
+          email: user.email,
+          password: user.password,
+          returnSecureToken: true
+      }).then(res => {
+        commit('LOGIN_SUCSESS', res.data)
+        localStorage.setItem('user-token', res.data.idToken);
+        localStorage.setItem('user-email', res.data.email)
+        commit('SIGN_IN')
+
+      }).catch(error => {
+          console.log(error);
       });
   }
   },
   
   mutations: {
-    AUTH_SUCCESS (state, payload){
-      state.user = payload
-    },
+    // AUTH_SUCCESS (state, payload){
+    //   state.user = payload
+    // },
     SIGN_IN (state) {
       state.isLogin = true
     },
