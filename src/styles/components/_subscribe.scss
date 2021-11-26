@@ -35,9 +35,10 @@
 
     &__title {
         margin-bottom: 0.5em;
+        font-size: 35px;
+        font-weight: 500;
         line-height: 45px;
         color: $primary-color;
-        @extend %primary-title;
     }
 
     &__description {

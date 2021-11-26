@@ -52,7 +52,28 @@
         width: 100%;
     }
 }
-
+@media (max-width: 950px) {
+    .subscribe {
+        padding: 3.5em 2.5em;
+    }
+    .subscribe-info {
+        margin-right: 2em;
+    }
+    .footer-links_centre {
+        margin: 0 4em;
+    }
+}
+@media (max-width: 875px) {
+    .subscribe__button {
+        padding: 1em 1em;
+    }
+    .subscribe-info__title {
+        font-size: 26px;
+    }
+    .subscribe-info__description {
+        font-size: 14px;
+    }
+}
 @media (max-width: 823px) {
     .about {
         margin: 0 4em 6em 5em;
@@ -135,6 +156,9 @@
     .subscribe-info {
         width: 64%;
     }
+    .subscribe-info__title {
+        font-size: 24px;
+    }
     .footer-info {
         margin-right: 4em;
     }
@@ -151,7 +175,7 @@
 
 @media (max-width: 667px) {
     .about {
-        margin: 0 3em 6em 3em;
+        margin: 1em 3em 6em 3em;
     }
     .about-description {
         margin-right: 2em;
@@ -198,6 +222,12 @@
     .footer-info__description {
         font-size: 14px;
     }
+    .subscribe {
+        padding: 2em 2em;
+    }
+    .subscribe-info__title {
+        font-size: 22px;
+    }
     .subscribe__button {
         font-size: 15px;
     }
@@ -219,9 +249,6 @@
     }
     .subscribe {
         padding: 2em 2em;
-    }
-    .subscribe-info__title {
-        font-size: 22px;
     }
     .footer-info__image {
         width: 100%;
@@ -256,6 +283,18 @@
     .info-block__value {
         left: 40%;
     }
+    .subscribe {
+        flex-direction: column;
+    }
+    .subscribe-info {
+        width: 100%;
+    }
+    .footer-main {
+        padding: 15em 3em 6em 3em;
+    }
+    .footer-links_centre {
+        margin: 0 3em;
+    }
 }
 @media (max-width: 414px) {
     .info-block {
@@ -282,14 +321,8 @@
     .reviews__description {
         width: 100%;
     }
-    .subscribe {
-        flex-direction: column;
-    }
-    .subscribe-info {
-        width: 100%;
-    }
-    .footer-main {
-        padding: 15em 3em 6em 3em;
+    .subscribe-info__title {
+        font-size: 21px;
     }
     .footer-info {
         width: 100%;
