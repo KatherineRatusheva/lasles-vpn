@@ -11,7 +11,8 @@ export default new Vuex.Store({
     email: localStorage.getItem('user-email'),
     user: null,
     isLogin: false,
-    reviews: [{}]
+    reviews: [{}],
+    requestUserModal: {}
   },
 
   getters: {
@@ -84,7 +85,23 @@ export default new Vuex.Store({
       }).catch(error => {
           console.log(error);
       });
-  }
+    },
+
+    sendRequest({commit}, dataUserModal) {
+      axios.post( apiUrls.sendRequest, {
+        name: dataUserModal.name,
+        phone: dataUserModal.phone,
+        selectPlan: dataUserModal.selectPlan
+
+        }).then(response => {
+          commit('SEND_REQUEST', response)
+          dataUserModal.name = '';
+          dataUserModal.phone = '';
+
+        }).catch(error => {
+          console.log(error);
+      })
+    }
   },
   
   mutations: {
@@ -99,6 +116,9 @@ export default new Vuex.Store({
     },
     LOGIN_SUCSESS (state, payload){
       state.user = payload
+    },
+    SEND_REQUEST (state, payload){
+      state.requestUserModal = payload
     },
   }
   

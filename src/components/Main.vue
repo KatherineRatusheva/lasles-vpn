@@ -205,7 +205,7 @@ export default {
             this.$refs.modal.isModalVisible = true
         },
         showModalPrice(e) {
-            this.$refs.modal.selectPlan = e.target.parentNode.firstChild.innerHTML
+            this.$refs.modal.dataUserModal.selectPlan = e.target.parentNode.parentElement.firstChild.firstChild.innerText
             this.$refs.modal.isModalVisible = true
         }
     }
