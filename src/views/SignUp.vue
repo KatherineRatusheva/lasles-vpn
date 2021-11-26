@@ -9,9 +9,14 @@
     <div class="signUp" v-else>
         <h1 class="signUp__title">Sign up</h1>
         <form @submit.prevent='registerUser' class="signUp-form">
-            <input class="signUp-form__input" v-model="user.email" type="email" placeholder="E-mail">
-            <input class="signUp-form__input" v-model="user.password" type="password" placeholder="Password">
+            <input class="signUp-form__input" v-model="user.email" type="email" placeholder="E-mail" required>
+            
+            <input class="signUp-form__input" v-model="user.password" type="password" placeholder="Password" required>
             <p class="signUp-form__error" v-if="error">Password must be at least 6 characters</p>
+
+            <input class="signUp-form__input" v-model="user.repeatedPassword" type="password" placeholder="Repeat password" required>
+            <p class="signUp-form__error" v-if="errorPassword">Passwords must match</p>
+
             <button class="signUp-form__button" type="submit">Sign up</button>
         </form>
     </div>
@@ -30,9 +35,11 @@ export default {
         return {
             user: {
                 email: this.email,
-                password: this.password
+                password: this.password,
+                repeatedPassword: this.repeatedPassword
             },
             error: false,
+            errorPassword: false,
             emailUser: this.$store.state.email
         }
     },
@@ -43,11 +50,14 @@ export default {
     },
     methods: {
         registerUser() {
-            if(this.user.password.length < 6){
-                this.error = true
-            }
-            this.$store.dispatch('registerUser', this.user)
-            this.emailUser = this.user.email
+
+            if(this.user.password.length > 6){
+                if(this.user.password === this.user.repeatedPassword) {
+                    this.$store.dispatch('registerUser', this.user)
+                    this.emailUser = this.user.email
+                    this.errorPassword = false
+                } else this.errorPassword = true
+            } else this.error = true
         },
 
         signOutUser() {

@@ -114,7 +114,7 @@
                 </div>
               </div>
 
-              <p class="footer-info__year">©2020LaslesVPN</p>
+              <p class="footer-info__year"> {{ $t('footerInfo') }} </p>
           </div>
 
           <ul class="footer-links footer-links_left">

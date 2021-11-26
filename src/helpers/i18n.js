@@ -47,6 +47,10 @@ export const i18n = new VueI18n({
                 }
             ],
             priseButton: 'Select',
+            footerInfo: '©2020LaslesVPN',
+
+
+
         },
         ru: {
             welcomeTitle: 'Хотите, чтобы с LaslesVPN все было просто.',
@@ -89,6 +93,10 @@ export const i18n = new VueI18n({
                 }
             ],
             priseButton: 'Выбрать',
+            footerInfo: '©2020LaslesVPN',
+
+
+
         }
     }
 })
