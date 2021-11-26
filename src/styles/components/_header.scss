@@ -24,7 +24,7 @@
         margin-right: 2.8em;
         cursor: pointer;
         text-transform: capitalize;
-        @include primaryDescription;
+        @extend %primary-description;
     }
     &__item:hover {
         color: $primary-color;

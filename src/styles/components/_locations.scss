@@ -11,12 +11,12 @@
         width: 34%;
         margin-bottom: 0.5em;
         line-height: 50px;
-        @include primaryTitle;
+        @extend %primary-title;
     }
     &__description {
         width: 50%;
         margin-bottom: 9em;
-        @include primaryDescription;
+        @extend %primary-description;
         text-align: center;
     }
     &__img {

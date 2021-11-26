@@ -17,7 +17,7 @@
 
     &__description {
         margin: 1em 0 2em;
-        @include primaryDescription;
+        @extend %primary-description;
     }
     &__year {
         font-size: 16px;
@@ -30,15 +30,15 @@
     display: flex;
 
     &__facebook {
-        @include socialIcon;
+        @extend %social-icon;
         background: url(../image/Facebook.png) no-repeat;
     }
     &__instagram {
-        @include socialIcon;
+        @extend %social-icon;
         background: url(../image/Instagram.png) no-repeat;
     }
     &__twitter {
-        @include socialIcon;
+        @extend %social-icon;
         background: url(../image/Twitter.png) no-repeat;
     }
     &__icon {
@@ -62,7 +62,7 @@
     }
     &__item {
         margin-bottom: 0.6em;
-        @include primaryDescription;
+        @extend %primary-description;
         cursor: pointer;
     }
 }

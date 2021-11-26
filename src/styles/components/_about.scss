@@ -18,7 +18,7 @@
     }
     &__description {
         margin-bottom: 4em;
-        @include primaryDescription;
+        @extend %primary-description;
     }
     &__button {
         padding: 1em 5em;

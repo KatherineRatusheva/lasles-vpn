@@ -1,28 +1,28 @@
 @import './variables';
 
-@mixin primaryTitle {
+%primary-title {
     font-size: 35px;
     font-weight: 500;
     text-align: center;
 }
-@mixin primaryDescription {
+%primary-description {
     font-size: 16px;
     line-height: 30px;
     color: $color-link;
 }
-@mixin primaryText {
+%primary-text {
     font-size: 14px;
     line-height: 30px;
     color: $color-link;
 }
-@mixin reviewsButton {
+%reviews-button {
     padding: 2em;
     border: 2px solid $color-active;
     border-radius: 50%;
     background-position: center;
     cursor: pointer;
 }
-@mixin socialIcon {
+%social-icon {
     width: 60px;
     height: 60px;
     background-size: cover;

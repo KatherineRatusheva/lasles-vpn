@@ -7,12 +7,12 @@
 
     &__title {
         padding: 2em 0 0.5em;
-        @include primaryTitle;
+        @extend %primary-title;
     }
     &__description {
         width: 46%;
         margin: 0 auto 3.5em;
-        @include primaryDescription;
+        @extend %primary-description;
         text-align: center;
     }
 }
@@ -52,7 +52,7 @@
 
     &__item {
         padding: 0 0 1em 3em;
-        @include primaryText;
+        @extend %primary-title;
         background: url(../image/check.png) no-repeat;
     }
 

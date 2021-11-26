@@ -37,10 +37,10 @@
         margin-bottom: 0.5em;
         line-height: 45px;
         color: $primary-color;
-        @include primaryTitle;
+        @extend %primary-title;
     }
 
     &__description {
-        @include primaryDescription;
+        @extend %primary-description;
     }
 }
