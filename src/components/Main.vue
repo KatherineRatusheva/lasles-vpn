@@ -107,11 +107,13 @@
           <div class="footer-info">
               <a href="#" class="footer-info__logo"> <img class="footer-info__image" src="../image/Logo.png" alt=""> </a>
               <p class="footer-info__description"> {{ $t('footerText') }} </p>
+
               <div class="footer-social">
-                  <a class="footer-social__facebook" href="https://ru-ru.facebook.com/"></a>
-                  <a class="footer-social__instagram" href="https://www.instagram.com/?hl=ru"></a>
-                  <a class="footer-social__twitter" href="https://twitter.com/?lang=ru"></a>
+                  <div class="footer-social__icon" v-for="item in footelSocialIcon" :key='item.class'>
+                    <a :class="[item.class]" :href="[item.url]"></a>
+                </div>
               </div>
+
               <p class="footer-info__year">©2020LaslesVPN</p>
           </div>
 
@@ -151,6 +153,12 @@ export default {
                 {title: "90+", description: 'Users', activeClass: 'info-block_users'},
                 {title: "30+", description: 'Locations', activeClass: 'info-block_locations'},
                 {title: "50+", description: 'Servers', activeClass: 'info-block_servers'},
+            ],
+
+            footelSocialIcon: [
+                {url: "https://ru-ru.facebook.com/", class: 'footer-social__facebook'},
+                {url: "https://www.instagram.com/?hl=ru", class: 'footer-social__instagram'},
+                {url: "https://twitter.com/?lang=ru", class: 'footer-social__twitter'},
             ],
 
             settings: {

@@ -22,3 +22,8 @@
     background-position: center;
     cursor: pointer;
 }
+@mixin socialIcon {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+}

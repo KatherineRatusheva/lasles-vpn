@@ -22,7 +22,7 @@
     &__year {
         font-size: 16px;
         color: #AFB5C0;
-        padding-top: 4em;
+        padding-top: 1em;
     }
 }
 
@@ -30,22 +30,19 @@
     display: flex;
 
     &__facebook {
-        width: 60px;
-        height: 50px;
+        @include socialIcon;
         background: url(../image/Facebook.png) no-repeat;
-        background-size: cover;
     }
     &__instagram {
-        width: 60px;
-        height: 50px;
+        @include socialIcon;
         background: url(../image/Instagram.png) no-repeat;
-        background-size: cover;
     }
     &__twitter {
-        width: 60px;
-        height: 50px;
+        @include socialIcon;
         background: url(../image/Twitter.png) no-repeat;
-        background-size: cover;
+    }
+    &__icon {
+        display: flex;
     }
 }
 
