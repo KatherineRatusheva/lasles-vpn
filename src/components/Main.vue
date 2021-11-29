@@ -160,10 +160,10 @@ export default {
                 {url: "https://www.instagram.com/?hl=ru", class: 'footer-social__instagram'},
                 {url: "https://twitter.com/?lang=ru", class: 'footer-social__twitter'},
             ],
-
+            
             settings: {
-				"slidesToShow": 3,
-				"slidesToScroll": 1,
+                "slidesToShow": 3,
+                "slidesToScroll": 1,
                 "variableWidth": true,
                 responsive: [{
                     breakpoint: 1260,
