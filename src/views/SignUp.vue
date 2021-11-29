@@ -3,20 +3,20 @@
 
     <div class="sign" v-if="LOGIN_STATE">
         <p class="sign__title">Hello {{this.emailUser}}</p>
-        <button @click="signOutUser" class="sign__button" type="submit">Sign out</button>
+        <button @click="signOutUser" class="sign-form__button" type="submit">Sign out</button>
     </div>
 
     <div class="sign" v-else>
         <h1 class="sign__title">Sign up</h1>
         <form @submit.prevent='registerUser' class="sign-form">
-            <input :class="[errorEmail === false ? 'active-input' : 'error-input']" v-model="user.email" type="text" placeholder="E-mail" required>
-            <p class="sign-form__error" v-if="errorEmail">  {{ $t('emailError') }}  </p>
+            <input :class="[errorEmail === false ? 'sign-form__active' : 'sign-form__error']" v-model="user.email" type="text" placeholder="E-mail" required>
+            <p class="sign-form__error-text" v-if="errorEmail">  {{ $t('emailError') }}  </p>
             
-            <input :class="[error === false ? 'active-input' : 'error-input']" v-model="user.password" type="password" placeholder="Password" required>
-            <p class="sign-form__error" v-if="error">  {{ $t('passwordError') }}  </p>
+            <input :class="[error === false ? 'sign-form__active' : 'sign-form__error']" v-model="user.password" type="password" placeholder="Password" required>
+            <p class="sign-form__error-text" v-if="error">  {{ $t('passwordError') }}  </p>
 
-            <input :class="[errorPassword === false ? 'active-input' : 'error-input']" v-model="user.repeatedPassword" type="password" placeholder="Repeat password" required>
-            <p class="sign-form__error" v-if="errorPassword">  {{ $t('passwordNotMatch') }}  </p>
+            <input :class="[errorPassword === false ? 'sign-form__active' : 'sign-form__error']" v-model="user.repeatedPassword" type="password" placeholder="Repeat password" required>
+            <p class="sign-form__error-text" v-if="errorPassword">  {{ $t('passwordNotMatch') }}  </p>
 
             <button class="sign-form__button" type="submit">Sign up</button>
         </form>

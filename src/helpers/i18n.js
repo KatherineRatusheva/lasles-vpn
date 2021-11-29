@@ -50,7 +50,8 @@ export const i18n = new VueI18n({
             footerInfo: '©2020LaslesVPN',
             passwordError: 'Password must be at least 6 characters',
             passwordNotMatch: 'Passwords must match',
-            emailError: 'Please enter a valid email address. Example: name@gmail.com'
+            emailError: 'Please enter a valid email address. Example: name@gmail.com',
+            authorizationError: 'Incorrect E-mail or password'
         },
         ru: {
             welcomeTitle: 'Хотите, чтобы с LaslesVPN все было просто.',
@@ -96,7 +97,8 @@ export const i18n = new VueI18n({
             footerInfo: '©2020LaslesVPN',
             passwordError: 'Пароль должен быть не менее 6 символов',
             passwordNotMatch: 'Пароли должны совподать',
-            emailError: 'Введите корректный email. Пример: name@gmail.com'
+            emailError: 'Введите корректный email. Пример: name@gmail.com',
+            authorizationError: 'Не правильный E-mail или пароль'
         }
     }
 })

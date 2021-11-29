@@ -12,7 +12,8 @@ export default new Vuex.Store({
     user: null,
     isLogin: false,
     reviews: [{}],
-    requestUserModal: {}
+    requestUserModal: {},
+    error: ''
   },
 
   getters: {
@@ -24,6 +25,9 @@ export default new Vuex.Store({
     },
     LOGIN_USER(state) {
       return state.user
+    },
+    ERROR(state) {
+      return state.error
     }
   },
 
@@ -67,7 +71,7 @@ export default new Vuex.Store({
         commit('SIGN_IN')
 
       }).catch(error => {
-          console.log(error);
+        commit('ERROR_MESSAGE', error.response.data.error.message)
       })
     },
 
@@ -107,6 +111,7 @@ export default new Vuex.Store({
   mutations: {
     SIGN_IN (state) {
       state.isLogin = true
+      state.error = ''
     },
     LOG_OUT (state) {
       state.isLogin = false
@@ -119,6 +124,9 @@ export default new Vuex.Store({
     },
     SEND_REQUEST (state, payload){
       state.requestUserModal = payload
+    },
+    ERROR_MESSAGE (state, payload){
+      state.error = payload
     },
   }
   
