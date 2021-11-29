@@ -60,8 +60,7 @@
 
     &__user {
         margin-left: 18em;
-        width: 45px;
-        height: 45px;
+        @include size(45px);
         border-radius: 50%;
         border: 1px solid $color-white;
         background: url(../image/user.png) no-repeat;
@@ -113,8 +112,7 @@
         position: fixed;
         top: 20px;
         left: 20px;
-        width: 26px;
-        height: 26px;
+        @include size(26px);
         cursor: pointer;
         z-index: 2;
     }

@@ -27,3 +27,7 @@
     height: 60px;
     background-size: cover;
 }
+@mixin size($size) {
+    width: $size;
+    height: $size;
+}
