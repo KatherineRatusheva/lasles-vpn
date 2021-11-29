@@ -26,16 +26,12 @@
         line-height: 30px;
         color: $color-link;
     }
-    &_users {
-        background: url(../image/user.png) no-repeat;
-        background-position: 30% 50%;
-    }
-    &_servers {
-        background: url(../image/server.png) no-repeat;
-        background-position: 30% 50%;
-    }
-    &_locations {
-        background: url(../image/location.png) no-repeat;
-        background-position: 30% 50%;
+
+    $icons: "user", "server", "location";
+    @each $name in $icons {
+        &_#{$name} {
+            background: url(../image/#{$name}.png) no-repeat;
+            background-position: 30% 50%;
+        }
     }
 }

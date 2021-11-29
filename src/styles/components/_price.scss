@@ -36,7 +36,7 @@
     }
 
     &__package:hover {
-        border: 2px solid $color-active;
+        border: $border-hover;
     }
 
     &__package_standart {

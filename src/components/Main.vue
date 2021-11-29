@@ -150,9 +150,9 @@ export default {
             footerLinksEngage: ['LaslesVPN', 'FAQ', 'Tutorials', 'About Us', 'Privacy Policy', 'Terms of Service'],
             footerLinksMoney: ['Affiliate', 'Become Partner'],
             info: [
-                {title: "90+", description: 'Users', activeClass: 'info-block_users'},
-                {title: "30+", description: 'Locations', activeClass: 'info-block_locations'},
-                {title: "50+", description: 'Servers', activeClass: 'info-block_servers'},
+                {title: "90+", description: 'Users', activeClass: 'info-block_user'},
+                {title: "30+", description: 'Locations', activeClass: 'info-block_location'},
+                {title: "50+", description: 'Servers', activeClass: 'info-block_server'},
             ],
 
             footerSocialIcon: [
