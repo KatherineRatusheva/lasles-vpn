@@ -53,6 +53,8 @@ export const i18n = new VueI18n({
             emailError: 'Please enter a valid email address. Example: name@gmail.com',
             authorizationErrorPassword: 'Incorrect password',
             authorizationErrorEmail: 'E-mail not found',
+            modalErrorName: 'Name must be at least 2 characters long',
+            modalErrorPhone: 'Please enter a valid phone. Example for the Belarus +37529 ХХХ ХХ ХХ',
         },
         ru: {
             welcomeTitle: 'Хотите, чтобы с LaslesVPN все было просто.',
@@ -101,6 +103,8 @@ export const i18n = new VueI18n({
             emailError: 'Введите корректный email. Пример: name@gmail.com',
             authorizationErrorPassword: 'Не правильный пароль',
             authorizationErrorEmail: 'E-mail не найден',
+            modalErrorName: 'Имя должно состоять минимум из 2 символов',
+            modalErrorPhone: 'Введите корректный номер телефона. Пример для Беларуси: +37529 ХХХ ХХ ХХ',
         }
     }
 })

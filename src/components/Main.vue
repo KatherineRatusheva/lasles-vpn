@@ -168,15 +168,15 @@ export default {
                 responsive: [{
                     breakpoint: 1260,
                     settings: {
-                        "slidesToShow": 2,
-                        "slidesToScroll": 1,
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
                     }
                 },
                 {
                     breakpoint: 850,
                     settings: {
-                        "slidesToShow": 1,
-                        "slidesToScroll": 1,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
                     }
                 }]
             },

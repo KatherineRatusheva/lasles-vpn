@@ -18,3 +18,15 @@ export const isEmailValid = (email) => {
         return false
     } else return true
 }
+
+export const isNameLength = (value) => {
+    if (value != null && value.length >= 2) {
+        return false
+    } else return true
+}
+
+export const isPhoneLength = (value) => {
+    if (value != null && value.length >= 12) {
+        return false
+    } else return true
+}

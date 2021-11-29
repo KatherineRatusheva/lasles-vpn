@@ -4,11 +4,12 @@
         <h2 class="modal-form__title" v-if="dataUserModal.selectPlan">You chose {{dataUserModal.selectPlan}}</h2>
         <h2 class="modal-form__title" v-else>Seek advice</h2>
 
-        <p class="modal-form__error" v-if="error">String must not be empty</p>
-        <p class="modal-form__error" v-if="errorPhone">Example for the Belarus +37529 ХХХ ХХ ХХ</p>
+        <input :class="[!errorName ? 'modal-form__active' : 'modal-form__error']" v-model="dataUserModal.name" type="text" placeholder="Name" required>
+        <p class="modal-form__text-error" v-if="errorName"> {{ $t('modalErrorName') }} </p>
+        
+        <input :class="[!errorPhone ? 'modal-form__active' : 'modal-form__error']" v-model="dataUserModal.phone" type="tel" placeholder="Phone" required>
+        <p class="modal-form__text-error" v-if="errorPhone"> {{ $t('modalErrorPhone') }} </p>
 
-        <input class="modal-form__name" v-model="dataUserModal.name" type="text" placeholder="Name">
-        <input class="modal-form__phone" v-model="dataUserModal.phone" type="tel" placeholder="Phone">
         <button  type="button" class="modal-form__button-send" @click="sendRequest">Send</button>
         <button type="button" class="modal-form__button-close" @click="closeModal">✖</button>
     </form>
@@ -17,13 +18,14 @@
 </template>
 
 <script>
+import { isPhoneLength, isNameLength } from "../helpers/validate";
 
 export default {
     name: 'modal',
     data() {
         return {
             isModalVisible: false,
-            error: false,
+            errorName: false,
             errorPhone: false,
             dataUserModal: {
                 name: this.name,
@@ -34,16 +36,15 @@ export default {
     },
     methods: {
         sendRequest() {
-            if(this.dataUserModal.name != null && this.dataUserModal.phone != null ) {
-
-                if(this.dataUserModal.phone.length >= 12) {
+            this.errorName = isNameLength(this.dataUserModal.name)
+            this.errorPhone = isPhoneLength(this.dataUserModal.phone)
+            
+            if(this.errorName === false) {
+                if(this.errorPhone === false) {
                     this.$store.dispatch('sendRequest', this.dataUserModal)
-                    this.isModalVisible = false;
-                    this.errorPhone = false;
-
-                } else this.errorPhone = true;
-
-            } else this.error = true;
+                    this.closeModal()
+                }
+            }
         },
 
         open(value) {
