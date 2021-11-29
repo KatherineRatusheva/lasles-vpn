@@ -9,13 +9,13 @@
     <div class="sign" v-else>
         <h1 class="sign__title">Sign up</h1>
         <form @submit.prevent='registerUser' class="sign-form">
-            <input :class="[errorEmail === false ? 'sign-form__active' : 'sign-form__error']" v-model="user.email" type="text" placeholder="E-mail" required>
+            <input :class="[!errorEmail ? 'sign-form__active' : 'sign-form__error']" v-model="user.email" type="text" placeholder="E-mail" required>
             <p class="sign-form__error-text" v-if="errorEmail">  {{ $t('emailError') }}  </p>
             
-            <input :class="[error === false ? 'sign-form__active' : 'sign-form__error']" v-model="user.password" type="password" placeholder="Password" required>
+            <input :class="[!error ? 'sign-form__active' : 'sign-form__error']" v-model="user.password" type="password" placeholder="Password" required>
             <p class="sign-form__error-text" v-if="error">  {{ $t('passwordError') }}  </p>
 
-            <input :class="[errorPassword === false ? 'sign-form__active' : 'sign-form__error']" v-model="user.repeatedPassword" type="password" placeholder="Repeat password" required>
+            <input :class="[!errorPassword ? 'sign-form__active' : 'sign-form__error']" v-model="user.repeatedPassword" type="password" placeholder="Repeat password" required>
             <p class="sign-form__error-text" v-if="errorPassword">  {{ $t('passwordNotMatch') }}  </p>
 
             <button class="sign-form__button" type="submit">Sign up</button>

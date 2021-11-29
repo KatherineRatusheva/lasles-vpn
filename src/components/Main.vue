@@ -162,9 +162,9 @@ export default {
             ],
             
             settings: {
-                "slidesToShow": 3,
-                "slidesToScroll": 1,
-                "variableWidth": true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                variableWidth: true,
                 responsive: [{
                     breakpoint: 1260,
                     settings: {
