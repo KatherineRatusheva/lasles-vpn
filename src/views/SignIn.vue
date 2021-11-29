@@ -8,10 +8,10 @@
     <div class="sign" v-else>
     <h1 class="sign__title">Sign in</h1>
     <form @submit.prevent='loginUser' class="sign-form">
-        <input :class="[ERROR !== this.errorStatusEmail ? 'sign-form__active' : 'sign-form__error']" v-model="user.email" type="email" value="" placeholder="E-mail">
+        <input :class="[ERROR !== ErrorStatus.ERROR_EMAIL ? 'sign-form__active' : 'sign-form__error']" v-model="user.email" type="email" value="" placeholder="E-mail" required>
         <p class="sign-form__error-text" v-if="ERROR === ErrorStatus.ERROR_EMAIL">  {{ $t('authorizationErrorEmail') }}  </p>
 
-        <input :class="[ERROR !== this.errorStatusPassword ? 'sign-form__active' : 'sign-form__error']" v-model="user.password" type="password" placeholder="Password">
+        <input :class="[ERROR !== ErrorStatus.ERROR_PASSWORD ? 'sign-form__active' : 'sign-form__error']" v-model="user.password" type="password" placeholder="Password" required>
         <p class="sign-form__error-text" v-if="ERROR === ErrorStatus.ERROR_PASSWORD">  {{ $t('authorizationErrorPassword') }}  </p>
 
         <button class="sign-form__button" type="submit" @click="loginUser">Sign in</button>
@@ -33,7 +33,7 @@ const ErrorStatus = {
 export default {
     name: 'SignIn',
     mixins: [saveUser],
-    components: {ErrorStatus},
+    components: ErrorStatus,
     data() {
         return {
             user: {
@@ -41,10 +41,7 @@ export default {
                 password: this.password
             },
             emailUser: this.$store.state.email,
-            
-            ErrorStatus,
-            errorStatusEmail: ErrorStatus.ERROR_EMAIL,
-            errorStatusPassword: ErrorStatus.ERROR_PASSWORD
+            ErrorStatus
         }
     },
     computed: {
