@@ -29,18 +29,14 @@
 .footer-social {
     display: flex;
 
-    &__facebook {
-        @extend %social-icon;
-        background: url(../image/Facebook.png) no-repeat;
+    $icons: "facebook", "instagram", "twitter";
+    @each $name in $icons {
+        &__#{$name} {
+            @extend %social-icon;
+            background: url(../image/#{$name}.png) no-repeat;
+        }
     }
-    &__instagram {
-        @extend %social-icon;
-        background: url(../image/Instagram.png) no-repeat;
-    }
-    &__twitter {
-        @extend %social-icon;
-        background: url(../image/Twitter.png) no-repeat;
-    }
+
     &__icon {
         display: flex;
     }
