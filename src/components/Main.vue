@@ -11,7 +11,7 @@
               </a>
           </div>
           <div class="about-img">
-              <img class="about-img__img" src="../image/Illustration-1.png" alt="">
+              <img class="about-img__img" src="../image/illustration-1.png" alt="a network LaslesVPN">
           </div>
       </div>
 
@@ -26,7 +26,7 @@
 
       <div class="features">
           <div class="features-img">
-              <img class="features-img__image" src="../image/Illustration-2.png" alt="">
+              <img class="features-img__image" src="../image/illustration-2.png" alt="features LaslesVPN">
           </div>
           <div class="features-text">
               <h2 class="features-text__title"> {{ $t('featuresTitle') }} </h2>
@@ -59,7 +59,7 @@
           <div class="locations">
               <h3 class="locations__title"> {{ $t('locationsTitle') }} </h3>
               <p class="locations__description"> {{ $t('locationsText') }} </p>
-              <img class="locations__img" src="../image/Huge-Global.png" alt="">
+              <img class="locations__img" src="../image/huge-global.png" alt="Global Network of VPN">
           </div>
       </div>
 
@@ -75,7 +75,7 @@
               <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
               <div class="reviews-user" v-for="item in GET_REVIEWS" :key='item.name'>
                   <div class="reviews-user__header">
-                      <img class="reviews-user__img" :src="[item.img]" alt="">
+                      <img class="reviews-user__img" :src="[item.img]" :alt="[item.name]">
                       <div class="reviews-user__main">
                           <p class="reviews-user__name" >{{ item.surname }} {{ item.name }}</p>
                           <p class="reviews-user__city">{{ item.country }}, {{ item.city }}</p>
@@ -105,7 +105,7 @@
 
       <div class="footer-main">
           <div class="footer-info">
-              <a href="#" class="footer-info__logo"> <img class="footer-info__image" src="../image/Logo.png" alt=""> </a>
+              <a href="#" class="footer-info__logo"> <img class="footer-info__image" src="../image/logo.png" alt="logo LaslesVPN"> </a>
               <p class="footer-info__description"> {{ $t('footerText') }} </p>
 
               <div class="footer-social">
@@ -201,11 +201,10 @@ export default {
             this.$refs.carousel.prev()
         },
         showModal() {
-            this.$refs.modal.isModalVisible = true
+            this.$refs.modal.open()
         },
         showModalPrice(e) {
-            this.$refs.modal.dataUserModal.selectPlan = e.target.parentNode.parentElement.firstChild.firstChild.innerText
-            this.$refs.modal.isModalVisible = true
+            this.$refs.modal.open(e.target.parentNode.parentElement.firstChild.firstChild.innerText)
         }
     }
 

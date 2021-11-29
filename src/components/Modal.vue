@@ -45,6 +45,14 @@ export default {
 
             } else this.error = true;
         },
+
+        open(value) {
+            this.isModalVisible = true
+            if(value) {
+                this.dataUserModal.selectPlan = value
+            }
+        },
+
         closeModal() {
             this.dataUserModal.selectPlan = ''
             this.dataUserModal.name = '';

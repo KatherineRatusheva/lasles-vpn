@@ -17,7 +17,7 @@
     
     <header class="header">
       <div class="header-container">
-        <router-link to="/">  <img class="header-container__logo" src="./image/Logo.png" alt="Logo">  </router-link>
+        <router-link to="/">  <img class="header-container__logo" src="./image/logo.png" alt="logo LaslesVPN">  </router-link>
 
         <nav class="header-nav">
           <ul class="header-nav__list" v-for="link in links" :key='link'>
