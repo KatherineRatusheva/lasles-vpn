@@ -1,23 +1,24 @@
 <template>
-<div class="signUp-container">
+<div class="sign-container">
 
-    <div class="signUp" v-if="LOGIN_STATE">
-        <p class="signUp__title">Hello {{this.emailUser}}</p>
-        <button @click="signOutUser" class="signUp-form__button" type="submit">Sign out</button>
+    <div class="sign" v-if="LOGIN_STATE">
+        <p class="sign__title">Hello {{this.emailUser}}</p>
+        <button @click="signOutUser" class="sign__button" type="submit">Sign out</button>
     </div>
 
-    <div class="signUp" v-else>
-        <h1 class="signUp__title">Sign up</h1>
-        <form @submit.prevent='registerUser' class="signUp-form">
-            <input class="signUp-form__input" v-model="user.email" type="email" placeholder="E-mail" required>
+    <div class="sign" v-else>
+        <h1 class="sign__title">Sign up</h1>
+        <form @submit.prevent='registerUser' class="sign-form">
+            <input :class="[errorEmail === false ? 'active-input' : 'error-input']" v-model="user.email" type="text" placeholder="E-mail" required>
+            <p class="sign-form__error" v-if="errorEmail">  {{ $t('emailError') }}  </p>
             
-            <input class="signUp-form__input" v-model="user.password" type="password" placeholder="Password" required>
-            <p class="signUp-form__error" v-if="error">Password must be at least 6 characters</p>
+            <input :class="[error === false ? 'active-input' : 'error-input']" v-model="user.password" type="password" placeholder="Password" required>
+            <p class="sign-form__error" v-if="error">  {{ $t('passwordError') }}  </p>
 
-            <input class="signUp-form__input" v-model="user.repeatedPassword" type="password" placeholder="Repeat password" required>
-            <p class="signUp-form__error" v-if="errorPassword">Passwords must match</p>
+            <input :class="[errorPassword === false ? 'active-input' : 'error-input']" v-model="user.repeatedPassword" type="password" placeholder="Repeat password" required>
+            <p class="sign-form__error" v-if="errorPassword">  {{ $t('passwordNotMatch') }}  </p>
 
-            <button class="signUp-form__button" type="submit">Sign up</button>
+            <button class="sign-form__button" type="submit">Sign up</button>
         </form>
     </div>
 
@@ -27,6 +28,7 @@
 <script>
 import {mapGetters} from 'vuex';
 import {saveUser} from '../mixins/saveUser';
+import { isPasswordLength, isPasswordRepeat, isEmailValid } from "../helpers/validate";
 
 export default {
     name: 'SignUp',
@@ -40,6 +42,7 @@ export default {
             },
             error: false,
             errorPassword: false,
+            errorEmail: false,
             emailUser: this.$store.state.email
         }
     },
@@ -50,14 +53,18 @@ export default {
     },
     methods: {
         registerUser() {
+            this.error = isPasswordLength(this.user.password.length)
+            this.errorPassword = isPasswordRepeat(this.user.password, this.user.repeatedPassword)
+            this.errorEmail = isEmailValid(this.user.email)
 
-            if(this.user.password.length > 6){
-                if(this.user.password === this.user.repeatedPassword) {
-                    this.$store.dispatch('registerUser', this.user)
-                    this.emailUser = this.user.email
-                    this.errorPassword = false
-                } else this.errorPassword = true
-            } else this.error = true
+            if(this.errorEmail === false) {
+                if(this.error === false) {
+                    if(this.errorPassword === false) {
+                        this.$store.dispatch('registerUser', this.user)
+                        this.emailUser = this.user.email
+                    }
+                }
+            }
         },
 
         signOutUser() {

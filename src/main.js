@@ -7,7 +7,6 @@ import VueAxios from 'vue-axios'
 import store from './store'
 import './styles/style.scss';
 import {i18n} from './helpers/i18n'
-
 import { initializeApp } from "firebase/app";
 
 Vue.use(VueRouter, VueAxios, axios)

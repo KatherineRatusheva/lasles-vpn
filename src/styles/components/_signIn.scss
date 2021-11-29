@@ -1,42 +1,55 @@
 @import '../variables';
 @import '../mixins';
 
-.signIn, .signIn-form, .signUp, .signUp-form {
+.sign {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 39%;
+    width: 20%;
     margin: 0 auto;
+
+    &__title {
+        font-size: 28px;
+        font-weight: 600;
+        margin: 1em auto;
+    }
+}
+.sign-form {
+    display: flex;
+    flex-direction: column;
+
+    &__button {
+        margin: 0 auto;
+        padding: 1em 3em;
+        width: 55%;
+        background: $color-active;
+        font-size: 16px;
+        font-weight: bold;
+        color: $color-white;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__button:hover {
+        background: $color-button-active;
+    }
+
+    &__error {
+        margin: -2em 0 2em;
+        color: $color-active;
+        font-size: 12px;
+    }
 }
 
-.signIn__title, .signUp__title {
-    font-size: 28px;
-    font-weight: 600;
-    margin: 1em auto;
-}
-
-.signIn-form__input, .signUp-form__input {
+.active-input {
     margin-bottom: 2em;
     width: 100%;
-    height: 20px;
+    height: 30px;
+    border: 1px solid $primary-color;
 }
-
-.signIn-form__button, .signUp-form__button {
-    padding: 1em 3em;
-    background: $color-active;
-    border-radius: 10px;
-    border: none;
-    font-weight: bold;
-    font-size: 16px;
-    color: $color-white;
-    cursor: pointer;
-}
-
-.signIn-form__button:hover, .signUp-form__button:hover {
-    background: $color-button-active;
-}
-
-.signUp-form__error {
-    margin-bottom: 1em;
-    color: $color-active;
+.error-input {
+    margin: 0 0 2em;
+    width: 100%;
+    height: 30px;
+    border: 1px solid $color-active;
 }

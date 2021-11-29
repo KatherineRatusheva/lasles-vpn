@@ -1,16 +1,16 @@
 <template>
-<div class="signUp-container">
-    <div class="signIn" v-if="LOGIN_STATE">
-        <p class="signIn__title">Hello {{this.emailUser}}</p>
-        <button @click="signOutUser" class="signIn-form__button" type="submit">Sign out</button>
+<div class="sign-container">
+    <div class="sign" v-if="LOGIN_STATE">
+        <p class="sign__title">Hello {{this.emailUser}}</p>
+        <button @click="signOutUser" class="sign__button" type="submit">Sign out</button>
     </div>
 
-    <div class="signIn" v-else>
-    <h1 class="signIn__title">Sign in</h1>
-    <form @submit.prevent='loginUser' class="signIn-form">
+    <div class="sign" v-else>
+    <h1 class="sign__title">Sign in</h1>
+    <form @submit.prevent='loginUser' class="sign-form">
         <input class="signIn-form__input" v-model="user.email" type="email" value="" placeholder="E-mail">
         <input class="signIn-form__input" v-model="user.password" type="password" placeholder="Password">
-        <button class="signIn-form__button" type="submit">Sign in</button>
+        <button class="sign-form__button" type="submit">Sign in</button>
     </form>
   </div>
 
