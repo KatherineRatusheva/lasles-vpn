@@ -1,8 +1,8 @@
 <template>
 <div class="form" v-show="isModalVisible">
     <form class="modal-form" v-click-outside="onClickOutside">
-        <h2 class="modal-form__title" v-if="dataUserModal.selectPlan">You chose {{dataUserModal.selectPlan}}</h2>
-        <h2 class="modal-form__title" v-else>Seek advice</h2>
+        <h2 class="modal-form__title" v-if="dataUserModal.selectPlan">{{ $t('modalMessagePlan') }} {{dataUserModal.selectPlan}}</h2>
+        <h2 class="modal-form__title" v-else> {{ $t('modalMessage') }} </h2>
 
         <input :class="[!errorName ? 'modal-form__active' : 'modal-form__error']" v-model="dataUserModal.name" type="text" placeholder="Name" required>
         <p class="modal-form__text-error" v-if="errorName"> {{ $t('modalErrorName') }} </p>

@@ -28,6 +28,8 @@ export const i18n = new VueI18n({
             footerText: "LaslesVPN is a private virtual network that has unique features and has high security.",
             signInTitle: "Sign in",
             signUpTitle: "Sign up",
+            modalMessage: "Leave a request",
+            modalMessagePlan: "You chose",
             plan: [
                 {
                     name: 'Free Plan',
@@ -80,6 +82,8 @@ export const i18n = new VueI18n({
             footerText: "LaslesVPN - это частная виртуальная сеть с уникальными функциями и высоким уровнем безопасности.",
             signInTitle: "Войти",
             signUpTitle: "Зарегистрироваться",
+            modalMessage: "Оставить заявку",
+            modalMessagePlan: "Вы выбрали",
             plan: [
                 {
                     name: 'Бесплатный план',
