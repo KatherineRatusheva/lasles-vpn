@@ -1,6 +1,6 @@
 <template>
 <div class="form" v-show="isModalVisible">
-    <form class="modal-form">
+    <form class="modal-form" v-click-outside="onClickOutside">
         <h2 class="modal-form__title" v-if="dataUserModal.selectPlan">You chose {{dataUserModal.selectPlan}}</h2>
         <h2 class="modal-form__title" v-else>Seek advice</h2>
 
@@ -19,6 +19,7 @@
 
 <script>
 import { isPhoneLength, isNameLength } from "../helpers/validate";
+import vClickOutside from 'v-click-outside'
 
 export default {
     name: 'modal',
@@ -34,6 +35,11 @@ export default {
             }
         }
     },
+
+    directives: {
+        clickOutside: vClickOutside.directive
+    },
+
     methods: {
         sendRequest() {
             this.errorName = isNameLength(this.dataUserModal.name)
@@ -62,6 +68,12 @@ export default {
             this.isModalVisible = false
             this.errorPhone = false;
             this.errorName = false;
+        },
+
+        onClickOutside (event) {
+            if(event.target.localName !== "button") {
+                this.closeModal()
+            }
         },
     }
 }

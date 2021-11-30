@@ -8,8 +8,9 @@ import store from './store'
 import './styles/style.scss';
 import {i18n} from './helpers/i18n'
 import { initializeApp } from "firebase/app";
+import vClickOutside from 'v-click-outside'
 
-Vue.use(VueRouter, VueAxios, axios)
+Vue.use(VueRouter, VueAxios, axios, vClickOutside)
 Vue.config.productionTip = false
 
 const firebaseApp = initializeApp({
