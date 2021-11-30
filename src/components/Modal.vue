@@ -61,7 +61,7 @@ export default {
 
             this.isModalVisible = false
             this.errorPhone = false;
-            this.error = false;
+            this.errorName = false;
         },
     }
 }
