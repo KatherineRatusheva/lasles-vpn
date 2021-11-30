@@ -26,6 +26,8 @@ export const i18n = new VueI18n({
             subscribeText: "Let's subscribe with us and find the fun.",
             subscribeButton: 'Subscribe Now',
             footerText: "LaslesVPN is a private virtual network that has unique features and has high security.",
+            signInTitle: "Sign in",
+            signUpTitle: "Sign up",
             plan: [
                 {
                     name: 'Free Plan',
@@ -76,6 +78,8 @@ export const i18n = new VueI18n({
             subscribeText: "Давайте подписываемся с нами и найдем самое интересное.",
             subscribeButton: 'Подпишитесь сейчас',
             footerText: "LaslesVPN - это частная виртуальная сеть с уникальными функциями и высоким уровнем безопасности.",
+            signInTitle: "Войти",
+            signUpTitle: "Зарегистрироваться",
             plan: [
                 {
                     name: 'Бесплатный план',

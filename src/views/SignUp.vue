@@ -7,7 +7,7 @@
     </div>
 
     <div class="sign" v-else>
-        <h1 class="sign__title">Sign up</h1>
+        <h1 class="sign__title"> {{ $t('signUpTitle') }} </h1>
         <form @submit.prevent='registerUser' class="sign-form">
             <input :class="[!errorEmail ? 'sign-form__active' : 'sign-form__error']" v-model="user.email" type="text" placeholder="E-mail" required>
             <p class="sign-form__error-text" v-if="errorEmail">  {{ $t('emailError') }}  </p>
