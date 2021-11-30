@@ -44,12 +44,10 @@ export default {
         sendRequest() {
             this.errorName = isNameLength(this.dataUserModal.name)
             this.errorPhone = isPhoneLength(this.dataUserModal.phone)
-            
-            if(this.errorName === false) {
-                if(this.errorPhone === false) {
-                    this.$store.dispatch('sendRequest', this.dataUserModal)
-                    this.closeModal()
-                }
+
+            if(!this.errorName && !this.errorPhone) {
+                this.$store.dispatch('sendRequest', this.dataUserModal)
+                this.closeModal()
             }
         },
 

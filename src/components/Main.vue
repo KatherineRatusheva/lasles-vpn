@@ -117,18 +117,11 @@
               <p class="footer-info__year"> {{ $t('footerInfo') }} </p>
           </div>
 
-          <ul class="footer-links footer-links_left">
-              <li class="footer-links__title">Product</li>
-              <li class="footer-links__item" v-for="link in footerLinksProduct" :key='link'><a href="#">{{link}}</a></li>
+          <ul class="footer-links" :class="[link.class]" v-for="link in footerLinks" :key='link.title'>
+              <li class="footer-links__title"> {{link.title}} </li>
+              <li class="footer-links__item" v-for="item in link.listLinks" :key='item'><a href="#">{{item}}</a></li>
           </ul>
-          <ul class="footer-links footer-links_centre">
-              <li class="footer-links__title">Engage</li>
-              <li class="footer-links__item" v-for="link in footerLinksEngage" :key='link'><a href="#">{{link}}</a></li>
-          </ul>
-          <ul class="footer-links footer-links_right">
-              <li class="footer-links__title">Earn Money</li>
-              <li class="footer-links__item" v-for="link in footerLinksMoney" :key='link'><a href="#">{{link}}</a></li>
-          </ul>
+
       </div>
   </footer>
 
@@ -146,9 +139,24 @@ export default {
     components: { VueSlickCarousel, Modal},
     data() {
         return {
-            footerLinksProduct: ['Download', 'Pricing', 'Locations', 'Server', 'Countries', 'Blog'],
-            footerLinksEngage: ['LaslesVPN', 'FAQ', 'Tutorials', 'About Us', 'Privacy Policy', 'Terms of Service'],
-            footerLinksMoney: ['Affiliate', 'Become Partner'],
+            footerLinks: [
+                {
+                    listLinks: ['Download', 'Pricing', 'Locations', 'Server', 'Countries', 'Blog'],
+                    title: 'Product',
+                    class: 'footer-links_left'
+                },
+                {
+                    listLinks: ['LaslesVPN', 'FAQ', 'Tutorials', 'About Us', 'Privacy Policy', 'Terms of Service'],
+                    title: 'Engage',
+                    class: 'footer-links_centre'
+                },
+                {
+                    listLinks: ['Affiliate', 'Become Partner'],
+                    title: 'Earn Money',
+                    class: 'footer-links_right'
+                }
+            ],
+            
             info: [
                 {title: "90+", description: 'Users', activeClass: 'info-block_user'},
                 {title: "30+", description: 'Locations', activeClass: 'info-block_location'},
