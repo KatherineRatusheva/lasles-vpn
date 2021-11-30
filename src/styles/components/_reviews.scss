@@ -54,7 +54,7 @@
         position: absolute;
         top: 0.5em;
         right: 0;
-        font-size: 16px;
+        font-size: $primary-size;
         font-weight: 400;
         color: $primary-color;
         background: url(../image/star.png) no-repeat;
@@ -63,7 +63,7 @@
 
     &__description {
         padding-top: 1em;
-        font-size: 16px;
+        font-size: $primary-size;
         line-height: 30px;
         color: $primary-color;
     }

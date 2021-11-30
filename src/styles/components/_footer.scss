@@ -20,7 +20,7 @@
         @extend %primary-description;
     }
     &__year {
-        font-size: 16px;
+        font-size: $primary-size;
         color: #AFB5C0;
         padding-top: 1em;
     }
