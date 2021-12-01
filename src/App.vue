@@ -1,12 +1,12 @@
 <template>
   <div id="app">
 
-    <div class="menu">
+    <div class="menu" @click="toggle">
       <input id="menu__toggle" type="checkbox">
-      <label class="menu__btn" for="menu__toggle">
+      <label :class="[!isVisible ? 'menu__btn' : 'menu__btn-close']" for="menu__toggle">
         <span></span>
       </label>
-      <nav class="menu__box">
+      <nav :class="[!isVisible ? 'menu__box' : 'menu__box-open']">
         <ul v-for="link in links" :key='link'>
           <router-link :to="link">  <li class="menu__item">{{link}}</li>  </router-link>
         </ul>
@@ -50,6 +50,7 @@ export default {
   data() {
     return {
       links: ['about', 'features', 'pricing', 'testimonials', 'help'],
+      isVisible: false
     }
   },
   
@@ -73,6 +74,12 @@ export default {
   methods: {
     setLocale(locale) {
       this.$i18n.locale = locale
+    },
+
+    toggle(e) {
+      if(e.target.id === "menu__toggle" || e.target.className === "menu__item" || e.target.nodeName === "BUTTON") {
+        this.isVisible = !this.isVisible
+      }
     }
   }
 
