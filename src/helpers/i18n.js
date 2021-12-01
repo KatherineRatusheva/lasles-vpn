@@ -57,6 +57,7 @@ export const i18n = new VueI18n({
             emailError: 'Please enter a valid email address. Example: name@gmail.com',
             authorizationErrorPassword: 'Incorrect password',
             authorizationErrorEmail: 'E-mail not found',
+            authorizationErrorDisabled: 'Access to this account has been temporarily disabled due to many failed login attempts. You can try again later.',
             modalErrorName: 'Name must be at least 2 characters long',
             modalErrorPhone: 'Please enter a valid phone. Example for the Belarus +37529 ХХХ ХХ ХХ',
         },
@@ -111,6 +112,7 @@ export const i18n = new VueI18n({
             emailError: 'Введите корректный email. Пример: name@gmail.com',
             authorizationErrorPassword: 'Не правильный пароль',
             authorizationErrorEmail: 'E-mail не найден',
+            authorizationErrorDisabled: 'Доступ к этой учетной записи был временно отключен из-за множества неудачных попыток входа в систему. Вы можете повторить попытку позже.',
             modalErrorName: 'Имя должно состоять минимум из 2 символов',
             modalErrorPhone: 'Введите корректный номер телефона. Пример для Беларуси: +37529 ХХХ ХХ ХХ',
         }
