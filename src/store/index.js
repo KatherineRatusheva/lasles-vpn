@@ -126,6 +126,7 @@ export default new Vuex.Store({
       state.requestUserModal = payload
     },
     ERROR_MESSAGE (state, payload){
+      state.isLogin = false
       state.error = payload
     },
   }

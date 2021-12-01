@@ -8,6 +8,7 @@ import Help from '../views/Help.vue'
 import Main from '@/components/Main'
 import SignUp from '../views/SignUp.vue'
 import SignIn from '../views/SignIn.vue'
+import User from '../views/User.vue'
 
 Vue.use(VueRouter)
 
@@ -51,6 +52,11 @@ const routes = [
     path: '/sign-in',
     name: 'SignIn',
     component: SignIn
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: User
   }
 ]
 

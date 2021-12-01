@@ -24,7 +24,7 @@
             <router-link :to="link">  <li class="header-nav__item">{{link}}</li>  </router-link>
           </ul>
         </nav>
-        <router-link to="/sign-in" v-if="LOGIN_STATE"><div class="header-auth__user"></div>  </router-link>
+        <router-link to="/user" v-if="LOGIN_STATE"><div class="header-auth__user"></div>  </router-link>
         
         <div class="header-auth" v-else>
           <router-link to="/sign-in">  <button class="header-auth__button-sign-in">Sign In</button>  </router-link>

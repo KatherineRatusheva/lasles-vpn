@@ -1,12 +1,7 @@
 <template>
 <div class="sign-container">
-
-    <div class="sign" v-if="LOGIN_STATE">
-        <p class="sign__title">Hello {{this.emailUser}}</p>
-        <button @click="signOutUser" class="sign-form__button" type="submit">Sign out</button>
-    </div>
-
-    <div class="sign" v-else>
+    
+    <div class="sign">
         <h1 class="sign__title"> {{ $t('signUpTitle') }} </h1>
         <form @submit.prevent='registerUser' class="sign-form">
             <input :class="[!errorEmail ? 'sign-form__active' : 'sign-form__error']" v-model="user.email" type="text" placeholder="E-mail" required>
@@ -26,13 +21,10 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
-import {saveUser} from '../mixins/saveUser';
 import { isPasswordLength, isPasswordRepeat, isEmailValid } from "../helpers/validate";
 
 export default {
     name: 'SignUp',
-    mixins: [saveUser],
     data() {
         return {
             user: {
@@ -43,14 +35,9 @@ export default {
             error: false,
             errorPassword: false,
             errorEmail: false,
-            emailUser: this.$store.state.email
         }
     },
-    computed: {
-        ...mapGetters([
-            'LOGIN_STATE',
-        ])
-    },
+
     methods: {
         registerUser() {
             this.error = isPasswordLength(this.user.password.length)
@@ -65,20 +52,12 @@ export default {
                     }
                 }
             }
-        },
-
-        signOutUser() {
-            this.deleteUser()
+            
+            if(this.$store.getters.LOGIN_STATE) {
+                this.$router.push('/user')
+            }
         }
-    },
 
-    created() {
-        this.$store.dispatch('getUser')
-        if(this.$store.state.token) {
-            this.$store.commit('SIGN_IN')
-            this.$store.dispatch('toggleSignIn')
-        }
     }
-
 }
 </script>
