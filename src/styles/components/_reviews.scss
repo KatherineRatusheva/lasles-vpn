@@ -2,22 +2,51 @@
 @import '../mixins';
 
 .reviews {
+    margin: 0 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    @media (min-width: 640px) {
+        margin: 0 3em;
+    }
+    @media (min-width: 768px) {
+        margin: 0 4em;
+    }
+    @media (min-width: 1024px) {
+        margin: 0 5em;
+    }
+    @media (min-width: 1280px) {
+        margin: 0 6em;
+    }
+
     &__title {
-        width: 36%;
         margin-bottom: 0.5em;
         line-height: 50px;
         color: $primary-color;
         @extend %primary-title;
+
+        @media (min-width: 640px) {
+            width: 70%;
+        }
+        @media (min-width: 768px) {
+            width: 58%;
+        }
+        @media (min-width: 1280px) {
+            width: 36%;
+        }
     }
     &__description {
-        width: 40%;
         margin-bottom: 4em;
         @extend %primary-description;
         text-align: center;
+
+        @media (min-width: 640px) {
+            width: 76%;
+        }
+        @media (min-width: 1280px) {
+            width: 40%;
+        }
     }
 }
 .reviews-user {
@@ -101,7 +130,7 @@
 
 .carousel {
     max-width: 100%;
-    margin: 0 0 0 6em;
+    margin: 0 0 0 2em;
 }
 .slick-slide {
     margin-right: 6em;

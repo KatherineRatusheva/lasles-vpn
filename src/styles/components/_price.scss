@@ -2,45 +2,83 @@
 @import '../mixins';
 
 .price {
-    padding: 0 9em;
+    padding: 0 2em;
     background: linear-gradient(180deg, #F8F8F8 -45.04%, rgba(248, 248, 248, 0) 88.56%);
+
+    @media (min-width: 640px) {
+        padding: 0 3em;
+    }
+    @media (min-width: 768px) {
+        padding: 0 4em;
+    }
+    @media (min-width: 1024px) {
+        padding: 0 5em;
+    }
+    @media (min-width: 1280px) {
+        padding: 0 9em;
+    }
 
     &__title {
         padding: 2em 0 0.5em;
         @extend %primary-title;
     }
+
     &__description {
-        width: 46%;
         margin: 0 auto 3.5em;
         @extend %primary-description;
         text-align: center;
+
+        @media (min-width: 667px) {
+            width: 46%;
+            margin: 0 auto 3.5em;
+            text-align: center;
+        }
     }
 }
 
 .price-block {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 667px) {
+        flex-direction: row;
+        align-items: stretch;
+    }
 
     &__package {
+        margin-bottom: 2em;
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: space-between;
-        width: 33.33%;
+        width: 100%;
         background: $color-white;
         border: 2px solid $color-border;
         border-radius: 10px;
         background: url(../image/free.png) no-repeat;
         background-position: center 4em;
         background-color: $color-white;
+
+        @media (min-width: 414px) {
+            width: 70%;
+        }
+        @media (min-width: 667px) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__package_standart {
+        @media (min-width: 667px) {
+            margin: 0 1em;
+        }
+        @media (min-width: 736px) {
+            margin: 0 2em;
+        }
     }
 
     &__package:hover {
         border: $border-hover;
-    }
-
-    &__package_standart {
-        margin: 0 2em;
     }
     
     &__title {
@@ -52,8 +90,17 @@
 
     &__item {
         padding: 0 0 1em 3em;
-        @extend %primary-text;
+        font-size: 14px;
+        line-height: 30px;
+        color: #4F5665;
         background: url(../image/check.png) no-repeat;
+
+        @media (min-width: 667px) {
+            font-size: 12px;
+        }
+        @media (min-width: 830px) {
+            font-size: 14px;
+        }
     }
 
     &__cost {
@@ -73,6 +120,16 @@
         font-weight: 700;
         color: $color-active;
         cursor: pointer;
+
+        @media (min-width: 667px) {
+            padding: 1em 2em;
+        }
+        @media (min-width: 736px) {
+            padding: 1em 3em;
+        }
+        @media (min-width: 830px) {
+            padding: 1em 4em;
+        }
     }
 
     &__button:hover {
@@ -81,4 +138,3 @@
         box-shadow: 10px 20px 34px -10px rgb(245 56 56 / 35%);
     }
 }
-

@@ -11,7 +11,7 @@
             <p class="sign-form__error-text" v-if="ERROR === ErrorStatus.ERROR_PASSWORD">  {{ $t('authorizationErrorPassword') }}  </p>
             <p class="sign-form__error-text" v-if="ERROR === ErrorStatus.ERROR_DISABLED">  {{ $t('authorizationErrorDisabled') }}  </p>
             
-            <button class="sign-form__button" type="submit" @click="loginUser">Sign in</button>
+            <button class="sign-form__button" type="submit">Sign in</button>
         </form>
     </div>
 
@@ -53,6 +53,6 @@ export default {
                 this.$router.push('/user')
             }
         }
-    }
-}
+    }  
+} 
 </script>

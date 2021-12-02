@@ -3,24 +3,63 @@
 
 .about {
     display: flex;
-    margin: 0 4em 6em 9em;
+    flex-direction: column;
+    margin: 0 2em 2em;
+
+    @media (min-width: 640px) {
+        margin: 0 3em 2em;
+        flex-direction: row;
+    }
+    @media (min-width: 768px) {
+        margin: 0 4em 2em;
+    }
+    @media (min-width: 1024px) {
+        margin: 0 5em 6em;
+    }
+    @media (min-width: 1280px) {
+        margin: 0 4em 6em 9em;
+    }
 }
 .about-description {
-    width: 49%;
-    margin-right: 2.5em;
+    width: 100%;
+    text-align: center;
 
+    @media (min-width: 640px) {
+        text-align: start;
+        margin-right: 2.5em;
+    }
+    @media (min-width: 1280px) {
+        margin-right: 3.5em;
+    }
+    
     &__title {
-        margin: 0.5em auto 0.5em;
+        margin-bottom: 0.5em;
+        font-size: 28px;
         font-weight: 500;
-        font-size: 50px;
-        line-height: 70px;
+        line-height: 50px;
         color: $primary-color;
+
+        @media (min-width: 1024px) {
+            margin: 0.5em auto 0.5em;
+            font-size: 40px;
+            line-height: 70px;
+        }
+        @media (min-width: 1280px) {
+            font-size: 50px;
+        }
     }
+
     &__description {
-        margin-bottom: 4em;
+        margin-bottom: 2em;
         @extend %primary-description;
+
+        @media (min-width: 1280px) {
+            margin-bottom: 4em;
+        }
     }
+
     &__button {
+        margin-bottom: 2em;
         padding: 1em 5em;
         background: $color-active;
         border-radius: 10px;
@@ -31,16 +70,21 @@
         cursor: pointer;
         box-shadow: 0 30px 30px -20px rgb(245 56 56 / 35%);
     }
+
     &__button:hover {
         background: $color-button-active;
     }
 }
 
 .about-img {
-    width: 51%;
+    width: 100%;
+
+    @media (min-width: 640px) {
+        display: flex;
+        align-items: center;
+    }
 
     &__img {
         width: 100%;
     }
 }
-

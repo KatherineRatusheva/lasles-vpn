@@ -3,24 +3,49 @@
 
 .info {
     display: flex;
-    margin: 0 9em;
-    margin-bottom: 6em;
-    box-shadow: 50px 50px 114px 0 rgb(13, 16, 37, 0.06);;
+    flex-direction: column;
+    margin: 0 2em 2em;
+    box-shadow: 50px 50px 114px 0 rgb(13, 16, 37, 0.06);
+
+    @media (min-width: 640px) {
+        flex-direction: row;
+        margin: 0 3em 3em;
+    }
+    @media (min-width: 768px) {
+        margin: 0 4em 4em;
+    }
+    @media (min-width: 1024px) {
+        margin: 0 5em 6em;
+    }
+    @media (min-width: 1280px) {
+        margin: 0 9em 6em;
+    }
 }
+
 .info-block {
-    padding: 6em 5em;
+    padding: 4em 0;
     position: relative;
-    width: 33.33%;
+    width: 100%;
+
+    @media (min-width: 640px) {
+        padding: 6em 5em;
+    }
 
     &__value {
         position: absolute;
         left: 50%;
-        bottom: 35%;
+        bottom: 27%;
+
+        @media (min-width: 640px) {
+            bottom: 35%;
+        }
     }
+
     &__title {
         font-weight: bold;
         font-size: 25px;
     }
+
     &__description {
         font-size: 20px;
         line-height: 30px;
@@ -32,6 +57,13 @@
         &_#{$name} {
             background: url(../image/#{$name}.png) no-repeat;
             background-position: 30% 50%;
+
+            @media (min-width: 640px) {
+                background-position: 15% 50%;
+            }
+            @media (min-width: 875px) {
+                background-position: 30% 50%;
+            }
         }
     }
 }
