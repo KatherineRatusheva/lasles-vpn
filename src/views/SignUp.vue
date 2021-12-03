@@ -52,12 +52,7 @@ export default {
                     }
                 }
             }
-            
-            if(this.$store.getters.LOGIN_STATE) {
-                this.$router.push('/user')
-            }
         }
-
     }
 }
 </script>

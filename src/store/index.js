@@ -69,6 +69,7 @@ export default new Vuex.Store({
         localStorage.setItem('user-token', res.data.idToken);
         localStorage.setItem('user-email', res.data.email)
         commit('SIGN_IN')
+        window.location.href = '/user'
 
       }).catch(error => {
         commit('ERROR_MESSAGE', error.response.data.error.message)
@@ -85,6 +86,7 @@ export default new Vuex.Store({
         localStorage.setItem('user-token', res.data.idToken);
         localStorage.setItem('user-email', res.data.email)
         commit('SIGN_IN')
+        window.location.href = '/user'
 
       }).catch(error => {
           console.log(error);

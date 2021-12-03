@@ -48,11 +48,7 @@ export default {
     methods: {
         loginUser() {
             this.$store.dispatch('loginUser', this.user)
-
-            if(this.$store.getters.LOGIN_STATE) {
-                this.$router.push('/user')
-            }
         }
-    }  
+    }
 } 
 </script>
