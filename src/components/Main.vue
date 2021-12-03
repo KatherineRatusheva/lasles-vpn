@@ -70,23 +70,21 @@
           <p class="reviews__description"> {{ $t('reviewsText') }} </p>
       </div>
       
-      
-          <div v-if="GET_REVIEWS">
-              <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
-              <div class="reviews-user" v-for="item in GET_REVIEWS" :key='item.name'>
-                  <div class="reviews-user__header">
-                      <img class="reviews-user__img" :src="[item.img]" :alt="[item.name]">
-                      <div class="reviews-user__main">
-                          <p class="reviews-user__name" >{{ item.surname }} {{ item.name }}</p>
-                          <p class="reviews-user__city">{{ item.country }}, {{ item.city }}</p>
-                      </div>
-                      <p class="reviews-user__rating">{{ item.rating }}</p>
+      <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel" v-if="GET_REVIEWS">
+          <div class="reviews-user"  v-for="item in GET_REVIEWS" :key='item.name'>
+              <div class="reviews-user__header" >
+                  <img class="reviews-user__img" :src="[item.img]" :alt="[item.name]">
+                  <div class="reviews-user__main">
+                      <p class="reviews-user__name" >{{ item.surname }} {{ item.name }}</p>
+                      <p class="reviews-user__city">{{ item.country }}, {{ item.city }}</p>
                   </div>
-                  <p class="reviews-user__description"> {{ item.message }}</p>
+                  <p class="reviews-user__rating">{{ item.rating }}</p>
               </div>
-              </VueSlickCarousel>
-        </div>
-
+              <p class="reviews-user__description"> {{ item.message }}</p>
+          </div>
+          
+      </VueSlickCarousel>
+      
       <div class="arrows-button">
           <div class="arrows-button__left" @click="prev"></div>
           <div class="arrows-button__right" @click="next"></div>
@@ -174,14 +172,14 @@ export default {
                 slidesToScroll: 1,
                 variableWidth: true,
                 responsive: [{
-                    breakpoint: 1260,
+                    breakpoint: 1280,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 1,
                     }
                 },
                 {
-                    breakpoint: 850,
+                    breakpoint: 768,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
