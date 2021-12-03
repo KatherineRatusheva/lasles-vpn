@@ -27,9 +27,9 @@
     height: 60px;
     background-size: cover;
 }
-@mixin size($size) {
-    width: $size;
-    height: $size;
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
 }
 @mixin position($top, $left) {
     top: $top;
