@@ -6,17 +6,17 @@
     flex-direction: column;
     margin: 0 2em 2em;
 
-    @media (min-width: 640px) {
+    @include mq("min", "xs") {
         margin: 0 3em 3em;
         flex-direction: row;
     }
-    @media (min-width: 768px) {
+    @include mq("min", "sm") {
         margin: 0 4em 4em;
     }
-    @media (min-width: 1024px) {
+    @include mq("min", "md") {
         margin: 0 5em 5em;
     }
-    @media (min-width: 1280px) {
+    @include mq("min", "lg") {
         margin: 0 9em 8em;
     }
 }
@@ -25,10 +25,10 @@
     width: 100%;
     padding-top: 4em;
 
-    @media (min-width: 640px) {
+    @include mq("min", "xs") {
         padding-top: 0;
     }
-    @media (min-width: 1024px) {
+    @include mq("min", "md") {
         width: 37%;
         padding-top: 4em;
     }
@@ -39,10 +39,10 @@
         font-size: 28px;
         font-weight: 500;
 
-        @media (min-width: 1024px) {
+        @include mq("min", "md") {
             font-size: 30px;
         }
-        @media (min-width: 1280px) {
+        @include mq("min", "lg") {
             font-size: 35px;
         }
     }
@@ -60,16 +60,16 @@
 .features-img {
     width: 100%;
 
-    @media (min-width: 640px) {
+    @include mq("min", "xs") {
         display: flex;
         align-items: center;
         margin-right: 2em;
     }
-    @media (min-width: 1024px) {
+    @include mq("min", "md") {
         width: 49%;
         margin-right: 7em;
     }
-    @media (min-width: 1280px) {
+    @include mq("min", "lg") {
         margin-right: 13em;
     }
 

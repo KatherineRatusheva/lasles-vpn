@@ -9,6 +9,7 @@ import './styles/style.scss';
 import {i18n} from './helpers/i18n'
 import { initializeApp } from "firebase/app";
 import vClickOutside from 'v-click-outside'
+import 'leaflet/dist/leaflet.css';
 
 Vue.use(VueRouter, VueAxios, axios, vClickOutside)
 Vue.config.productionTip = false

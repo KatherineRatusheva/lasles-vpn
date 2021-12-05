@@ -7,16 +7,16 @@
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 640px) {
+    @include mq("min", "xs") {
         margin: 0 3em;
     }
-    @media (min-width: 768px) {
+    @include mq("min", "sm") {
         margin: 0 4em;
     }
-    @media (min-width: 1024px) {
+    @include mq("min", "md") {
         margin: 0 5em;
     }
-    @media (min-width: 1280px) {
+    @include mq("min", "lg") {
         margin: 0 6em;
     }
 
@@ -26,13 +26,13 @@
         color: $primary-color;
         @extend %primary-title;
 
-        @media (min-width: 640px) {
+        @include mq("min", "xs") {
             width: 70%;
         }
-        @media (min-width: 768px) {
+        @include mq("min", "sm") {
             width: 58%;
         }
-        @media (min-width: 1280px) {
+        @include mq("min", "lg") {
             width: 36%;
         }
     }
@@ -41,10 +41,10 @@
         @extend %primary-description;
         text-align: center;
 
-        @media (min-width: 640px) {
+        @include mq("min", "xs") {
             width: 76%;
         }
-        @media (min-width: 1280px) {
+        @include mq("min", "lg") {
             width: 40%;
         }
     }
@@ -132,16 +132,16 @@
     max-width: 100%;
     margin: 0 0 0 2em;
 
-    @media (min-width: 640px) {
+    @include mq("min", "xs") {
         margin: 0 0 0 3em;
     }
-    @media (min-width: 768px) {
+    @include mq("min", "sm") {
         margin: 0 0 0 4em;
     }
-    @media (min-width: 1024px) {
+    @include mq("min", "md") {
         margin: 0 0 0 5em;
     }
-    @media (min-width: 1280px) {
+    @include mq("min", "lg") {
         margin: 0 0 0 9em;
     }
 }
@@ -149,7 +149,7 @@
     margin-right: 6em;
     width: 7%;
     
-    @media (min-width: 1280px) {
+    @include mq("min", "lg") {
         width: 23%;
         margin-right: 6em;
     }

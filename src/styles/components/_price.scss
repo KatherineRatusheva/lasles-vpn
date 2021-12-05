@@ -5,16 +5,16 @@
     padding: 0 2em;
     background: linear-gradient(180deg, #F8F8F8 -45.04%, rgba(248, 248, 248, 0) 88.56%);
 
-    @media (min-width: 640px) {
+    @include mq("min", "xs") {
         padding: 0 3em;
     }
-    @media (min-width: 768px) {
+    @include mq("min", "sm") {
         padding: 0 4em;
     }
-    @media (min-width: 1024px) {
+    @include mq("min", "md") {
         padding: 0 5em;
     }
-    @media (min-width: 1280px) {
+    @include mq("min", "lg") {
         padding: 0 9em;
     }
 
@@ -28,7 +28,7 @@
         @extend %primary-description;
         text-align: center;
 
-        @media (min-width: 667px) {
+        @include mq("min", "xs") {
             width: 46%;
             margin: 0 auto 3.5em;
             text-align: center;
@@ -41,7 +41,7 @@
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 667px) {
+    @include mq("min", "xs") {
         flex-direction: row;
         align-items: stretch;
     }
@@ -60,19 +60,19 @@
         background-position: center 4em;
         background-color: $color-white;
 
-        @media (min-width: 414px) {
+        @include mq("min", "xxs") {
             width: 70%;
         }
-        @media (min-width: 667px) {
+        @include mq("min", "xs") {
             margin-bottom: 0;
         }
     }
 
     &__package_standart {
-        @media (min-width: 667px) {
+        @include mq("min", "xs") {
             margin: 0 1em;
         }
-        @media (min-width: 736px) {
+        @include mq("min", "sm") {
             margin: 0 2em;
         }
     }
@@ -95,10 +95,10 @@
         color: #4F5665;
         background: url(../image/check.png) no-repeat;
 
-        @media (min-width: 667px) {
+        @include mq("min", "xs") {
             font-size: 12px;
         }
-        @media (min-width: 830px) {
+        @include mq("min", "m") {
             font-size: 14px;
         }
     }
@@ -121,13 +121,13 @@
         color: $color-active;
         cursor: pointer;
 
-        @media (min-width: 667px) {
+        @include mq("min", "xs") {
             padding: 1em 2em;
         }
-        @media (min-width: 736px) {
+        @include mq("min", "sm") {
             padding: 1em 3em;
         }
-        @media (min-width: 830px) {
+        @include mq("min", "m") {
             padding: 1em 4em;
         }
     }

@@ -59,6 +59,7 @@
           <div class="locations">
               <h3 class="locations__title"> {{ $t('locationsTitle') }} </h3>
               <p class="locations__description"> {{ $t('locationsText') }} </p>
+              <Map />
               <img class="locations__img" src="../image/huge-global.png" alt="Global Network of VPN">
           </div>
       </div>
@@ -132,9 +133,10 @@ import VueSlickCarousel from 'vue-slick-carousel';
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 import {mapGetters} from 'vuex'
+import Map from './Map.vue'
  
 export default {
-    components: { VueSlickCarousel, Modal},
+    components: { VueSlickCarousel, Modal, Map},
     data() {
         return {
             footerLinks: [

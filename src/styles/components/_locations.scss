@@ -7,10 +7,10 @@
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 667px) {
+    @include mq("min", "xs") {
         margin-top: 6em;
     }
-    @media (min-width: 1024px) {
+    @include mq("min", "md") {
         margin-top: 9em;
     }
 
@@ -20,16 +20,16 @@
         line-height: 50px;
         @extend %primary-title;
 
-        @media (min-width: 667px) {
+        @include mq("min", "xs") {
             width: 62%;
         }
-        @media (min-width: 768px) {
+        @include mq("min", "sm") {
             width: 56%;
         }
-        @media (min-width: 1024px) {
+        @include mq("min", "md") {
             width: 45%;
         }
-        @media (min-width: 1280px) {
+        @include mq("min", "lg") {
             width: 35%;
         }
     }
@@ -39,10 +39,10 @@
         @extend %primary-description;
         text-align: center;
 
-        @media (min-width: 667px) {
+        @include mq("min", "xs") {
             width: 50%;
         }
-        @media (min-width: 1280px) {
+        @include mq("min", "lg") {
             margin-bottom: 9em;
         }
     }
@@ -57,16 +57,16 @@
     background-size: contain;
     padding-bottom: 15%;
 
-    @media (min-width: 640px) {
+    @include mq("min", "xs") {
         margin: 2em 3em 3em;
     }
-    @media (min-width: 768px) {
+    @include mq("min", "sm") {
         margin: 2em 4em 3em;
     }
-    @media (min-width: 1024px) {
+    @include mq("min", "md") {
         margin: 2em 5em 3em;
     }
-    @media (min-width: 1280px) {
+    @include mq("min", "lg") {
         margin: 2em 6em 3em;
     }
 }

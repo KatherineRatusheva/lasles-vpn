@@ -4,7 +4,7 @@
 .header {
     display: none;
 
-    @media (min-width: 1024px) {
+    @include mq("min", "md") {
         display: flex;
         justify-content: center;
         margin: 3em 0 5.5em 0;
@@ -16,7 +16,7 @@
     &__logo {
         margin-right: 4em;
 
-        @media (min-width: 1280px) {
+        @include mq("min", "lg") {
             margin-right: 9em;
         }
     }
@@ -48,7 +48,7 @@
         color: $primary-color;
         cursor: pointer;
 
-        @media (min-width: 1280px) {
+        @include mq("min", "lg") {
             margin: 0 1.8em 0 6em;
         }
     }
@@ -86,7 +86,7 @@
 .menu {
     display: block;
 
-    @media (min-width: 1024px) {
+    @include mq("min", "md") {
         display: none;
     }
 
