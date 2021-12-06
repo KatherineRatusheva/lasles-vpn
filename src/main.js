@@ -9,9 +9,9 @@ import './styles/style.scss';
 import {i18n} from './helpers/i18n'
 import { initializeApp } from "firebase/app";
 import vClickOutside from 'v-click-outside'
-import 'leaflet/dist/leaflet.css';
+import YmapPlugin from 'vue-yandex-maps'
 
-Vue.use(VueRouter, VueAxios, axios, vClickOutside)
+Vue.use(VueRouter, VueAxios, axios, vClickOutside, YmapPlugin)
 Vue.config.productionTip = false
 
 const firebaseApp = initializeApp({

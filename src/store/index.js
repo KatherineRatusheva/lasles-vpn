@@ -13,7 +13,8 @@ export default new Vuex.Store({
     isLogin: false,
     reviews: [{}],
     requestUserModal: {},
-    error: ''
+    error: '',
+    mapMarkers: [{}]
   },
 
   getters: {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
     },
     GET_REVIEWS(state) {
       return state.reviews
+    },
+    GET_MARKERS(state) {
+      return state.mapMarkers
     },
     LOGIN_USER(state) {
       return state.user
@@ -49,6 +53,12 @@ export default new Vuex.Store({
       axios.get( apiUrls.getReviews)
         .then(response => {
             commit('GET_REVIEWS', response.data)
+        });
+    },
+    getMarkersMap({commit}) {
+      axios.get( apiUrls.getMarker)
+        .then(response => {
+            commit('GET_MARKERS', response.data)
         });
     },
 
@@ -120,6 +130,9 @@ export default new Vuex.Store({
     },
     GET_REVIEWS (state, payload) {
       state.reviews = payload
+    },
+    GET_MARKERS (state, payload) {
+      state.mapMarkers = payload
     },
     LOGIN_SUCSESS (state, payload){
       state.user = payload
