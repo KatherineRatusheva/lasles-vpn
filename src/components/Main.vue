@@ -60,7 +60,6 @@
               <h3 class="locations__title"> {{ $t('locationsTitle') }} </h3>
               <p class="locations__description"> {{ $t('locationsText') }} </p>
               <Map />
-              <img class="locations__img" src="../image/huge-global.png" alt="Global Network of VPN">
           </div>
       </div>
 

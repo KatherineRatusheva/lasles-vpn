@@ -1,6 +1,6 @@
 <template>
-<div id="map" style="width: 100%; height: 600px" v-if="GET_MARKERS">
-    <yandex-map ymap-class="map-box" :coords="coords" :zoom="2" :scroll-zoom="scrollZoom" :settings="settings">
+<div id="map" style="width: 100%; height: 660px" v-if="GET_MARKERS">
+    <yandex-map ymap-class="map-box" :coords="coords" :zoom="2" :scroll-zoom="false" :settings="settings">
         
         <ymap-marker v-for="item in GET_MARKERS" :key='item.id'
         marker-id="[item.id]" 
@@ -27,8 +27,7 @@ export default {
                 lang: 'ru_RU',
                 coordorder: 'latlong',
             },
-            coords: [40, 18],
-            scrollZoom: false,
+            coords: [44, 15],
 
             markerIcon: [
                 {
@@ -106,6 +105,81 @@ export default {
                     imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
                     imageSize: [40,40],  
                 },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [29,29],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [55,55],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [40,40],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [40,40],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [35,35],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [35,35],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [40,40],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [55,55],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [40,40],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [40,40],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [29,29],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [29,29],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [40,40],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [55,55],  
+                },
+                {
+                    layout: 'default#imageWithContent',
+                    imageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=7d00acef-a876-47ce-ab90-c53658e4c8ab',
+                    imageSize: [29,29],  
+                },
 
             ]
 
@@ -132,13 +206,6 @@ export default {
 <style >
     .map-box {
         width: 100%;
-        height: 600px;
+        height: 660px;
     }
-/* #map {
-	filter: grayscale(1);
--ms-filter: grayscale(1);
--webkit-filter: grayscale(1);
--moz-filter: grayscale(1);
--o-filter: grayscale(1);
-} */
 </style>
