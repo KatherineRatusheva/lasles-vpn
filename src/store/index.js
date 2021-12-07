@@ -59,6 +59,7 @@ export default new Vuex.Store({
       axios.get( apiUrls.getMarker)
         .then(response => {
             commit('GET_MARKERS', response.data)
+            console.log(response.data);
         });
     },
 
