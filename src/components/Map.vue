@@ -68,7 +68,7 @@ export default {
             for (let key in this.$store.getters.GET_MARKERS) {
                 let obj = this.$store.getters.GET_MARKERS[key]
                 for (let item in obj) {
-                     if(item === 'coordinates') {
+                    if(item === 'coordinates') {
                         let place = new window.ymaps.Placemark((obj[item]), {}, {
                             iconLayout: 'default#image',
                             iconImageHref: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/marker.png?alt=media&token=f9cfb180-288d-46ac-bee8-641a14cb5064',

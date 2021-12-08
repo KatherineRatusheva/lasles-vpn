@@ -14,7 +14,7 @@ export default {
     mixins: [saveUser],
     data() {
         return {
-            emailUser: this.$store.state.user.email,
+            emailUser: this.$store.state.email,
         }
     },
     
@@ -37,7 +37,6 @@ export default {
         if(this.$store.state.token) {
             this.$store.commit('SIGN_IN')
             this.$store.dispatch('toggleSignIn')
-            this.emailUser = this.$store.state.email
         }
     }
 }
