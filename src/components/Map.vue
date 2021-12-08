@@ -37,11 +37,11 @@ export default {
             PIC_HEIGHT = 539;
 
             let Layer = () => {
-                let layer = new window.ymaps.Layer(TILES_PATH + '%2F0%2Ftile-%x-%y.png?alt=media&token=938b2357-257b-4b0c-88b9-870d616b08d6', {
-                    notFoundTile: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/tiles%2F0%2Ftile-0-2.png?alt=media&token=fa9fe33a-e481-4814-ae75-33fa1e2218ad'
+                let layer = new window.ymaps.Layer(TILES_PATH + '%2F%z%2Ftile-%x-%y.png?alt=media&token=938b2357-257b-4b0c-88b9-870d616b08d6', {
+                    notFoundTile: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/tiles%2F3%2Ftile-4-1.png?alt=media&token=39e82de8-3724-46e0-addd-f3dc38fac6ca'
                 });
                 layer.getZoomRange = () => {
-                    return window.ymaps.vow.resolve([0,2]);
+                    return window.ymaps.vow.resolve([2, 2]);
                 };
                 return layer;
             };
