@@ -90,11 +90,11 @@
     }
 
     &__item {
+        position: relative;
         padding: 0 0 1em 3em;
         font-size: 14px;
         line-height: 30px;
         color: #4F5665;
-        @include bgImg('check');
 
         @include mq("xs") {
             font-size: 12px;
@@ -138,4 +138,10 @@
         color: $color-white;
         box-shadow: 10px 20px 34px -10px rgb(245 56 56 / 35%);
     }
+}
+
+.fa-check {
+    position: absolute;
+    @include position(18%, 0);
+    color: #2FAB73;
 }

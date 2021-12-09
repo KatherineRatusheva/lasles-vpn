@@ -31,10 +31,10 @@
           <div class="features-text">
               <h2 class="features-text__title"> {{ $t('featuresTitle') }} </h2>
               <p class="features-text__description"> {{ $t('featuresText') }} </p>
-              <p class="features-text__item"> {{ $t('featuresItem_1') }} </p>
-              <p class="features-text__item"> {{ $t('featuresItem_2') }} </p>
-              <p class="features-text__item"> {{ $t('featuresItem_3') }} </p>
-              <p class="features-text__item"> {{ $t('featuresItem_4') }} </p>
+              <p class="features-text__item"> {{ $t('featuresItem_1') }} <i class="fas fa-check-circle"></i> </p>
+              <p class="features-text__item"> {{ $t('featuresItem_2') }} <i class="fas fa-check-circle"></i> </p>
+              <p class="features-text__item"> {{ $t('featuresItem_3') }} <i class="fas fa-check-circle"></i> </p>
+              <p class="features-text__item"> {{ $t('featuresItem_4') }} <i class="fas fa-check-circle"></i> </p>
           </div>
       </div>
 
@@ -46,7 +46,9 @@
               <div class="price-block__package" v-for="item in $t('plan')" :key="item.name" :class="[item.activeClass]">
                   <div class="price-block__list">
                       <p class="price-block__title"> {{item.name}} </p>
-                      <p class="price-block__item" v-for="item in item.include" :key="item">  {{item}} </p>
+                      <p class="price-block__item" v-for="item in item.include" :key="item"> 
+                          <i class="fas fa-check"></i>{{item}}
+                      </p>
                   </div>
                   <div>
                       <p class="price-block__cost">{{item.price}}</p>
