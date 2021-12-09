@@ -1,6 +1,6 @@
 <template>
-<div id="map" style="width: 100%; height: 539px">
-    <yandex-map @created="mapCreated"></yandex-map>
+<div id="map">
+    <yandex-map @created="mapCreated"></yandex-map >
 </div>
 </template>
 
@@ -28,7 +28,6 @@ export default {
 
     methods: {
         mapCreated() {
-
             let LAYER_NAME = 'layer',
             MAP_TYPE_NAME = 'customMap',
             TILES_PATH = 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/tiles',
@@ -37,30 +36,29 @@ export default {
             PIC_HEIGHT = 539;
 
             let Layer = () => {
-                let layer = new window.ymaps.Layer(TILES_PATH + '%2F%z%2Ftile-%x-%y.png?alt=media&token=938b2357-257b-4b0c-88b9-870d616b08d6', {
-                    notFoundTile: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/tiles%2F3%2Ftile-4-1.png?alt=media&token=39e82de8-3724-46e0-addd-f3dc38fac6ca'
+                let layer = new window.ymaps.Layer(TILES_PATH + '%2F%z%2Ftile-%x-%y.png?alt=media&token=5bc5a0d8-7923-4b7b-98d1-c1d591c3bd84', {
+                    notFoundTile: 'https://firebasestorage.googleapis.com/v0/b/laslesvpn-97c54.appspot.com/o/tiles%2F2%2Ftile-4-2.png?alt=media&token=5d77ce3d-3adf-4870-87fa-24aaa29879f9'
                 });
-                layer.getZoomRange = () => {
-                    return window.ymaps.vow.resolve([2, 2]);
+                layer.getZoomRange = function () {
+                    return window.ymaps.vow.resolve([0,2]);
                 };
                 return layer;
             };
-            
             window.ymaps.layer.storage.add(LAYER_NAME, Layer);
 
             let mapType = new window.ymaps.MapType(MAP_TYPE_NAME, [LAYER_NAME]);
             window.ymaps.mapType.storage.add(MAP_TYPE_NAME, mapType);
-            
-            let worldSize = Math.pow(2, MAX_ZOOM) * 256,
-            
-            map = new window.ymaps.Map('map', {
-                center: [0,0],
+
+            let worldSize = Math.pow(MAX_ZOOM, 1) * 256,
+
+            map = new window.ymaps.Map("map", {
+                center: [0, -9],
                 zoom: 2,
                 controls: ['zoomControl'],
-                type: MAP_TYPE_NAME
+                type: MAP_TYPE_NAME,
             }, {
                 projection: new window.ymaps.projection.Cartesian([[PIC_HEIGHT / 4 - worldSize, -PIC_WIDTH / 4], [PIC_HEIGHT / 4, worldSize - PIC_WIDTH / 4]], [false, false]),
-                restrictMapArea: [[-PIC_HEIGHT / 3, -PIC_WIDTH / 3], [PIC_HEIGHT / 3, PIC_WIDTH / 3]]
+                restrictMapArea: [[-PIC_HEIGHT / 2, -PIC_WIDTH / 2], [PIC_HEIGHT / 2, PIC_WIDTH / 2]]
             });
             map.behaviors.disable('scrollZoom');
 
@@ -87,6 +85,10 @@ export default {
 
 
 <style>
+#map {
+    width: 90%;
+    height: 539px;
+}
 .yandex-map {
     display: none;
 }
