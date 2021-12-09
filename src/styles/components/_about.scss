@@ -1,22 +1,23 @@
 @import '../variables';
 @import '../mixins';
+@import '../placeholders';
 
 .about {
     display: flex;
     flex-direction: column;
     margin: 3em 2em 2em;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         margin: 3em 3em 2em;
         flex-direction: row;
     }
-    @include mq("min", "sm") {
+    @include mq("sm") {
         margin: 3em 4em 2em;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         margin: 0 5em 6em;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         margin: 0 4em 6em 9em;
     }
 }
@@ -24,11 +25,11 @@
     width: 100%;
     text-align: center;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         text-align: start;
         margin-right: 2.5em;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         margin-right: 3.5em;
     }
     
@@ -39,12 +40,12 @@
         line-height: 50px;
         color: $primary-color;
 
-        @include mq("min", "md") {
+        @include mq("md") {
             margin: 0.5em auto 0.5em;
             font-size: 40px;
             line-height: 70px;
         }
-        @include mq("min", "lg") {
+        @include mq("lg") {
             font-size: 50px;
         }
     }
@@ -53,7 +54,7 @@
         margin-bottom: 2em;
         @extend %primary-description;
 
-        @include mq("min", "lg") {
+        @include mq("lg") {
             margin-bottom: 4em;
         }
     }
@@ -79,7 +80,7 @@
 .about-img {
     width: 100%;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         display: flex;
         align-items: center;
     }

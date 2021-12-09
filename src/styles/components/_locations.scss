@@ -1,5 +1,6 @@
 @import '../variables';
 @import '../mixins';
+@import '../placeholders';
 
 .locations {
     margin-top: 4em;
@@ -7,10 +8,10 @@
     flex-direction: column;
     align-items: center;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         margin-top: 6em;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         margin-top: 9em;
     }
 
@@ -20,16 +21,16 @@
         line-height: 50px;
         @extend %primary-title;
 
-        @include mq("min", "xs") {
+        @include mq("xs") {
             width: 62%;
         }
-        @include mq("min", "sm") {
+        @include mq("sm") {
             width: 56%;
         }
-        @include mq("min", "md") {
+        @include mq("md") {
             width: 45%;
         }
-        @include mq("min", "lg") {
+        @include mq("lg") {
             width: 35%;
         }
     }
@@ -39,10 +40,10 @@
         @extend %primary-description;
         text-align: center;
 
-        @include mq("min", "xs") {
+        @include mq("xs") {
             width: 50%;
         }
-        @include mq("min", "lg") {
+        @include mq("lg") {
             margin-bottom: 9em;
         }
     }
@@ -50,20 +51,20 @@
 
 .partners {
     margin: 2em 2em 3em;
-    background: url(../image/sponsored.png) no-repeat;
+    @include bgImg('sponsored');
     background-size: contain;
     padding-bottom: 15%;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         margin: 2em 3em 3em;
     }
-    @include mq("min", "sm") {
+    @include mq("sm") {
         margin: 2em 4em 3em;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         margin: 2em 5em 3em;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         margin: 2em 6em 3em;
     }
 }

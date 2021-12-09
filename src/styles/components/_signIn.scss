@@ -1,18 +1,19 @@
 @import '../variables';
 @import '../mixins';
+@import '../placeholders';
 
 .sign {
     display: flex;
     flex-direction: column;
     margin: 3em 20%;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         margin: 3em 30%;
     }
-    @include mq("min", "sm") {
+    @include mq("sm") {
         margin: 3em 35%;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         margin: 3em 40%;
     }
 

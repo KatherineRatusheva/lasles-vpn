@@ -1,5 +1,6 @@
 @import '../variables';
 @import '../mixins';
+@import '../placeholders';
 
 .reviews {
     margin: 0 2em;
@@ -7,16 +8,16 @@
     flex-direction: column;
     align-items: center;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         margin: 0 3em;
     }
-    @include mq("min", "sm") {
+    @include mq("sm") {
         margin: 0 4em;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         margin: 0 5em;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         margin: 0 6em;
     }
 
@@ -26,13 +27,13 @@
         color: $primary-color;
         @extend %primary-title;
 
-        @include mq("min", "xs") {
+        @include mq("xs") {
             width: 70%;
         }
-        @include mq("min", "sm") {
+        @include mq("sm") {
             width: 58%;
         }
-        @include mq("min", "lg") {
+        @include mq("lg") {
             width: 36%;
         }
     }
@@ -41,10 +42,10 @@
         @extend %primary-description;
         text-align: center;
 
-        @include mq("min", "xs") {
+        @include mq("xs") {
             width: 76%;
         }
-        @include mq("min", "lg") {
+        @include mq("lg") {
             width: 40%;
         }
     }
@@ -86,7 +87,7 @@
         font-size: $primary-size;
         font-weight: 400;
         color: $primary-color;
-        background: url(../image/star.png) no-repeat;
+        @include bgImg('star');
         background-position: 100%;
     }
 
@@ -105,24 +106,26 @@
 
     &__left {
         margin-right: 1.5em;
-        background: url(../image/arrow-left.png) no-repeat;
+        @include bgImg('arrow-left');
         @extend %reviews-button;
     }
 
     &__right {
-        background: url(../image/arrow-left.png) no-repeat;
+        @include bgImg('arrow-left');
         transform: scale(-1, 1);
         @extend %reviews-button;
     }
 
     &__right:hover{
-        background: url(../image/arrow-right.png) no-repeat $color-active;
+        @include bgImg('arrow-right');
+        background-color: $color-active;
         background-position: center;
         transform: scale(1, -1);
     }
 
     &__left:hover{
-        background: url(../image/arrow-right.png) no-repeat $color-active;
+        @include bgImg('arrow-right');
+        background-color: $color-active;
         background-position: center;
         transform: scale(-1, 1);
     }
@@ -132,16 +135,16 @@
     max-width: 100%;
     margin: 0 0 0 2em;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         margin: 0 0 0 3em;
     }
-    @include mq("min", "sm") {
+    @include mq("sm") {
         margin: 0 0 0 4em;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         margin: 0 0 0 5em;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         margin: 0 0 0 9em;
     }
 }
@@ -149,7 +152,7 @@
     margin-right: 6em;
     width: 7%;
     
-    @include mq("min", "lg") {
+    @include mq("lg") {
         width: 23%;
         margin-right: 6em;
     }

@@ -1,22 +1,23 @@
 @import '../variables';
 @import '../mixins';
+@import '../placeholders';
 
 .features {
     display: flex;
     flex-direction: column;
     margin: 0 2em 2em;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         margin: 0 3em 3em;
         flex-direction: row;
     }
-    @include mq("min", "sm") {
+    @include mq("sm") {
         margin: 0 4em 4em;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         margin: 0 5em 5em;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         margin: 0 9em 8em;
     }
 }
@@ -25,10 +26,10 @@
     width: 100%;
     padding-top: 4em;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         padding-top: 0;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         width: 37%;
         padding-top: 4em;
     }
@@ -39,10 +40,10 @@
         font-size: 28px;
         font-weight: 500;
 
-        @include mq("min", "md") {
+        @include mq("md") {
             font-size: 30px;
         }
-        @include mq("min", "lg") {
+        @include mq("lg") {
             font-size: 35px;
         }
     }
@@ -53,23 +54,23 @@
     &__item {
         margin-bottom: 1em;
         padding-left: 3em;
-        background: url(../image/done.png) no-repeat;
+        @include bgImg('done');
         @extend %primary-text;
     }
 }
 .features-img {
     width: 100%;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         display: flex;
         align-items: center;
         margin-right: 2em;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         width: 49%;
         margin-right: 7em;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         margin-right: 13em;
     }
 

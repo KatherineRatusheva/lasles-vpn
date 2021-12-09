@@ -1,33 +1,33 @@
 @import '../variables';
 @import '../mixins';
+@import '../placeholders';
 
 .subscribe {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     position: absolute;
     padding: 2.5em 2.5em;
     @include position(-7em, 2em);
     right: 2em;
-    display: flex;
-    justify-content: space-between;
     background: $color-white;
     border-radius: 10px;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         flex-direction: row;
         left: 3em;
         right: 3em;
     }
-    @include mq("min", "sm") {
+    @include mq("sm") {
         left: 4em;
         right: 4em;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         left: 5em;
         right: 5em;
         padding: 3.5em 4.5em;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         left: 9em;
         right: 9em;
     }
@@ -44,13 +44,13 @@
         cursor: pointer;
         box-shadow: 0 35px 30px -20px rgb(245 56 56 / 35%);
 
-        @include mq("min", "xxs") {
+        @include mq("xxs") {
            width: 70%;
         }
-        @include mq("min", "xs") {
+        @include mq("xs") {
             width: auto;
         }
-        @include mq("min", "md") {
+        @include mq("md") {
             padding: 1em 4em;
         }
     }
@@ -64,19 +64,19 @@
     width: 100%;
     text-align: center;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         text-align: start;
         margin-right: 1em;
     }
-    @include mq("min", "sm") {
+    @include mq("sm") {
         width: 53%;
         margin-right: 4em;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         width: 50%;
         margin-right: 7em;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         width: 44%;
         margin-right: 10em;
     }

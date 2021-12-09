@@ -1,5 +1,6 @@
 @import '../variables';
 @import '../mixins';
+@import '../placeholders';
 
 .footer {
     margin-top: 11em;
@@ -11,20 +12,20 @@
     display: flex;
     flex-wrap: wrap;
 
-    @include mq("min", "xxs") {
+    @include mq("xxs") {
         padding: 18em 2em 4em 2em;
     }
-    @include mq("min", "xs") {
+    @include mq("xs") {
         padding: 10em 3em 4em 3em;
         flex-wrap: nowrap;
     }
-    @include mq("min", "sm") {
+    @include mq("sm") {
         padding: 10em 4em 4em 4em;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         padding: 12em 5em 4em 5em;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         padding: 12em 9em 4em 9em;
     }
 }
@@ -35,19 +36,19 @@
     align-items: center;
     text-align: center;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         margin-right: 3em;
         width: 30%;
         align-items: start;
         text-align: start;
     }
-    @include mq("min", "m") {
+    @include mq("m") {
         width: 58%;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         margin-right: 9em;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         margin-right: 11em;
     }
 
@@ -69,7 +70,7 @@
     @each $name in $icons {
         &__#{$name} {
             @extend %social-icon;
-            background: url(../image/#{$name}.png) no-repeat;
+            @include bgImg(#{$name});
         }
     }
 
@@ -83,14 +84,14 @@
     flex-direction: column;
     width: 24%;
 
-    @include mq("min", "xxs") {
+    @include mq("xxs") {
         width: 26%;
     }
 
     &_centre {
         margin: 0 2.5em;
 
-        @include mq("min", "lg") {
+        @include mq("lg") {
             margin: 0 7em;
         }
     }

@@ -1,5 +1,6 @@
 @import '../variables';
 @import '../mixins';
+@import '../placeholders';
 
 .info {
     display: flex;
@@ -7,17 +8,17 @@
     margin: 0 2em 2em;
     box-shadow: 50px 50px 114px 0 rgb(13, 16, 37, 0.06);
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         flex-direction: row;
         margin: 0 3em 3em;
     }
-    @include mq("min", "sm") {
+    @include mq("sm") {
         margin: 0 4em 4em;
     }
-    @include mq("min", "md") {
+    @include mq("md") {
         margin: 0 5em 6em;
     }
-    @include mq("min", "lg") {
+    @include mq("lg") {
         margin: 0 9em 6em;
     }
 }
@@ -27,7 +28,7 @@
     position: relative;
     width: 100%;
 
-    @include mq("min", "xs") {
+    @include mq("xs") {
         padding: 6em 5em;
     }
 
@@ -36,7 +37,7 @@
         left: 50%;
         bottom: 27%;
 
-        @include mq("min", "xs") {
+        @include mq("xs") {
             bottom: 35%;
         }
     }
@@ -55,15 +56,18 @@
     $icons: "user", "server", "location";
     @each $name in $icons {
         &_#{$name} {
-            background: url(../image/#{$name}.png) no-repeat;
-            background-position: 30% 50%;
-
-            @include mq("min", "xs") {
-                background-position: 15% 50%;
-            }
-            @include mq("min", "m") {
-                background-position: 30% 50%;
-            }
+            @include bgImg(#{$name});
+            @extend %_desc-icon;
         }
+    }
+}
+
+%_desc-icon {
+    background-position: 30% 50%;
+    @include mq("xs") {
+        background-position: 15% 50%;
+    }
+    @include mq("m") {
+        background-position: 30% 50%;
     }
 }

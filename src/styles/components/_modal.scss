@@ -1,5 +1,6 @@
 @import '../variables';
 @import '../mixins';
+@import '../placeholders';
 
 .form {
     position: fixed;
@@ -55,7 +56,7 @@
         position: absolute;
         top: 3%;
         right: 3%;
-        @include size(30px, 30px);
+        @include size(30px);
         border-radius: 50%;
         background: $color-active;
         color: $color-white;
