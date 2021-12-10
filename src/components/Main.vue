@@ -89,8 +89,8 @@
       </VueSlickCarousel>
       
       <div class="arrows-button">
-          <i class="fas fa-arrow-circle-left" @click="prev"></i>
-          <i class="fas fa-arrow-circle-right" @click="next"></i>
+          <i class="fas fa-arrow-left" @click="prev"></i>
+          <i class="fas fa-arrow-right" @click="next"></i>
       </div>
   </main >
 

@@ -106,17 +106,20 @@
     margin: 3em 9em 0 0;
 }
 
-.fa-arrow-circle-left, .fa-arrow-circle-right {
-    font-size: 55px;
-    color: $color-border;
+.fa-arrow-left, .fa-arrow-right {
+    padding: 0.8em;
+    font-size: 22px;
+    color: $color-active;
+    border: 2px solid $color-active;
     border-radius: 50%;
     cursor: pointer;
 }
-.fa-arrow-circle-left {
-    margin-right: 0.5em;
+.fa-arrow-left {
+    margin-right: 1em;
 }
-.fa-arrow-circle-left:hover, .fa-arrow-circle-right:hover {
-    color: $color-active;
+.fa-arrow-left:hover, .fa-arrow-right:hover {
+    background: $color-active;
+    color: white;
 }
 
 .carousel {
