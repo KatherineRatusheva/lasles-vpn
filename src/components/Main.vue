@@ -31,10 +31,10 @@
           <div class="features-text">
               <h2 class="features-text__title"> {{ $t('featuresTitle') }} </h2>
               <p class="features-text__description"> {{ $t('featuresText') }} </p>
-              <p class="features-text__item"> {{ $t('featuresItem_1') }} <i class="fas fa-check-circle"></i> </p>
-              <p class="features-text__item"> {{ $t('featuresItem_2') }} <i class="fas fa-check-circle"></i> </p>
-              <p class="features-text__item"> {{ $t('featuresItem_3') }} <i class="fas fa-check-circle"></i> </p>
-              <p class="features-text__item"> {{ $t('featuresItem_4') }} <i class="fas fa-check-circle"></i> </p>
+              <div class="features-text__item"> {{ $t('featuresItem_1') }} <div class="fas fa-check-circle"></div> </div>
+              <div class="features-text__item"> {{ $t('featuresItem_2') }} <div class="fas fa-check-circle"></div> </div>
+              <div class="features-text__item"> {{ $t('featuresItem_3') }} <div class="fas fa-check-circle"></div> </div>
+              <div class="features-text__item"> {{ $t('featuresItem_4') }} <div class="fas fa-check-circle"></div> </div>
           </div>
       </div>
 
@@ -46,17 +46,20 @@
               <div class="price-block__package" v-for="item in $t('plan')" :key="item.name" :class="[item.activeClass]">
                   <div class="price-block__list">
                       <p class="price-block__title"> {{item.name}} </p>
-                      <p class="price-block__item" v-for="item in item.include" :key="item"> 
-                          <i class="fas fa-check"></i>{{item}}
-                      </p>
+                      <div class="price-block__item" v-for="item in item.include" :key="item"> 
+                          <div class="fas fa-check"></div>
+                          {{item}}
+                      </div>
                   </div>
-                  <div>
+                  <div class="price-block__bottom">
                       <p class="price-block__cost">{{item.price}}</p>
                       <button class="price-block__button" @click="showModalPrice"> {{ $t('priseButton') }} </button>
+                      <button class="fas fa-shopping-basket" @click="addBasket"></button>
                   </div>
               </div>
           </div>
           <Modal ref="modal"/>
+          <AlertRegistered ref="alert"/>
 
           <div class="locations">
               <h3 class="locations__title"> {{ $t('locationsTitle') }} </h3>
@@ -81,7 +84,7 @@
                       <p class="reviews-user__city">{{ item.country }}, {{ item.city }}</p>
                   </div>
                   <p class="reviews-user__rating">{{ item.rating }}</p>
-                  <i class="fas fa-star"></i>
+                  <div class="fas fa-star"></div>
               </div>
               <p class="reviews-user__description"> {{ item.message }}</p>
           </div>
@@ -89,8 +92,8 @@
       </VueSlickCarousel>
       
       <div class="arrows-button">
-          <i class="fas fa-arrow-left" @click="prev"></i>
-          <i class="fas fa-arrow-right" @click="next"></i>
+          <div class="fas fa-arrow-left" @click="prev"></div>
+          <div class="fas fa-arrow-right" @click="next"></div>
       </div>
   </main >
 
@@ -136,9 +139,10 @@ import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 import {mapGetters} from 'vuex'
 import Map from './Map.vue'
+import AlertRegistered from '../components/AlertRegistered.vue';
  
 export default {
-    components: { VueSlickCarousel, Modal, Map},
+    components: { VueSlickCarousel, Modal, Map, AlertRegistered},
     data() {
         return {
             footerLinks: [
@@ -215,6 +219,11 @@ export default {
         },
         showModalPrice(e) {
             this.$refs.modal.open(e.target.parentNode.parentElement.firstChild.firstChild.innerText)
+        },
+        addBasket() {
+            if(!this.$store.state.isLogin) {
+                this.$refs.alert.open()
+            } else console.log('++++')
         }
     }
 

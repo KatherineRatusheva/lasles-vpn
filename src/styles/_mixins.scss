@@ -7,6 +7,10 @@
     top: $top;
     left: $left;
 }
+@mixin positionWidth($left, $right: $left) {
+    left: $left;
+    right: $right;
+}
 
 @mixin mq($media) {
     @each $size, $resolution in $sizes {

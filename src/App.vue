@@ -25,7 +25,7 @@
           </ul>
         </nav>
         
-        <router-link to="/user" v-if="LOGIN_STATE">  <i class="fas fa-user-circle">  </i></router-link>
+        <router-link to="/user" v-if="LOGIN_STATE">  <div class="fas fa-user-circle"></div>  </router-link>
         
         <div class="header-auth" v-else>
           <router-link to="/sign-in">  <button class="header-auth__button-sign-in">Sign In</button>  </router-link>

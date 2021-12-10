@@ -48,6 +48,7 @@
     }
 
     &__package {
+        position: relative;
         margin-bottom: 2em;
         display: flex;
         align-items: center;
@@ -94,7 +95,7 @@
         padding: 0 0 1em 3em;
         font-size: 14px;
         line-height: 30px;
-        color: #4F5665;
+        color: $color-link;
 
         @include mq("xs") {
             font-size: 12px;
@@ -145,4 +146,21 @@
     position: absolute;
     @include position(18%, 0);
     color: #2FAB73;
+}
+
+.fa-shopping-basket {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    padding: 1em;
+    font-size: 20px;
+    color: $color-active;
+    background: $color-white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+.fa-shopping-basket:hover {
+    color: $color-white;
+    background: $color-active;
 }
