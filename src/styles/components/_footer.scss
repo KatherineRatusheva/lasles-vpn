@@ -8,7 +8,7 @@
     background: #F8F8F8;
 }
 .footer-main {
-    padding: 21em 2em 4em 2em;
+    padding: 22em 2em 4em 2em;
     display: flex;
     flex-wrap: wrap;
 
@@ -89,7 +89,7 @@ $icons: "fa-facebook-f", "fa-instagram", "fa-twitter";
 .footer-links {
     display: flex;
     flex-direction: column;
-    width: 24%;
+    width: 22%;
 
     @include mq("xxs") {
         width: 26%;
@@ -110,8 +110,14 @@ $icons: "fa-facebook-f", "fa-instagram", "fa-twitter";
     }
     &__item {
         margin-bottom: 0.6em;
-        @extend %primary-description;
+        font-size: 14px;
+        line-height: 30px;
+        color: #4F5665;
         cursor: pointer;
+
+        @include mq("xxs") {
+            font-size: 16px;
+        }
     }
 }
 

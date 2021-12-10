@@ -18,10 +18,14 @@
     }
 
     &__title {
-        font-size: 28px;
+        font-size: 16px;
         font-weight: 600;
         margin: 1em auto;
         text-align: center;
+
+        @include mq("xs") {
+            font-size: 22px;
+        }
     }
 }
 .sign-form {
@@ -30,8 +34,7 @@
 
     &__button {
         margin: 0 auto;
-        padding: 1em 2em;
-        width: 55%;
+        @include size(150px, 50px);
         background: $color-active;
         font-size: $primary-size;
         font-weight: bold;
