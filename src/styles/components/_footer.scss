@@ -57,7 +57,7 @@
         @extend %primary-description;
     }
     &__year {
-        margin-bottom: 2em;
+        margin: 2em 0;
         font-size: $primary-size;
         color: #AFB5C0;
     }
@@ -66,16 +66,23 @@
 .footer-social {
     display: flex;
 
-    $icons: "facebook", "instagram", "twitter";
-    @each $name in $icons {
-        &__#{$name} {
-            @extend %social-icon;
-            @include bgImg(#{$name});
-        }
-    }
-
     &__icon {
+        position: relative;
         display: flex;
+        margin-right: 20px;
+        @include size(34px);
+        background: white;
+        border-radius: 50%;
+    }
+}
+
+$icons: "fa-facebook-f", "fa-instagram", "fa-twitter";
+@each $name in $icons {
+    .#{$name} {
+        position: absolute;
+        @include position(25%);
+        font-size: 18px;
+        color: $color-active;
     }
 }
 

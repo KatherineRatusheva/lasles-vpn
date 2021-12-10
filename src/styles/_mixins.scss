@@ -3,7 +3,7 @@
     height: $height;
 }
 
-@mixin position($top, $left) {
+@mixin position($top, $left: $top) {
     top: $top;
     left: $left;
 }

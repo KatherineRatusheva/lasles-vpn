@@ -71,17 +71,19 @@
         color: $color-active;
     }
 
-    &__user {
-        margin-left: 18em;
-        @include size(45px);
-        border-radius: 50%;
-        border: 1px solid $color-white;
-        @include bgImg('user');
-        background-size: contain;
+}
+
+.fa-user-circle {
+    margin-left: 4em;
+    font-size: 45px;
+    color: $color-link;
+
+    @include mq("lg") {
+        margin-left: 6em;
     }
-    &__user:hover {
-        border: 1px solid $color-active;
-    }
+}
+.fa-user-circle:hover {
+    color: $color-active;
 }
 
 .menu {

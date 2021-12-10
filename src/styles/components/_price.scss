@@ -121,6 +121,7 @@
         font-weight: 700;
         color: $color-active;
         cursor: pointer;
+        white-space: nowrap;
 
         @include mq("xs") {
             padding: 1em 2em;

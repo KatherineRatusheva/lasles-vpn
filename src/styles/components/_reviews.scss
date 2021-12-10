@@ -64,6 +64,7 @@
     &__header {
         position: relative;
         display: flex;
+        justify-content: space-between;
     }
 
     &__main {
@@ -80,15 +81,10 @@
     }
 
     &__rating {
-        padding: 0 2em;
-        position: absolute;
-        top: 0.5em;
-        right: 0;
+        padding-left: 1.5em;
         font-size: $primary-size;
         font-weight: 400;
         color: $primary-color;
-        @include bgImg('star');
-        background-position: 100%;
     }
 
     &__description {
@@ -99,36 +95,28 @@
     }
 }
 
+.fa-star {
+    font-size: 14px;
+    color: #FEA250;
+}
+
 .arrows-button {
     display: flex;
     justify-content: flex-end;
     margin: 3em 9em 0 0;
+}
 
-    &__left {
-        margin-right: 1.5em;
-        @include bgImg('arrow-left');
-        @extend %reviews-button;
-    }
-
-    &__right {
-        @include bgImg('arrow-left');
-        transform: scale(-1, 1);
-        @extend %reviews-button;
-    }
-
-    &__right:hover{
-        @include bgImg('arrow-right');
-        background-color: $color-active;
-        background-position: center;
-        transform: scale(1, -1);
-    }
-
-    &__left:hover{
-        @include bgImg('arrow-right');
-        background-color: $color-active;
-        background-position: center;
-        transform: scale(-1, 1);
-    }
+.fa-arrow-circle-left, .fa-arrow-circle-right {
+    font-size: 55px;
+    color: $color-border;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.fa-arrow-circle-left {
+    margin-right: 0.5em;
+}
+.fa-arrow-circle-left:hover, .fa-arrow-circle-right:hover {
+    color: $color-active;
 }
 
 .carousel {

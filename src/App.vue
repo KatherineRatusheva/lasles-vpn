@@ -7,8 +7,8 @@
         <span></span>
       </label>
       <nav :class="[!isVisible ? 'menu__box' : 'menu__box-open']">
-        <ul v-for="link in links" :key='link'>
-          <router-link :to="link">  <li class="menu__item">{{link}}</li>  </router-link>
+        <ul v-for="item in linksMobile" :key='item.link'>
+          <router-link :to="item.url">  <li class="menu__item">{{item.link}}</li>  </router-link>
         </ul>
         <router-link to="/sign-in">  <button type="button" class="menu__item-button">Sign In</button>  </router-link>
         <router-link to="/sign-up">  <button type="button" class="menu__item-button">Sign Up</button>  </router-link>
@@ -24,7 +24,8 @@
             <router-link :to="link">  <li class="header-nav__item">{{link}}</li>  </router-link>
           </ul>
         </nav>
-        <router-link to="/user" v-if="LOGIN_STATE"><div class="header-auth__user"></div>  </router-link>
+        
+        <router-link to="/user" v-if="LOGIN_STATE">  <i class="fas fa-user-circle">  </i></router-link>
         
         <div class="header-auth" v-else>
           <router-link to="/sign-in">  <button class="header-auth__button-sign-in">Sign In</button>  </router-link>
@@ -50,6 +51,14 @@ export default {
   data() {
     return {
       links: ['about', 'features', 'pricing', 'testimonials', 'help'],
+      linksMobile: [
+        {url: '/', link: 'main'},
+        {url: 'about', link: 'about'},
+        {url: 'features', link: 'features'},
+        {url: 'pricing', link: 'pricing'},
+        {url: 'testimonials', link: 'testimonials'},
+        {url: 'help', link: 'help'}
+      ],
       isVisible: false
     }
   },

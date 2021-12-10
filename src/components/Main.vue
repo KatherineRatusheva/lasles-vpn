@@ -81,6 +81,7 @@
                       <p class="reviews-user__city">{{ item.country }}, {{ item.city }}</p>
                   </div>
                   <p class="reviews-user__rating">{{ item.rating }}</p>
+                  <i class="fas fa-star"></i>
               </div>
               <p class="reviews-user__description"> {{ item.message }}</p>
           </div>
@@ -88,8 +89,8 @@
       </VueSlickCarousel>
       
       <div class="arrows-button">
-          <div class="arrows-button__left" @click="prev"></div>
-          <div class="arrows-button__right" @click="next"></div>
+          <i class="fas fa-arrow-circle-left" @click="prev"></i>
+          <i class="fas fa-arrow-circle-right" @click="next"></i>
       </div>
   </main >
 
@@ -165,9 +166,9 @@ export default {
             ],
 
             footerSocialIcon: [
-                {url: "https://ru-ru.facebook.com/", class: 'footer-social__facebook'},
-                {url: "https://www.instagram.com/?hl=ru", class: 'footer-social__instagram'},
-                {url: "https://twitter.com/?lang=ru", class: 'footer-social__twitter'},
+                {url: "https://ru-ru.facebook.com/", class: 'fab fa-facebook-f'},
+                {url: "https://www.instagram.com/?hl=ru", class: 'fab fa-instagram'},
+                {url: "https://twitter.com/?lang=ru", class: 'fab fa-twitter'},
             ],
             
             settings: {
