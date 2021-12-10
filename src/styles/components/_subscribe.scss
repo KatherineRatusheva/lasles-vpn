@@ -34,7 +34,7 @@
 
     &__button {
         margin: 2em auto 0;
-        @include size(165px, 65px);
+        @include size(165px, 60px);
         background: $color-active;
         border-radius: 10px;
         border: none;
@@ -50,7 +50,7 @@
         }
         @include mq("md") {
             margin: 2em 0 0;
-            @include size(250px, 85px);
+            @include size(250px, 60px);
         }
     }
     
