@@ -223,7 +223,8 @@ export default {
             if(!this.$store.state.isLogin) {
                 this.$refs.alert.open()
             } else {
-                console.log('добавлен в корзину', e.target.parentNode.parentElement.firstChild.firstChild.innerText)
+                const item = e.target.parentNode.parentElement.firstChild.firstChild.innerText
+                this.$store.dispatch('addBasket', item)
             }
         }
     }

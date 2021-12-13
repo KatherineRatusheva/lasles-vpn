@@ -14,7 +14,9 @@ export default new Vuex.Store({
     reviews: [{}],
     requestUserModal: {},
     error: '',
-    mapMarkers: [{}]
+    mapMarkers: [{}],
+    dataUserId: localStorage.getItem('data-id'),
+    itemBasket: null
   },
 
   getters: {
@@ -32,6 +34,12 @@ export default new Vuex.Store({
     },
     ERROR(state) {
       return state.error
+    },
+    DATA_USER(state) {
+      return state.dataUserId
+    },
+    UPDATE_BASKET(state) {
+      return state.itemBasket
     }
   },
 
@@ -101,6 +109,14 @@ export default new Vuex.Store({
       }).catch(error => {
           console.log(error);
       });
+
+      // add user in database
+      axios.post( apiUrls.addUserData, {
+        email: user.email,
+      }).then(res => {
+        localStorage.setItem('data-id', res.data.name);
+      })
+
     },
 
     sendRequest({commit}, dataUserModal) {
@@ -117,7 +133,18 @@ export default new Vuex.Store({
         }).catch(error => {
           console.log(error);
       })
+    },
+
+    addBasket({commit}, item) {
+      axios.patch(`https://laslesvpn-97c54-default-rtdb.firebaseio.com/users/${this.state.dataUserId}.json`, {
+        basket: item
+      }).then(response => {
+        commit('ADD_BASKET', response.data.basket)
+      }).catch(error => {
+        console.log(error);
+      })
     }
+
   },
   
   mutations: {
@@ -144,6 +171,9 @@ export default new Vuex.Store({
       state.isLogin = false
       state.error = payload
     },
+    ADD_BASKET (state, payload) {
+      state.itemBasket = payload
+    }
   }
   
 })
