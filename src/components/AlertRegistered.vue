@@ -1,8 +1,8 @@
 <template>
 <div class="form" v-show="isVisible">
     <form class="form-alert" v-click-outside="onClickOutside">
-        <p class="form-alert__title">You are not registred</p>
-        <p class="form-alert__text">Зарегистрируйтесь по <a href="/sign-up">ссылке</a></p>
+        <p class="form-alert__title">{{ $t('isNotRegistred') }}</p>
+        <p class="form-alert__text"> <a href="/sign-up"> {{ $t('registredText') }} </a> </p>
         <button type="button" class="form-alert__close" @click="close">✖</button>
     </form>
 </div>

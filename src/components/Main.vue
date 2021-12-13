@@ -31,10 +31,9 @@
           <div class="features-text">
               <h2 class="features-text__title"> {{ $t('featuresTitle') }} </h2>
               <p class="features-text__description"> {{ $t('featuresText') }} </p>
-              <div class="features-text__item"> {{ $t('featuresItem_1') }} <div class="fas fa-check-circle"></div> </div>
-              <div class="features-text__item"> {{ $t('featuresItem_2') }} <div class="fas fa-check-circle"></div> </div>
-              <div class="features-text__item"> {{ $t('featuresItem_3') }} <div class="fas fa-check-circle"></div> </div>
-              <div class="features-text__item"> {{ $t('featuresItem_4') }} <div class="fas fa-check-circle"></div> </div>
+              <ul v-for="item in $t('featuresItems')" :key="item">
+                  <li class="features-text__item"> {{ item }} <i class="fas fa-check-circle"></i></li>
+              </ul>
           </div>
       </div>
 
@@ -220,10 +219,12 @@ export default {
         showModalPrice(e) {
             this.$refs.modal.open(e.target.parentNode.parentElement.firstChild.firstChild.innerText)
         },
-        addBasket() {
+        addBasket(e) {
             if(!this.$store.state.isLogin) {
                 this.$refs.alert.open()
-            } else console.log('++++')
+            } else {
+                console.log('добавлен в корзину', e.target.parentNode.parentElement.firstChild.firstChild.innerText)
+            }
         }
     }
 

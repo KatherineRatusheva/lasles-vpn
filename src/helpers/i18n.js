@@ -12,10 +12,7 @@ export const i18n = new VueI18n({
             welcomeButton: 'Get Started',
             featuresTitle: "We Provide Many Features You Can Use",
             featuresText: "You can explore the features that we provide with fun and have their own functions each feature.",
-            featuresItem_1: "Powerfull online protection.",
-            featuresItem_2: "Internet without borders.",
-            featuresItem_3: "Supercharged VPN",
-            featuresItem_4: "No specific time limits.",
+            featuresItems: ["Powerfull online protection.", "Internet without borders.", "Supercharged VPN", "No specific time limits."], 
             planTitle: "Choose Your Plan",
             planText: "Let's choose the package that is best for you and explore it happily and cheerfully.",
             locationsTitle: "Huge Global Network of Fast VPN",
@@ -60,6 +57,8 @@ export const i18n = new VueI18n({
             authorizationErrorDisabled: 'Access to this account has been temporarily disabled due to many failed login attempts. You can try again later.',
             modalErrorName: 'Name must be at least 2 characters long',
             modalErrorPhone: 'Please enter a valid phone. Example for the Belarus +37529 ХХХ ХХ ХХ',
+            isNotRegistred: 'You are not registred',
+            registredText: 'Register here',
         },
         ru: {
             welcomeTitle: 'Хотите, чтобы с LaslesVPN все было просто.',
@@ -67,10 +66,7 @@ export const i18n = new VueI18n({
             welcomeButton: 'Начать',
             featuresTitle: "Мы предоставляем множество функций, которые вы можете использовать",
             featuresText: "Вы можете с удовольствием изучить функции, которые мы предоставляем, и иметь свои собственные функции для каждой функции.",
-            featuresItem_1: "Мощная онлайн-защита.",
-            featuresItem_2: "Интернет без границ.",
-            featuresItem_3: "VPN с наддувом",
-            featuresItem_4: "Нет конкретных сроков.",
+            featuresItems: ["Мощная онлайн-защита.", "Интернет без границ.", "VPN с наддувом", "Нет конкретных сроков."],
             planTitle: "Выберите свой план",
             planText: "Давайте выберем пакет, который вам больше всего подходит, и рассмотрим его весело и весело.",
             locationsTitle: "Огромная глобальная сеть быстрых VPN",
@@ -115,6 +111,8 @@ export const i18n = new VueI18n({
             authorizationErrorDisabled: 'Доступ к этой учетной записи был временно отключен из-за множества неудачных попыток входа в систему. Вы можете повторить попытку позже.',
             modalErrorName: 'Имя должно состоять минимум из 2 символов',
             modalErrorPhone: 'Введите корректный номер телефона. Пример для Беларуси: +37529 ХХХ ХХ ХХ',
+            isNotRegistred: 'Вы не зарегистрированы',
+            registredText: 'Зарегистрируйтесь здесь',
         }
     }
 })
