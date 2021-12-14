@@ -224,7 +224,7 @@ export default {
                 this.$refs.alert.open()
             } else {
                 const item = e.target.parentNode.parentElement.firstChild.firstChild.innerText
-                this.$store.dispatch('addBasket', item)
+                this.$store.dispatch('addItemBasket', item)
             }
         }
     }

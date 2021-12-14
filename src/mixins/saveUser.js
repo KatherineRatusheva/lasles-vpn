@@ -3,7 +3,7 @@ export const saveUser = {
         deleteUser() {
             localStorage.removeItem('user-token')
             localStorage.removeItem('user-email')
-            localStorage.removeItem('data-id')
+            localStorage.removeItem('user-id')
 
             this.$store.commit('LOG_OUT')
             this.$store.dispatch('isLogOut')

@@ -15,8 +15,9 @@ export default new Vuex.Store({
     requestUserModal: {},
     error: '',
     mapMarkers: [{}],
-    dataUserId: localStorage.getItem('data-id'),
-    itemBasket: null
+    userId: localStorage.getItem('user-id'),
+    itemBasket: '',
+    userBasket: {}
   },
 
   getters: {
@@ -36,10 +37,13 @@ export default new Vuex.Store({
       return state.error
     },
     DATA_USER(state) {
-      return state.dataUserId
+      return state.userId
     },
     UPDATE_BASKET(state) {
       return state.itemBasket
+    },
+    GET_USERS_BASKET(state) {
+      return state.userBasket
     }
   },
 
@@ -86,6 +90,7 @@ export default new Vuex.Store({
         commit('LOGIN_SUCSESS', res.data)
         localStorage.setItem('user-token', res.data.idToken);
         localStorage.setItem('user-email', res.data.email)
+        localStorage.setItem('user-id', res.data.localId)
         commit('SIGN_IN')
         window.location.href = '/user'
 
@@ -103,19 +108,13 @@ export default new Vuex.Store({
         commit('LOGIN_SUCSESS', res.data)
         localStorage.setItem('user-token', res.data.idToken);
         localStorage.setItem('user-email', res.data.email)
-        commit('SIGN_IN')
+        localStorage.setItem('user-id', res.data.localId)
+        commit('SIGN_IN')      
         window.location.href = '/user'
 
       }).catch(error => {
           console.log(error);
       });
-
-      // add user in database
-      axios.post( apiUrls.addUserData, {
-        email: user.email,
-      }).then(res => {
-        localStorage.setItem('data-id', res.data.name);
-      })
 
     },
 
@@ -135,11 +134,20 @@ export default new Vuex.Store({
       })
     },
 
-    addBasket({commit}, item) {
-      axios.patch(`https://laslesvpn-97c54-default-rtdb.firebaseio.com/users/${this.state.dataUserId}.json`, {
-        basket: item
+    addItemBasket({commit}, item) {
+      axios.patch(`https://laslesvpn-97c54-default-rtdb.firebaseio.com/users/${this.state.userId}.json`, {
+        selectPlan: item
       }).then(response => {
-        commit('ADD_BASKET', response.data.basket)
+        commit('ADD_BASKET', response.data.selectPlan)
+      }).catch(error => {
+        console.log(error);
+      })
+    },
+
+    getUsersBasket({commit}) {
+      axios.get(`https://laslesvpn-97c54-default-rtdb.firebaseio.com/users/${this.state.userId}.json`
+      ).then(response => {
+        commit('GET_USERS_BASKET', response.data)
       }).catch(error => {
         console.log(error);
       })
@@ -173,6 +181,9 @@ export default new Vuex.Store({
     },
     ADD_BASKET (state, payload) {
       state.itemBasket = payload
+    },
+    GET_USERS_BASKET (state, payload) {
+      state.userBasket = payload
     }
   }
   
