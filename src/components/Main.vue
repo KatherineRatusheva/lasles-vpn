@@ -53,7 +53,7 @@
                   <div class="price-block__bottom">
                       <p class="price-block__cost">{{item.price}}</p>
                       <button class="price-block__button" @click="showModalPrice"> {{ $t('priseButton') }} </button>
-                      <button class="fas fa-shopping-basket" @click="addBasket"></button>
+                      <button :class="[item.name === GET_USERS_BASKET.selectPlan ? 'fas fa-shopping-basket check' : 'fas fa-shopping-basket']" @click="addBasket"></button>
                   </div>
               </div>
           </div>
@@ -199,11 +199,13 @@ export default {
     computed: {
         ...mapGetters([
             'GET_REVIEWS',
+            'GET_USERS_BASKET'
         ])
     },
 
     mounted() {
         this.$store.dispatch('getReviews')
+        this.$store.dispatch('getUsersBasket')
     },
 
     methods: {
@@ -225,6 +227,7 @@ export default {
             } else {
                 const item = e.target.parentNode.parentElement.firstChild.firstChild.innerText
                 this.$store.dispatch('addItemBasket', item)
+                setTimeout(() => this.$router.push('/user'), 1000);
             }
         }
     }
