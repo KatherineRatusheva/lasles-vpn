@@ -6,7 +6,7 @@
         <button @click="signOutUser" class="user-container__button" type="submit">Sign out</button>
     </div>
 
-    <div class="basket" v-if="GET_USERS_BASKET.selectPlan">
+    <div class="basket" v-if="GET_USERS_BASKET">
         <div class="basket__title">Basket</div>
 
         <div :class="[item.name === GET_USERS_BASKET.selectPlan ? 'select-plan' : 'error-plan']" v-for="item in $t('plan')" :key="item.name">
