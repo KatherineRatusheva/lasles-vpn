@@ -151,6 +151,16 @@ export default new Vuex.Store({
       }).catch(error => {
         console.log(error);
       })
+    },
+
+    deleteItemBasket({commit}) {
+      axios.patch(`https://laslesvpn-97c54-default-rtdb.firebaseio.com/users/${this.state.userId}.json`, {
+        selectPlan: ''
+      }).then(response => {
+        commit('GET_USERS_BASKET', response.data)
+      }).catch(error => {
+        console.log(error);
+      })
     }
 
   },

@@ -15,7 +15,7 @@
                 <li class="select-plan__item" v-for="item in item.include" :key="item"> {{item}} </li>
             </ul>
             <p class="select-plan__price">{{item.price}}</p>
-            <button class="far fa-times-circle"></button>
+            <button class="far fa-times-circle" @click="deleteBasket"></button>
         </div>
     </div>
         
@@ -49,6 +49,9 @@ export default {
             this.deleteUser()
             this.$router.push('/')
             this.emailUser = ''
+        },
+        deleteBasket() {
+            this.$store.dispatch('deleteItemBasket')
         }
     },
 
