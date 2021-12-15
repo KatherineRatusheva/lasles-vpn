@@ -16,7 +16,7 @@ export default new Vuex.Store({
     error: '',
     mapMarkers: [{}],
     userId: localStorage.getItem('user-id'),
-    userBasket: ''
+    userBasket: []
   },
 
   getters: {
@@ -38,7 +38,7 @@ export default new Vuex.Store({
     DATA_USER(state) {
       return state.userId
     },
-    GET_USERS_BASKET(state) {
+    UPDATE_BASKET(state) {
       return state.userBasket
     }
   },
@@ -132,9 +132,9 @@ export default new Vuex.Store({
 
     addItemBasket({commit}, item) {
       axios.patch(`https://laslesvpn-97c54-default-rtdb.firebaseio.com/users/${this.state.userId}.json`, {
-        selectPlan: item
+        selectPlan: [...this.state.userBasket, item]
       }).then(response => {
-        commit('GET_USERS_BASKET', response.data.selectPlan)
+        commit('ADD_BASKET', response.data.selectPlan)
       }).catch(error => {
         console.log(error);
       })
@@ -149,11 +149,11 @@ export default new Vuex.Store({
       })
     },
 
-    deleteItemBasket({commit}) {
+    deleteItemBasket({commit}, newBasket) {
       axios.patch(`https://laslesvpn-97c54-default-rtdb.firebaseio.com/users/${this.state.userId}.json`, {
-        selectPlan: ''
+        selectPlan: newBasket
       }).then(response => {
-        commit('GET_USERS_BASKET', response.data.selectPlan)
+        commit('REMOVE_BASKET', response.data.selectPlan)
       }).catch(error => {
         console.log(error);
       })
@@ -187,7 +187,13 @@ export default new Vuex.Store({
     },
     GET_USERS_BASKET (state, payload) {
       state.userBasket = payload
-    }
+    },
+    ADD_BASKET (state, payload) {
+      state.userBasket = payload
+    },
+    REMOVE_BASKET (state, payload) {
+      state.userBasket = payload
+    },
   }
   
 })

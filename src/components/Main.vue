@@ -45,10 +45,11 @@
               <div class="price-block__package" v-for="item in $t('plan')" :key="item.name" :class="[item.activeClass]">
                   <div class="price-block__list">
                       <p class="price-block__title"> {{item.name}} </p>
-                      <div class="price-block__item" v-for="item in item.include" :key="item"> 
-                          <div class="fas fa-check"></div>
-                          {{item}}
-                      </div>
+                      <ul class="price-block__list">
+                          <li class="price-block__item" v-for="item in item.include" :key="item">
+                              <div class="fas fa-check"></div> {{item}} 
+                          </li>
+                      </ul>
                   </div>
                   <div class="price-block__bottom">
                       <p class="price-block__cost">{{item.price}}</p>
@@ -224,7 +225,9 @@ export default {
                 this.$refs.alert.open()
             } else {
                 const item = e.target.parentNode.parentElement.firstChild.firstChild.innerText
-                this.$store.dispatch('addItemBasket', item)
+                const include = e.target.parentNode.parentElement.firstChild.lastChild.innerText
+                const price = e.target.parentNode.parentElement.lastChild.innerText
+                this.$store.dispatch('addItemBasket', {name: item, include: include, price: price})
             }
         }
     }
