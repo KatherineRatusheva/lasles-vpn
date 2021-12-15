@@ -100,6 +100,9 @@
         }
     }
 }
+.select-plan:hover {
+    border: 2px solid $color-active;
+}
 .error-plan {
     display: none;
 }
