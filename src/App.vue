@@ -25,9 +25,13 @@
           </ul>
         </nav>
         
-        <router-link to="/user" v-if="LOGIN_STATE">  <div class="fas fa-user-circle"></div>  </router-link>
+        <div class="header-user" v-if="LOGIN_STATE">
+          <router-link to="/basket">  <button class="header-auth__basket fas fa-shopping-basket"></button>  </router-link>
+          <router-link to="/user">  <div class="fas fa-user-circle"></div>  </router-link>
+        </div>
         
         <div class="header-auth" v-else>
+          <router-link to="/basket">  <button class="header-auth__basket fas fa-shopping-basket"></button>  </router-link>
           <router-link to="/sign-in">  <button class="header-auth__button-sign-in">Sign In</button>  </router-link>
           <router-link to="/sign-up">  <button class="header-auth__button-sign-up">Sign Up</button>  </router-link>
         </div>

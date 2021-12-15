@@ -148,7 +148,7 @@
     color: #2FAB73;
 }
 
-.fa-shopping-basket {
+.price-block__basket.fas.fa-shopping-basket {
     position: absolute;
     top: 2%;
     right: 5%;
@@ -160,7 +160,7 @@
     border: none;
     cursor: pointer;
 }
-.fa-shopping-basket:hover {
+.price-block__basket.fas.fa-shopping-basket:hover {
     color: $color-white;
     background: $color-active;
 }

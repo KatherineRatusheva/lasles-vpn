@@ -50,14 +50,14 @@
         cursor: pointer;
 
         @include mq("lg") {
-            margin: 0 1.8em 0 6em;
+            margin: 0 1.8em 0 1em;
         }
     }
     &__button-sign-in:hover {
         color: $color-active;
     }
     &__button-sign-up {
-        padding: 1em 2.8em;
+        padding: 1em 1.5em;
         background: none;
         border: 1px solid $primary-color;
         border-radius: 50px;
@@ -65,22 +65,42 @@
         font-weight: 600;
         color: $primary-color;
         cursor: pointer;
+
+        @include mq("lg") {
+            padding: 1em 2.8em;
+        }
     }
     &__button-sign-up:hover {
         border: 1px solid $color-active;
         color: $color-active;
     }
-
+    &__basket.fas.fa-shopping-basket {
+        padding: 1em;
+        font-size: 16px;
+        color: $color-link;
+        border-radius: 25px;
+        background: $color-white;
+        border: 1px solid $color-white;
+        cursor: pointer;
+    
+        @include mq("lg") {
+            margin: 0 0 0 6em;
+        }
+    }
+    &__basket.fas.fa-shopping-basket:hover {
+        border: 1px solid $color-active;
+        color: $color-active;
+    }
+}
+.header-user {
+    display: flex;
 }
 
 .fa-user-circle {
-    margin-left: 4em;
+    margin-left: 0.5em;
     font-size: 45px;
     color: $color-link;
 
-    @include mq("lg") {
-        margin-left: 6em;
-    }
 }
 .fa-user-circle:hover {
     color: $color-active;

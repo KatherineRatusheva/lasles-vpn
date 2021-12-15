@@ -9,6 +9,7 @@ import Main from '@/components/Main'
 import SignUp from '../views/SignUp.vue'
 import SignIn from '../views/SignIn.vue'
 import User from '../views/User.vue'
+import Basket from '../views/Basket.vue'
 
 Vue.use(VueRouter)
 
@@ -57,6 +58,11 @@ const routes = [
     path: '/user',
     name: 'User',
     component: User
+  },
+  {
+    path: '/basket',
+    name: 'Basket',
+    component: Basket
   }
 ]
 
