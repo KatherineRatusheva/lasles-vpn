@@ -10,15 +10,24 @@
         <ul v-for="item in linksMobile" :key='item.link'>
           <router-link :to="item.url">  <li class="menu__item">{{item.link}}</li>  </router-link>
         </ul>
-        <router-link to="/sign-in">  <button type="button" class="menu__item-button">Sign In</button>  </router-link>
-        <router-link to="/sign-up">  <button type="button" class="menu__item-button">Sign Up</button>  </router-link>
+
+        <div class="menu-user" v-if="LOGIN_STATE">
+          <router-link to="/basket">
+          <button class="header-auth__basket fas fa-shopping-basket"><div class="header-auth__basket-item" v-if="UPDATE_COUNT_BASKET">{{UPDATE_COUNT_BASKET}}</div></button>
+          </router-link>
+          <router-link to="/user">  <button class="fas fa-user-circle"></button>  </router-link>
+        </div>
+
+        <div class="menu-auth" v-else>
+          <router-link to="/sign-in">  <button type="button" class="menu-auth__item-button">Sign In</button>  </router-link>
+          <router-link to="/sign-up">  <button type="button" class="menu-auth__item-button">Sign Up</button>  </router-link>
+        </div>
       </nav>
     </div>
     
     <header class="header">
       <div class="header-container">
         <router-link to="/">  <img class="header-container__logo" src="./image/logo.png" alt="logo LaslesVPN">  </router-link>
-
         <nav class="header-nav">
           <ul class="header-nav__list" v-for="link in links" :key='link'>
             <router-link :to="link">  <li class="header-nav__item">{{link}}</li>  </router-link>
