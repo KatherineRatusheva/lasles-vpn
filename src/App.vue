@@ -21,6 +21,7 @@
         <div class="menu-auth" v-else>
           <router-link to="/sign-in">  <button type="button" class="menu-auth__item-button">Sign In</button>  </router-link>
           <router-link to="/sign-up">  <button type="button" class="menu-auth__item-button">Sign Up</button>  </router-link>
+          <router-link to="/basket">  <button class="header-auth__basket fas fa-shopping-basket"></button>  </router-link>
         </div>
       </nav>
     </div>
