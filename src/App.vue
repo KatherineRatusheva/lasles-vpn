@@ -26,7 +26,9 @@
         </nav>
         
         <div class="header-user" v-if="LOGIN_STATE">
-          <router-link to="/basket">  <button class="header-auth__basket fas fa-shopping-basket"></button>  </router-link>
+          <router-link to="/basket">
+          <button class="header-auth__basket fas fa-shopping-basket"><div class="header-auth__basket-item" v-if="UPDATE_COUNT_BASKET">{{UPDATE_COUNT_BASKET}}</div></button>
+          </router-link>
           <router-link to="/user">  <div class="fas fa-user-circle"></div>  </router-link>
         </div>
         
@@ -69,6 +71,7 @@ export default {
   
   created() {
     this.$store.dispatch('getUser')
+    this.$store.dispatch('getUsersBasket')
     if(this.$store.state.token) {
       this.$store.commit('SIGN_IN')
       this.$store.dispatch('toggleSignIn')
@@ -81,6 +84,7 @@ export default {
   computed: {
     ...mapGetters([
       'LOGIN_STATE',
+      'UPDATE_COUNT_BASKET'
     ])
   },
 

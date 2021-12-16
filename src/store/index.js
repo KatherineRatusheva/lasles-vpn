@@ -16,7 +16,8 @@ export default new Vuex.Store({
     error: '',
     mapMarkers: [{}],
     userId: localStorage.getItem('user-id'),
-    userBasket: []
+    userBasket: [],
+    countBusket: 0
   },
 
   getters: {
@@ -39,7 +40,12 @@ export default new Vuex.Store({
       return state.userId
     },
     UPDATE_BASKET(state) {
-      return state.userBasket
+      if(state.userBasket === null) {
+        return state.userBasket = []
+      } else return state.userBasket
+    },
+    UPDATE_COUNT_BASKET(state) {
+      return state.countBusket
     }
   },
 
@@ -102,10 +108,10 @@ export default new Vuex.Store({
           returnSecureToken: true
       }).then(res => {
         commit('LOGIN_SUCSESS', res.data)
-        localStorage.setItem('user-token', res.data.idToken);
+        localStorage.setItem('user-token', res.data.idToken)
         localStorage.setItem('user-email', res.data.email)
         localStorage.setItem('user-id', res.data.localId)
-        commit('SIGN_IN')      
+        commit('SIGN_IN')
         window.location.href = '/user'
 
       }).catch(error => {
@@ -187,12 +193,15 @@ export default new Vuex.Store({
     },
     GET_USERS_BASKET (state, payload) {
       state.userBasket = payload
+      state.countBusket = payload.length
     },
     ADD_BASKET (state, payload) {
       state.userBasket = payload
+      state.countBusket ++
     },
     REMOVE_BASKET (state, payload) {
       state.userBasket = payload
+      state.countBusket --
     },
   }
   

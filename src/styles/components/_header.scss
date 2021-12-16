@@ -75,6 +75,7 @@
         color: $color-active;
     }
     &__basket.fas.fa-shopping-basket {
+        position: relative;
         padding: 1em;
         font-size: 16px;
         color: $color-link;
@@ -90,6 +91,15 @@
     &__basket.fas.fa-shopping-basket:hover {
         border: 1px solid $color-active;
         color: $color-active;
+    }
+    &__basket-item {
+        position: absolute;
+        padding: 2px 6px;
+        @include position(7px, 50%);
+        font-size: 11px;
+        color: $color-white;
+        background: $color-active;
+        border-radius: 10px;
     }
 }
 .header-user {
