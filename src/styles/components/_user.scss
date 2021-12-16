@@ -3,13 +3,13 @@
 @import '../placeholders';
 
 .user {
-    margin: 0 2em;
+    margin: 4em 2em 0;
 
     @include mq("xs") {
-        margin: 0 3em;
+        margin: 4em 3em 0;
     }
     @include mq("sm") {
-        margin: 0 4em;
+        margin: 4em 4em 0;
     }
     @include mq("md") {
         margin: 0 5em;
