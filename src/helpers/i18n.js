@@ -59,6 +59,7 @@ export const i18n = new VueI18n({
             modalErrorPhone: 'Please enter a valid phone. Example for the Belarus +37529 ХХХ ХХ ХХ',
             isNotRegistred: 'You are not registred',
             registredText: 'Register here',
+            basketText: 'Basket is empty'
         },
         ru: {
             welcomeTitle: 'Хотите, чтобы с LaslesVPN все было просто.',
@@ -113,6 +114,7 @@ export const i18n = new VueI18n({
             modalErrorPhone: 'Введите корректный номер телефона. Пример для Беларуси: +37529 ХХХ ХХ ХХ',
             isNotRegistred: 'Вы не зарегистрированы',
             registredText: 'Зарегистрируйтесь здесь',
+            basketText: 'Корзина пустая'
         }
     }
 })

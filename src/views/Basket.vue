@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="basket" v-else>Basket is empty</div>
+    <div class="basket" v-else> {{ $t('basketText') }} </div>
 
 </div>
 </template>
